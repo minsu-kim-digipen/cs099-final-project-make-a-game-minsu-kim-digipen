@@ -15,12 +15,4 @@ function setup()
 function draw() 
 {
   background(220);
-  
-  
-
-  text("First Cup : " + FirstCup, width / 2, 50);
-  text("Second Cup : " + SecondCup, width / 2, 100);
-  text("Third Cup : " + ThirdCup, width / 2, 150);
-
-  text(FirstCup+SecondCup+ThirdCup, width /2, 300);
 }

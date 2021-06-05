@@ -3,28 +3,32 @@
 // Course     : CS099
 // Spring 2021
 
-let FirstCup;
-let SecondCup;
-let ThirdCup;
 
-let MAX_PERCENT;
-
-function mousePressed()
+function Random_Cup(Cup_amount, max_percent)
 {
-    // Initial Thing
-    MAX_PERCENT = 200;
+    // Initial variable
+    let Cup = [];
+    let MAX_PERCENT;
 
+    // Get First max_percent amount
+    if(MAX_PERCENT == undefined)
+    {
+        MAX_PERCENT = max_percent
+    }
 
-    // First random
-    FirstCup = int(random(MAX_PERCENT));
-    MAX_PERCENT -= FirstCup;
-
-
-    // Second random
-    SecondCup = int(random(MAX_PERCENT));
-    MAX_PERCENT -= SecondCup;
-
-    ThirdCup = floor(MAX_PERCENT);
-
-
+    // Get random value
+    for(i = 0; i < Cup_amount; i++)
+    {
+        // This is the last cup
+        if(i == Cup_amount - 1)
+        {
+            Cup[i] = MAX_PERCENT
+        }
+        // This is the other cups, using random to get percent value
+        else
+        {
+            Cup[i] = int(random(MAX_PERCENT));
+            MAX_PERCENT -= Cup[i];
+        }
+    }
 }
