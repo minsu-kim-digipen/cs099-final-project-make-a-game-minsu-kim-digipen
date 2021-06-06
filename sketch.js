@@ -3,9 +3,12 @@
 // Course     : CS099
 // Spring 2021
 
+let CurrentPage = MAINMENU;
+
+
 function setup() 
 {
-  createCanvas(800, 400);
+  createCanvas(800, 600);
   textAlign(CENTER);
   textSize(30);
 }
@@ -14,13 +17,9 @@ function setup()
 
 function draw() 
 {
-  background(220);
-  
-  
+  background('#304859');
 
-  text("First Cup : " + FirstCup, width / 2, 50);
-  text("Second Cup : " + SecondCup, width / 2, 100);
-  text("Third Cup : " + ThirdCup, width / 2, 150);
-
-  text(FirstCup+SecondCup+ThirdCup, width /2, 300);
+  CreateButton(width / 2, height / 2, 100, 100, "TEST");
 }
+
+
