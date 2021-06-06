@@ -3,11 +3,12 @@
 // Course     : CS099
 // Spring 2021
 
+let Cup = [];
 
 function Random_Cup(Cup_amount, max_percent)
 {
     // Initial variable
-    let Cup = [];
+
     let MAX_PERCENT;
 
     // Get First max_percent amount
@@ -31,4 +32,7 @@ function Random_Cup(Cup_amount, max_percent)
             MAX_PERCENT -= Cup[i];
         }
     }
+
+    // Visualize cup in console
+    console.log(Cup);
 }
