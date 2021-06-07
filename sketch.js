@@ -3,7 +3,7 @@
 // Course     : CS099
 // Spring 2021
 
-let CurrentPage = MAINMENU;
+let CurrentScene = MAINMENU;
 
 
 function setup() 
@@ -20,6 +20,8 @@ function draw()
   background('#304859');
 
   CreateButton(width / 2, height / 2, 100, 100, "TEST");
+
+  print(CurrentScene);
 }
 
 

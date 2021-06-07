@@ -3,7 +3,7 @@
 // Course     : CS099
 // Spring 2021
 
-function CreateButton(x, y, width, height, context, size = 30)
+function CreateButton(x, y, width, height, context)
 {
     push();
 
@@ -30,7 +30,7 @@ function CreateButton(x, y, width, height, context, size = 30)
     const MIDDLE_Y = y + (height / 2);
 
     textAlign(CENTER);
-    textSize(size);
+    textSize(30);
     text(context, MIDDLE_X, MIDDLE_Y);
 
     pop();
