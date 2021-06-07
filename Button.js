@@ -3,35 +3,58 @@
 // Course     : CS099
 // Spring 2021
 
-function CreateButton(x, y, width, height, context)
+class Button
 {
-    push();
-
-    noStroke();
-
-    // Mouse is in Button, it turns to gray
-    if(mouseX > x && mouseX < x + width && mouseY > y && mouseY < y + height)
+    constructor(x, y, width, height)
     {
-        fill(220);
-    }
-    else
-    {
-        fill(255);
+        this.x = x;
+        this.y = y;
+        this.width = width;
+        this.height = height;
     }
 
-    rect(x, y, width, height);
+    // Mouseover & Box
+    draw(context)
+    {
+        const is_inside_button = mouseX > this.x - (this.width / 2) && mouseX < this.x + (this.width / 2) && mouseY > this.y - (this.height / 2) && mouseY < this.y + (this.height / 2);
+        
+        push();
 
-    pop();
+        noStroke();
+        rectMode(CENTER);
 
-    // Present text in the button
-    push();
+        // Mouse is in Button, it turns to gray
+        if(is_inside_button)
+        {
+            fill(220);
+        }
+        else
+        {
+            fill(255);
+        }
+    
+        rect(this.x, this.y, this.width, this.height);
+    
+        pop();
 
-    const MIDDLE_X = x + (width / 2);
-    const MIDDLE_Y = y + (height / 2);
+        push();
 
-    textAlign(CENTER);
-    textSize(30);
-    text(context, MIDDLE_X, MIDDLE_Y);
+        textAlign(CENTER);
+        textSize(30);
+        text(context, this.x, this.y);
 
-    pop();
+        pop();
+    }
+
+    // When Click, Change variable
+
+    ChangeScene(Scene)
+    {
+        const is_inside_button = mouseX > this.x - (this.width / 2) && mouseX < this.x + (this.width / 2) && mouseY > this.y - (this.height / 2) && mouseY < this.y + (this.height / 2);
+
+        if(is_inside_button)
+        {
+            CurrentScene = Scene;
+        }
+    }
 }

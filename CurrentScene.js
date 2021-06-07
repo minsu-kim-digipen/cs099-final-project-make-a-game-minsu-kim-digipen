@@ -4,9 +4,3 @@
 // Spring 2021
 
 const MAINMENU = 0;
-
-
-function ChangeScene(Scene)
-{
-    CurrentScene = Scene;
-}
