@@ -41,7 +41,7 @@ class Button
 
         textAlign(CENTER);
         textSize(30);
-        text(context, this.x, this.y);
+        text(context, this.x, this.y + 10);
 
         pop();
     }
