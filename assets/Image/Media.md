@@ -6,4 +6,4 @@
 
 ## Home
 
-[assets/Image/home.png](https://www.flaticon.com/free-icon/home_553416?term=home&page=1&position=38&page=1&position=38&related_id=553416&origin=search)
+[assets/Image/InGame/home.png](https://www.flaticon.com/free-icon/home_553416?term=home&page=1&position=38&page=1&position=38&related_id=553416&origin=search)

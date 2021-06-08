@@ -10,7 +10,7 @@ const CanvasWidth = 800;
 const CanvasHeight = 600;
 
 // Go to MainMenu
-let HomeButton = new Button(70, 50, 100, 50)
+let HomeButton = new Button(30, 30, 50, 50)
 
 // MainMenu
 let StartButton = new Button(CanvasWidth / 2, 300, 200, 70);
@@ -24,15 +24,20 @@ function setup()
   createCanvas(800, 600);
   textAlign(CENTER);
   textSize(30);
+  imageMode(CENTER);
 }
 
 
 
 function draw() 
 {
+  print(CurrentScene);
   background('#304859');
 
+
+
   HomeButton.draw();
+  image(Home, 30, 30, 50, 50);
 
   switch(CurrentScene)
   {
@@ -42,12 +47,32 @@ function draw()
       ShopButton.draw("ROOM");
       HowtoButton.draw("How to Play");
     }
+    // Shall game Scene
+    case SHELL_GAME:
+    {
+      
+    }
+
+    // Room Scene
+    case ROOM:
+    {
+
+    }
+
+    // How to play
+    case HOWTO:
+    {
+      
+    }
   }
+
   
 }
 
 function mousePressed()
 {
+  HomeButton.ChangeScene(MAINMENU);
+
   switch(CurrentScene)
   {
     case MAINMENU:
