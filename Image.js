@@ -1,6 +1,8 @@
-let Home;
+let HomeImage;
+let PointImage;
 
 function preload()
 {
-    Home = loadImage('assets/Image/home.png')
+    HomeImage = loadImage('assets/Image/home.png')
+    PointImage = loadImage('assets/Image/point.png')
 }

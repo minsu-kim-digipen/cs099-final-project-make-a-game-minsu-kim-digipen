@@ -14,7 +14,7 @@ class Button
     }
 
     // Mouseover & Box
-    draw(context)
+    draw(context, TextColor = 0, style = NORMAL)
     {
         const is_inside_button = mouseX > this.x - (this.width / 2) && mouseX < this.x + (this.width / 2) && mouseY > this.y - (this.height / 2) && mouseY < this.y + (this.height / 2);
         
@@ -39,8 +39,11 @@ class Button
 
         push();
 
+        fill(TextColor);
         textAlign(CENTER);
         textSize(30);
+        textStyle(style)
+
         text(context, this.x, this.y + 10);
 
         pop();

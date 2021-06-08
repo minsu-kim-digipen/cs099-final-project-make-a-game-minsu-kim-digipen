@@ -3,6 +3,29 @@
 // Course     : CS099
 // Spring 2021
 
+// Display Point
+
+let point = 100;
+
+function display_point(x, y, size)
+{
+    push();
+
+    imageMode(CENTER);
+    image(PointImage, x - 40, y, size, size);
+
+    textAlign(LEFT, CENTER);
+    textSize(size);
+    textStyle(BOLD);
+    
+    text(point, x, y + 5);
+
+    pop();
+}
+
+// Get Random Cup value with this code
+// THe value will be inside Cup array
+// Cup[0], Cup[1], Cup[max]
 let Cup = [];
 
 function Random_Cup(Cup_amount, max_percent)
