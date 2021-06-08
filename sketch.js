@@ -26,19 +26,20 @@ let Shell_Start = new Button(CanvasWidth / 2, 500, 200, 70)
 
 
 
+
 function setup() 
 {
   createCanvas(800, 600);
   textAlign(CENTER);
   textSize(30);
   imageMode(CENTER);
-}
 
+  check();
+}
 
 
 function draw() 
 {
-  print(CurrentScene);
   background('#304859');
 
 

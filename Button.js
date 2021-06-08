@@ -58,6 +58,7 @@ class Button
         if(is_inside_button)
         {
             CurrentScene = Scene;
+            check();
         }
     }
 }
