@@ -20,11 +20,9 @@ let ShellButton = new Button(CanvasWidth / 2, 300, 200, 70);
 let ShopButton = new Button(CanvasWidth / 2, 400, 200, 70);
 let HowtoButton = new Button(CanvasWidth / 2, 500, 200, 70);
 
+
 // Shell Game
-let Shell_Start = new Button(CanvasWidth / 2, 500, 200, 70)
-
-
-
+let InputPoint;
 
 
 function setup() 
@@ -35,6 +33,8 @@ function setup()
   imageMode(CENTER);
 
   check();
+
+ 
 }
 
 
@@ -65,23 +65,19 @@ function draw()
       fill(255, 0,0);
       textSize(40);
       textStyle(BOLD);
+
       text("Welcome to Shell Game!", width / 2, 100);
 
 
       fill('#6495ed');
-      text("Before starting, Let's check point!", width / 2, 250);
+      text("Before starting, Let's check point!", width / 2, 200);
+
+      fill('orange')
+      text("How much point will you use?", width / 2, 400);
 
       pop();
 
-      display_point(width /2 - 10, 400, IconSize);
-
-      Shell_Start.draw("Start Game!!", 'blue', BOLD);
-    }
-    break;
-
-    case SHELL_SETTING:
-    {
-
+      display_point(width /2 - 10, 280, IconSize);
     }
     break;
 
@@ -119,13 +115,7 @@ function mousePressed()
     // Shall game Scene
     case SHELL_GAME:
     {
-      Shell_Start.ChangeScene(SHELL_SETTING);
-    }
-    break;
-
-    case SHELL_SETTING:
-    {
-
+      
     }
     break;
     // Room Scene
