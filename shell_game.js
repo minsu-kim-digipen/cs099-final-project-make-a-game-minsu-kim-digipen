@@ -7,18 +7,18 @@
 
 let point = 100;
 
-function display_point(x, y, size)
+function display_point( x, y, size )
 {
     push();
 
-    imageMode(CENTER);
-    image(PointImage, x - 40, y, size, size);
+    imageMode( CENTER );
+    image( PointImage, x - 40, y, size, size );
 
-    textAlign(LEFT, CENTER);
-    textSize(size);
-    textStyle(BOLD);
-    
-    text(point, x, y + 5);
+    textAlign( LEFT, CENTER );
+    textSize( size );
+    textStyle( BOLD );
+
+    text( point, x, y + 5 );
 
     pop();
 }
@@ -28,34 +28,34 @@ function display_point(x, y, size)
 // Cup[0], Cup[1], Cup[max]
 let Cup = [];
 
-function Random_Cup(Cup_amount, max_percent)
+function Random_Cup( Cup_amount, max_percent )
 {
     // Initial variable
 
     let MAX_PERCENT;
 
     // Get First max_percent amount
-    if(MAX_PERCENT == undefined)
+    if ( MAX_PERCENT == undefined )
     {
         MAX_PERCENT = max_percent
     }
 
     // Get random value
-    for(i = 0; i < Cup_amount; i++)
+    for ( i = 0; i < Cup_amount; i++ )
     {
         // This is the last cup
-        if(i == Cup_amount - 1)
+        if ( i == Cup_amount - 1 )
         {
-            Cup[i] = MAX_PERCENT
+            Cup[ i ] = MAX_PERCENT
         }
         // This is the other cups, using random to get percent value
         else
         {
-            Cup[i] = int(random(MAX_PERCENT));
-            MAX_PERCENT -= Cup[i];
+            Cup[ i ] = int( random( MAX_PERCENT ) );
+            MAX_PERCENT -= Cup[ i ];
         }
     }
 
     // Visualize cup in console
-    console.log(Cup);
+    console.log( Cup );
 }

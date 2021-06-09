@@ -11,73 +11,70 @@ const CanvasHeight = 600;
 const IconSize = 50;
 
 
-
 // Go to MainMenu
-let HomeButton = new Button(30, 30, 50, 50)
+let HomeButton = new Button( 30, 30, 50, 50 )
 
 // MainMenu
-let ShellButton = new Button(CanvasWidth / 2, 300, 200, 70);
-let ShopButton = new Button(CanvasWidth / 2, 400, 200, 70);
-let HowtoButton = new Button(CanvasWidth / 2, 500, 200, 70);
+let ShellButton = new Button( CanvasWidth / 2, 300, 200, 70 );
+let ShopButton = new Button( CanvasWidth / 2, 400, 200, 70 );
+let HowtoButton = new Button( CanvasWidth / 2, 500, 200, 70 );
 
 
 // Shell Game
 let InputPoint;
 
 
-function setup() 
+function setup()
 {
-  createCanvas(800, 600);
-  textAlign(CENTER);
-  textSize(30);
-  imageMode(CENTER);
+    createCanvas( 800, 600 );
+    textAlign( CENTER );
+    textSize( 30 );
+    imageMode( CENTER );
 
-  check();
+    check();
 
- 
+
 }
 
 
-function draw() 
+function draw()
 {
-  background('#304859');
+    background( '#304859' );
 
 
+    HomeButton.draw();
+    image( HomeImage, 30, 30, IconSize, IconSize );
 
-
-  HomeButton.draw();
-  image(HomeImage, 30, 30, IconSize, IconSize);
-
-  switch(CurrentScene)
-  {
+    switch ( CurrentScene )
+    {
     case MAINMENU:
     {
-      ShellButton.draw("GAME");
-      ShopButton.draw("ROOM");
-      HowtoButton.draw("How to Play");
+        ShellButton.draw( "GAME" );
+        ShopButton.draw( "ROOM" );
+        HowtoButton.draw( "How to Play" );
     }
     break;
     // Shall game Scene
     case SHELL_GAME:
     {
-      push();
+        push();
 
-      fill(255, 0,0);
-      textSize(40);
-      textStyle(BOLD);
+        fill( 255, 0, 0 );
+        textSize( 40 );
+        textStyle( BOLD );
 
-      text("Welcome to Shell Game!", width / 2, 100);
+        text( "Welcome to Shell Game!", width / 2, 100 );
 
 
-      fill('#6495ed');
-      text("Before starting, Let's check point!", width / 2, 200);
+        fill( '#6495ed' );
+        text( "Before starting, Let's check point!", width / 2, 200 );
 
-      fill('orange')
-      text("How much point will you use?", width / 2, 400);
+        fill( 'orange' )
+        text( "How much point will you use?", width / 2, 400 );
 
-      pop();
+        pop();
 
-      display_point(width /2 - 10, 280, IconSize);
+        display_point( width / 2 - 10, 280, IconSize );
     }
     break;
 
@@ -91,35 +88,35 @@ function draw()
     // How to play
     case HOWTO:
     {
-      
+
     }
     break;
-  }
+    }
 
-  
+
 }
 
 function mousePressed()
 {
-  HomeButton.ChangeScene(MAINMENU);
+    HomeButton.ChangeScene( MAINMENU );
 
-  switch(CurrentScene)
-  {
+    switch ( CurrentScene )
+    {
     case MAINMENU:
     {
-      ShellButton.ChangeScene(SHELL_GAME);
-      ShopButton.ChangeScene(ROOM);
-      HowtoButton.ChangeScene(HOWTO);
+        ShellButton.ChangeScene( SHELL_GAME );
+        ShopButton.ChangeScene( ROOM );
+        HowtoButton.ChangeScene( HOWTO );
     }
     break;
     // Shall game Scene
     case SHELL_GAME:
     {
-      
+
     }
     break;
     // Room Scene
 
     // How to play
-  }
+    }
 }

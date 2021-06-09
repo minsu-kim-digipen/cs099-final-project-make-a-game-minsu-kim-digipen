@@ -5,7 +5,7 @@
 
 class Button
 {
-    constructor(x, y, width, height)
+    constructor( x, y, width, height )
     {
         this.x = x;
         this.y = y;
@@ -14,48 +14,50 @@ class Button
     }
 
     // Mouseover & Box
-    draw(context, TextColor = 0, style = NORMAL)
+    draw( context, TextColor = 0, style = NORMAL )
     {
-        const is_inside_button = mouseX > this.x - (this.width / 2) && mouseX < this.x + (this.width / 2) && mouseY > this.y - (this.height / 2) && mouseY < this.y + (this.height / 2);
-        
+        const is_inside_button = mouseX > this.x - ( this.width / 2 ) && mouseX < this.x + ( this.width / 2 ) &&
+            mouseY > this.y - ( this.height / 2 ) && mouseY < this.y + ( this.height / 2 );
+
         push();
 
         noStroke();
-        rectMode(CENTER);
+        rectMode( CENTER );
 
         // Mouse is in Button, it turns to gray
-        if(is_inside_button)
+        if ( is_inside_button )
         {
-            fill(220);
+            fill( 220 );
         }
         else
         {
-            fill(255);
+            fill( 255 );
         }
-    
-        rect(this.x, this.y, this.width, this.height);
-    
+
+        rect( this.x, this.y, this.width, this.height );
+
         pop();
 
         push();
 
-        fill(TextColor);
-        textAlign(CENTER);
-        textSize(30);
-        textStyle(style)
+        fill( TextColor );
+        textAlign( CENTER );
+        textSize( 30 );
+        textStyle( style )
 
-        text(context, this.x, this.y + 10);
+        text( context, this.x, this.y + 10 );
 
         pop();
     }
 
     // When Click, Change variable
 
-    ChangeScene(Scene)
+    ChangeScene( Scene )
     {
-        const is_inside_button = mouseX > this.x - (this.width / 2) && mouseX < this.x + (this.width / 2) && mouseY > this.y - (this.height / 2) && mouseY < this.y + (this.height / 2);
+        const is_inside_button = mouseX > this.x - ( this.width / 2 ) && mouseX < this.x + ( this.width / 2 ) &&
+            mouseY > this.y - ( this.height / 2 ) && mouseY < this.y + ( this.height / 2 );
 
-        if(is_inside_button)
+        if ( is_inside_button )
         {
             CurrentScene = Scene;
             check();
