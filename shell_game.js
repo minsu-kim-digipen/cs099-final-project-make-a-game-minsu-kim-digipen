@@ -18,7 +18,7 @@ function display_point( x, y, size, another_value_to_display = false )
     textSize( size );
     textStyle( BOLD );
 
-    if(another_value_to_display)
+    if ( another_value_to_display )
     {
         text( Selected_Point, x, y + 5 );
     }
@@ -33,15 +33,14 @@ function display_point( x, y, size, another_value_to_display = false )
 // Get point with InputBox
 function getPoint()
 {
-    if(PointInput.value() >= 0 && PointInput.value() <= point)
+    if ( PointInput.value() >= 0 && PointInput.value() <= point )
     {
         return PointInput.value();
     }
     else
     {
-        alert("Please Type Valid Point!!");
+        alert( "Please Type Valid Point!!" );
     }
-
 }
 
 // Get Random Cup value with this code
