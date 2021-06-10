@@ -4,7 +4,9 @@
 // Spring 2021
 
 // Initial Setting
-let CurrentScene = SHELL_GAME;
+let Canvas;
+
+let CurrentScene = MAINMENU;
 
 const CanvasWidth = 800;
 const CanvasHeight = 600;
@@ -21,12 +23,19 @@ let HowtoButton = new Button( CanvasWidth / 2, 500, 200, 70 );
 
 
 // Shell Game
-let InputPoint;
+let PointInput;
+
+// IS_INPUT_RIGHT
+let Selected_Point;
+
+let input_true = new Button(300, 550, 100, 50);
+let input_false = new Button(500, 550, 100, 50);
 
 
 function setup()
 {
-    createCanvas( 800, 600 );
+    Canvas = createCanvas( 800, 600 );
+
     textAlign( CENTER );
     textSize( 30 );
     imageMode( CENTER );
@@ -39,8 +48,9 @@ function setup()
 
 function draw()
 {
-    background( '#304859' );
+    print(CurrentScene);
 
+    background( '#304859' );
 
     HomeButton.draw();
     image( HomeImage, 30, 30, IconSize, IconSize );
@@ -72,9 +82,56 @@ function draw()
         fill( 'orange' )
         text( "How much point will you use?", width / 2, 400 );
 
+
+        translate(40, 0);
+
+        fill(0);
+        textSize(20);
+        textStyle(NORMAL);
+
         pop();
 
         display_point( width / 2 - 10, 280, IconSize );
+
+
+
+
+        PointInput.position( Canvas.position().x + 350, Canvas.position().y + 450);
+    }
+    break;
+
+    case IS_INPUT_RIGHT:
+    {
+
+        if(isNaN(Selected_Point))
+        {
+            alert("Please Type again! You didn't type anything!!!");
+            CurrentScene = SHELL_GAME;
+        }
+
+        push();
+
+        fill( 255, 0, 0 );
+        textSize( 40 );
+        textStyle( BOLD );
+
+        text( "Please Check \n It's same point as you want to use!", width / 2, 50 );
+
+        fill('green')
+        text( "Current Point", width / 2, 170 );
+        display_point( width / 2 - 10, 220, IconSize );
+
+        fill('blue');
+        text( "Use this amount of Point", width / 2, 300 );
+        display_point( width / 2 - 10, 350, IconSize, true );
+
+        pop();
+
+        input_true.draw("YES~!", 'green', BOLD);
+        input_false.draw("NO!!!", 'red', BOLD);
+
+
+        PointInput.position( Canvas.position().x + 350, Canvas.position().y + 450);
     }
     break;
 
@@ -99,24 +156,46 @@ function draw()
 function mousePressed()
 {
     HomeButton.ChangeScene( MAINMENU );
+    HomeButton.clearInput();
 
     switch ( CurrentScene )
     {
     case MAINMENU:
     {
         ShellButton.ChangeScene( SHELL_GAME );
+        ShellButton.createInput(100, 50);
+
         ShopButton.ChangeScene( ROOM );
+
         HowtoButton.ChangeScene( HOWTO );
     }
     break;
     // Shall game Scene
-    case SHELL_GAME:
-    {
 
+    case IS_INPUT_RIGHT:
+    {
+        input_true.ChangeScene(SELECT_SHELL);
+        input_true.clearInput();
+
+        input_false.ChangeScene(SHELL_GAME);
+        input_false.Alert("OK, Please Type Again~")
     }
+
     break;
     // Room Scene
 
     // How to play
+    }
+}
+
+function keyPressed()
+{
+
+
+    if(CurrentScene == SHELL_GAME && keyCode === 13)
+    {
+        PointInput.changed(getPoint);
+        Selected_Point = int(PointInput.value());
+        CurrentScene = IS_INPUT_RIGHT;
     }
 }

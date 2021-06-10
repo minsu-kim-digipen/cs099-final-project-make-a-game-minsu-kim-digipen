@@ -9,6 +9,8 @@ const MAINMENU = 0;
 
 // Shell game Scene
 const SHELL_GAME = 100;
+const IS_INPUT_RIGHT = 101;
+const SELECT_SHELL = 102;
 
 // Room Scene
 const ROOM = 200;

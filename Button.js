@@ -63,4 +63,43 @@ class Button
             check();
         }
     }
+
+
+    // Alert When Click
+    Alert( text )
+    {
+        const is_inside_button = mouseX > this.x - ( this.width / 2 ) && mouseX < this.x + ( this.width / 2 ) &&
+        mouseY > this.y - ( this.height / 2 ) && mouseY < this.y + ( this.height / 2 );
+
+        if ( is_inside_button )
+        {
+            alert(text);
+        }
+    }
+
+    // Input point
+    createInput(width , height)
+    {
+        const is_inside_button = mouseX > this.x - ( this.width / 2 ) && mouseX < this.x + ( this.width / 2 ) &&
+        mouseY > this.y - ( this.height / 2 ) && mouseY < this.y + ( this.height / 2 );
+
+        if ( is_inside_button )
+        {
+            PointInput = createInput('');
+            PointInput.size(width, height); 
+        }
+    }
+
+    clearInput()
+    {
+        const is_inside_button = mouseX > this.x - ( this.width / 2 ) && mouseX < this.x + ( this.width / 2 ) &&
+        mouseY > this.y - ( this.height / 2 ) && mouseY < this.y + ( this.height / 2 );
+
+        if ( is_inside_button )
+        {
+            PointInput.remove();
+        }
+    }
 }
+
+
