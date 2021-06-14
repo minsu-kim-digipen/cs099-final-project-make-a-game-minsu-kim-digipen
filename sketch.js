@@ -190,7 +190,7 @@ function keyPressed()
 {
     if ( CurrentScene == SHELL_GAME && keyCode === 13 )
     {
-        if ( PointInput.value() >= 0 && PointInput.value() <= point )
+        if ( PointInput.value() >= 1 && PointInput.value() <= point )
         {
             PointInput.changed( getPoint );
             Selected_Point = int( PointInput.value() );
