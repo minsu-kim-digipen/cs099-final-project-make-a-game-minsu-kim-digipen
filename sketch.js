@@ -42,6 +42,9 @@ let BronzeCup = { x: 600 };
 
 let ShuffleEnd = false;
 
+// CHOOSE_CUP (1ST, 2ND, 3RD)
+let Confirm_Percent = new Button(CanvasWidth / 2, 500, 400, 70);
+
 
 function setup()
 {
@@ -196,18 +199,84 @@ function draw()
     case CHOOSE_1ST_CUP:
     {
         background(Cup[0], 0, 0);
+
+        push();
+
+        fill(255);
+
+        textSize( 40 );
+        textStyle( BOLD );
+
+        text( "You Choose First Cup!\nIf it's near the red color,\nYou probably get money!", width / 2, 100 );
+
+        text( "You'll get this Percent..." + Cup[0] + "%!!!", width / 2, 400 );
+
+        pop();
+
+        if(Cup[0] <= 100)
+        {
+            Confirm_Percent.draw("Okay...Let's Check...", 'blue', ITALIC);
+        }
+        else
+        {
+            Confirm_Percent.draw("OKAY!! LET'S CHECK!!!", 'yellow', BOLD);
+        }
     }
     break;
 
     case CHOOSE_2ND_CUP:
     {
         background(0, Cup[1], 0 );
+
+        push();
+
+        fill(255);
+
+        textSize( 40 );
+        textStyle( BOLD );
+
+        text( "You Choose First Cup!\nIf it's near the blue color,\nYou probably get money!", width / 2, 100 );
+
+        text( "You'll get this Percent..." + Cup[0] + "%!!!", width / 2, 400 );
+
+        pop();
+
+        if(Cup[1] <= 100)
+        {
+            Confirm_Percent.draw("Okay...Let's Check...", 'blue', ITALIC);
+        }
+        else
+        {
+            Confirm_Percent.draw("OKAY!! LET'S CHECK!!!", 'yellow', BOLD);
+        }
     }
     break;
 
     case CHOOSE_3RD_CUP:
     {
         background(0, 0, Cup[2]);
+
+        push();
+
+        fill(255);
+
+        textSize( 40 );
+        textStyle( BOLD );
+
+        text( "You Choose First Cup!\nIf it's near the red color,\nYou probably get money!", width / 2, 100 );
+
+        text( "You'll get this Percent..." + Cup[0] + "%!!!", width / 2, 400 );
+
+        pop();
+
+        if(Cup[2] <= 100)
+        {
+            Confirm_Percent.draw("Okay...Let's Check...", 'blue', ITALIC);
+        }
+        else
+        {
+            Confirm_Percent.draw("OKAY!! LET'S CHECK!!!", 'yellow', BOLD);
+        }
     }
     break;
 
