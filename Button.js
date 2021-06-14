@@ -104,18 +104,20 @@ class Button
     // Start Shuffle
     startShuffle()
     {
+        // Get Random amount in here 
+        Random_Cup_Amount(3, 200);
+
         // Use Interval to Shuffle Shell
         let Shuffle_interval = setInterval(() => 
         {
             Shuffle_CupPosition();
             CupMove();
-        
-            print( CupPosition );
         }, 20);
     
         setTimeout(() => {
             clearTimeout(Shuffle_interval);
             ShuffleEnd = true;
         }, 1000);
+
     }
 }

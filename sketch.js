@@ -189,23 +189,27 @@ function draw()
         display_point( width / 2 - 10, 500, IconSize, true );
 
         pop();
+
     }   
     break; 
 
     case CHOOSE_1ST_CUP:
     {
-
+        background(Cup[0], 0, 0);
     }
+    break;
 
     case CHOOSE_2ND_CUP:
     {
-
+        background(0, Cup[1], 0 );
     }
+    break;
 
     case CHOOSE_3RD_CUP:
     {
-        
+        background(0, 0, Cup[2]);
     }
+    break;
 
 
     // Room Scene

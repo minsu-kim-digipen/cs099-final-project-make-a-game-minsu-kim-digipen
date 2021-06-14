@@ -44,7 +44,7 @@ function getPoint()
 // Cup[0], Cup[1], Cup[max]
 let Cup = [];
 
-function Random_Cup( Cup_amount, max_percent )
+function Random_Cup_Amount( Cup_amount, max_percent )
 {
     // Initial variable
 
