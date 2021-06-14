@@ -45,6 +45,8 @@ let ShuffleEnd = false;
 // CHOOSE_CUP (1ST, 2ND, 3RD)
 let Confirm_Percent = new Button(CanvasWidth / 2, 500, 400, 70);
 
+let GetThisPoint;
+
 
 function setup()
 {
@@ -55,8 +57,6 @@ function setup()
     imageMode( CENTER );
 
     check();
-
-
 }
 
 
@@ -198,6 +198,8 @@ function draw()
 
     case CHOOSE_1ST_CUP:
     {
+        ShuffleEnd = false;
+
         background(Cup[0], 0, 0);
 
         push();
@@ -226,6 +228,8 @@ function draw()
 
     case CHOOSE_2ND_CUP:
     {
+        ShuffleEnd = false;
+
         background(0, Cup[1], 0 );
 
         push();
@@ -254,6 +258,8 @@ function draw()
 
     case CHOOSE_3RD_CUP:
     {
+        ShuffleEnd = false;
+
         background(0, 0, Cup[2]);
 
         push();
@@ -280,6 +286,11 @@ function draw()
     }
     break;
 
+    case FINAL_CALCULATE:
+    {
+
+    }
+
 
     // Room Scene
     case ROOM:
@@ -301,8 +312,7 @@ function draw()
 
 function mousePressed()
 {
-    HomeButton.ChangeScene( MAINMENU );
-    HomeButton.clearInput();
+
 
     switch ( CurrentScene )
     {
@@ -314,6 +324,8 @@ function mousePressed()
         ShopButton.ChangeScene( ROOM );
 
         HowtoButton.ChangeScene( HOWTO );
+
+        HomeButton.ChangeScene( MAINMENU );
     }
     break;
 
@@ -323,10 +335,14 @@ function mousePressed()
     {
         input_true.ChangeScene( SELECT_SHELL );
         input_true.clearInput();
+        input_true.calculate();
         input_true.startShuffle();
 
         input_false.ChangeScene( SHELL_GAME );
-        input_false.Alert( "OK, Please Type Again~" )
+        input_false.Alert( "OK, Please Type Again~" );
+
+        HomeButton.ChangeScene( MAINMENU );
+        HomeButton.clearInput();
     }
     break;
 
@@ -337,9 +353,45 @@ function mousePressed()
             Select_1stCup.ChangeScene(CHOOSE_1ST_CUP);
             Select_2ndCup.ChangeScene(CHOOSE_2ND_CUP);
             Select_3rdCup.ChangeScene(CHOOSE_3RD_CUP);
+
+
         }
+        HomeButton.Alert("Sorry, You can't go home while playing Shell Game!");
     }
     break;
+
+    case CHOOSE_1ST_CUP:
+    {
+        GetThisPoint = Calculate_Final_Point(Cup[0]);
+        Confirm_Percent.ChangeScene(FINAL_CALCULATE);
+
+        HomeButton.Alert("Sorry, You can't go home while playing Shell Game!");
+    }
+    break;
+
+    case CHOOSE_2ND_CUP:
+    {
+        GetThisPoint = Calculate_Final_Point(Cup[1]);
+        Confirm_Percent.ChangeScene(FINAL_CALCULATE);
+
+        HomeButton.Alert("Sorry, You can't go home while playing Shell Game!");
+    }
+    break;
+
+    case CHOOSE_3RD_CUP:
+    {
+        GetThisPoint = Calculate_Final_Point(Cup[2]);
+        Confirm_Percent.ChangeScene(FINAL_CALCULATE);
+
+        HomeButton.Alert("Sorry, You can't go home while playing Shell Game!");
+    }
+    break;
+
+    case FINAL_CALCULATE:
+    {
+        HomeButton.Alert("Sorry, You can't go home while playing Shell Game!");
+    }
+
     // Room Scene
 
     // How to play

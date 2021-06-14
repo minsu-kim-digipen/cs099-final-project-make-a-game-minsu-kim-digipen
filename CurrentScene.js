@@ -16,6 +16,8 @@ const CHOOSE_1ST_CUP = 131;
 const CHOOSE_2ND_CUP = 132;
 const CHOOSE_3RD_CUP = 133;
 
+const FINAL_CALCULATE = 14;
+
 // Room Scene
 const ROOM = 200;
 

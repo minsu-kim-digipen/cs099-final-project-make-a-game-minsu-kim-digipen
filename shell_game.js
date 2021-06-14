@@ -76,6 +76,13 @@ function Random_Cup_Amount( Cup_amount, max_percent )
     console.log( Cup );
 }
 
+function Calculate_Final_Point(which_cup)
+{
+    let Final_Point = Selected_Point * which_cup / 100;
+
+    return Final_Point;
+}
+
 
 // This all code is for Cup Mixing!
 
