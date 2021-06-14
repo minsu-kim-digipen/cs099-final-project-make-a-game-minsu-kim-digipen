@@ -219,7 +219,7 @@ function draw()
         }
         else
         {
-            Confirm_Percent.draw("OKAY!! LET'S CHECK!!!", 'yellow', BOLD);
+            Confirm_Percent.draw("OKAY!! LET'S CHECK!!!", 'orange', BOLD);
         }
     }
     break;
@@ -247,7 +247,7 @@ function draw()
         }
         else
         {
-            Confirm_Percent.draw("OKAY!! LET'S CHECK!!!", 'yellow', BOLD);
+            Confirm_Percent.draw("OKAY!! LET'S CHECK!!!", 'orange', BOLD);
         }
     }
     break;
@@ -275,7 +275,7 @@ function draw()
         }
         else
         {
-            Confirm_Percent.draw("OKAY!! LET'S CHECK!!!", 'yellow', BOLD);
+            Confirm_Percent.draw("OKAY!! LET'S CHECK!!!", 'orange', BOLD);
         }
     }
     break;
