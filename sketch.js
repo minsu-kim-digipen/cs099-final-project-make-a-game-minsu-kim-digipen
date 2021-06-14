@@ -190,8 +190,11 @@ function keyPressed()
 {
     if ( CurrentScene == SHELL_GAME && keyCode === 13 )
     {
-        PointInput.changed( getPoint );
-        Selected_Point = int( PointInput.value() );
-        CurrentScene = IS_INPUT_RIGHT;
+        if ( PointInput.value() >= 0 && PointInput.value() <= point )
+        {
+            PointInput.changed( getPoint );
+            Selected_Point = int( PointInput.value() );
+            CurrentScene = IS_INPUT_RIGHT;
+        }
     }
 }
