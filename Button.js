@@ -100,4 +100,22 @@ class Button
             PointInput.remove();
         }
     }
+
+    // Start Shuffle
+    startShuffle()
+    {
+        // Use Interval to Shuffle Shell
+        let Shuffle_interval = setInterval(() => 
+        {
+            Shuffle_CupPosition();
+            CupMove();
+        
+            print( CupPosition );
+        }, 20);
+    
+        setTimeout(() => {
+            clearTimeout(Shuffle_interval);
+            ShuffleEnd = true;
+        }, 1000);
+    }
 }

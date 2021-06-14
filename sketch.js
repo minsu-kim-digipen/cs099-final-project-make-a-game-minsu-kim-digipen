@@ -31,6 +31,17 @@ let Selected_Point;
 let input_true = new Button( 300, 550, 100, 50 );
 let input_false = new Button( 500, 550, 100, 50 );
 
+// SELECT_SHELL
+let Select_1stCup = new Button( 200, CanvasHeight / 2, 170, 170);
+let Select_2ndCup = new Button( 400, CanvasHeight / 2, 170, 170);
+let Select_3rdCup = new Button( 600, CanvasHeight / 2, 170, 170);
+
+let GoldCup = { x: 200 };
+let SilverCup = { x: 400 };
+let BronzeCup = { x: 600 };
+
+let ShuffleEnd = false;
+
 
 function setup()
 {
@@ -81,6 +92,9 @@ function draw()
 
         fill( 'orange' )
         text( "How much point will you use?", width / 2, 400 );
+
+        fill( 'gold' )
+        text( "Please type greater than 10 points!", width / 2, 550 );
 
 
         translate( 40, 0 );
@@ -133,6 +147,67 @@ function draw()
     }
     break;
 
+    case SELECT_SHELL:
+    {
+        // Image of cup
+        push();
+
+        rectMode( CENTER );
+        noStroke();
+
+        imageMode( CENTER );
+
+        const SIZE = 170;
+
+        const HEIGHT = height / 2;
+
+        fill( 'gold' );
+        square( GoldCup.x, HEIGHT, SIZE + 20 );
+        image( GoldCup_Image, GoldCup.x, HEIGHT, SIZE, SIZE );
+
+        fill( 'silver' );
+        square( SilverCup.x, HEIGHT, SIZE + 20 );
+        image( SilverCup_Image, SilverCup.x, HEIGHT, SIZE, SIZE );
+
+        fill( '#f4a460' );
+        square( BronzeCup.x, HEIGHT, SIZE + 20 );
+        image( BronzeCup_Image, BronzeCup.x, HEIGHT, SIZE, SIZE );
+        
+        pop();
+
+        // Text
+        push();
+
+        fill( 255, 0, 0 );
+        textSize( 40 );
+        textStyle( BOLD );
+
+        text( "Choose the Cup!", width / 2, 100 );
+
+        fill( 'blue' );
+        text( "Use this amount of Point", width / 2, 450 );
+        display_point( width / 2 - 10, 500, IconSize, true );
+
+        pop();
+    }   
+    break; 
+
+    case CHOOSE_1ST_CUP:
+    {
+
+    }
+
+    case CHOOSE_2ND_CUP:
+    {
+
+    }
+
+    case CHOOSE_3RD_CUP:
+    {
+        
+    }
+
+
     // Room Scene
     case ROOM:
     {
@@ -168,17 +243,29 @@ function mousePressed()
         HowtoButton.ChangeScene( HOWTO );
     }
     break;
+
     // Shall game Scene
 
     case IS_INPUT_RIGHT:
     {
         input_true.ChangeScene( SELECT_SHELL );
         input_true.clearInput();
+        input_true.startShuffle();
 
         input_false.ChangeScene( SHELL_GAME );
         input_false.Alert( "OK, Please Type Again~" )
     }
+    break;
 
+    case SELECT_SHELL:
+    {
+        if(ShuffleEnd)
+        {
+            Select_1stCup.ChangeScene(CHOOSE_1ST_CUP);
+            Select_2ndCup.ChangeScene(CHOOSE_2ND_CUP);
+            Select_3rdCup.ChangeScene(CHOOSE_3RD_CUP);
+        }
+    }
     break;
     // Room Scene
 
@@ -190,7 +277,7 @@ function keyPressed()
 {
     if ( CurrentScene == SHELL_GAME && keyCode === 13 )
     {
-        if ( PointInput.value() >= 1 && PointInput.value() <= point )
+        if ( PointInput.value() >= 10 && PointInput.value() <= point )
         {
             PointInput.changed( getPoint );
             Selected_Point = int( PointInput.value() );
