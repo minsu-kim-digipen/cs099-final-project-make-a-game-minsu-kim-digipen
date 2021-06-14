@@ -16,9 +16,9 @@ function preload()
     HomeImage = loadImage( 'assets/Image/home.png' );
     PointImage = loadImage( 'assets/Image/point.png' );
 
-    GoldCup_Image = loadImage('assets/Image/Gold_Cup.png')
-    SilverCup_Image = loadImage('assets/Image/Silver_Cup.png')
-    BronzeCup_Image = loadImage('assets/Image/Bronze_Cup.png')
+    GoldCup_Image = loadImage('assets/Image/Gold_Cup.png');
+    SilverCup_Image = loadImage('assets/Image/Silver_Cup.png');
+    BronzeCup_Image = loadImage('assets/Image/Bronze_Cup.png');
 
     // Load Sound
 }

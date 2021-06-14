@@ -5,7 +5,7 @@
 
 // Display Point
 
-let point = 100;
+let Point = 100;
 
 function display_point( x, y, size, another_value_to_display = false )
 {
@@ -24,7 +24,7 @@ function display_point( x, y, size, another_value_to_display = false )
     }
     else
     {
-        text( point, x, y + 5 );
+        text( Point, x, y + 5 );
     }
 
     pop();
@@ -33,7 +33,7 @@ function display_point( x, y, size, another_value_to_display = false )
 // Get point with InputBox
 function getPoint()
 {
-    if ( PointInput.value() >= 10 && PointInput.value() <= point )
+    if ( PointInput.value() >= 10 && PointInput.value() <= Point )
     {
         return PointInput.value();
     }

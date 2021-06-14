@@ -71,7 +71,7 @@ class Button
 
         if ( is_inside_button )
         {
-            point -= Selected_Point;
+            Point -= Selected_Point;
         }
 
 

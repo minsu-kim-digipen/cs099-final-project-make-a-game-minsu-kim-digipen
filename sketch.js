@@ -363,6 +363,7 @@ function mousePressed()
     case CHOOSE_1ST_CUP:
     {
         GetThisPoint = Calculate_Final_Point(Cup[0]);
+        Point += GetThisPoint;
         Confirm_Percent.ChangeScene(FINAL_CALCULATE);
 
         HomeButton.Alert("Sorry, You can't go home while playing Shell Game!");
@@ -372,6 +373,7 @@ function mousePressed()
     case CHOOSE_2ND_CUP:
     {
         GetThisPoint = Calculate_Final_Point(Cup[1]);
+        Point += GetThisPoint;
         Confirm_Percent.ChangeScene(FINAL_CALCULATE);
 
         HomeButton.Alert("Sorry, You can't go home while playing Shell Game!");
@@ -381,6 +383,7 @@ function mousePressed()
     case CHOOSE_3RD_CUP:
     {
         GetThisPoint = Calculate_Final_Point(Cup[2]);
+        Point += GetThisPoint;
         Confirm_Percent.ChangeScene(FINAL_CALCULATE);
 
         HomeButton.Alert("Sorry, You can't go home while playing Shell Game!");
@@ -402,7 +405,7 @@ function keyPressed()
 {
     if ( CurrentScene == SHELL_GAME && keyCode === 13 )
     {
-        if ( PointInput.value() >= 10 && PointInput.value() <= point )
+        if ( PointInput.value() >= 10 && PointInput.value() <= Point )
         {
             PointInput.changed( getPoint );
             Selected_Point = int( PointInput.value() );
