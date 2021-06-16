@@ -46,9 +46,9 @@ let ShuffleEnd = false;
 let Confirm_Percent = new Button(CanvasWidth / 2, 500, 400, 70);
 
 // FINAL_CALCULATE
-let Final_confirm = new Button();
+let Final_confirm = new Button(CanvasWidth / 2, 550, 100, 50);
 
-
+ 
 function setup()
 {
     Canvas = createCanvas( 800, 600 );
@@ -333,6 +333,8 @@ function draw()
         display_point( width / 2 + 170, 490, IconSize);
 
         pop();
+
+        Final_confirm.draw("OKAY", 'red', BOLD);
     }
 
 
@@ -385,8 +387,6 @@ function mousePressed()
 
     case IS_INPUT_RIGHT:
     {
-
-
         input_true.ChangeScene( SELECT_SHELL );
         input_true.clearInput();
         input_true.calculate();
@@ -434,6 +434,12 @@ function mousePressed()
     }
     break;
 
+    case FINAL_CALCULATE:
+    {
+        Final_confirm.Alert("Thanks for Plying!");
+        Final_confirm.ChangeScene(MAINMENU);
+    }
+    break;
     // Room Scene
 
     // How to play
