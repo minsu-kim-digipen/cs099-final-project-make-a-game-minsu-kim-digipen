@@ -8,9 +8,15 @@
 const MAINMENU = 0;
 
 // Shell game Scene
-const SHELL_GAME = 100;
-const IS_INPUT_RIGHT = 101;
-const SELECT_SHELL = 102;
+const SHELL_GAME = 10;
+const IS_INPUT_RIGHT = 11;
+const SELECT_SHELL = 12;
+
+const CHOOSE_1ST_CUP = 131;
+const CHOOSE_2ND_CUP = 132;
+const CHOOSE_3RD_CUP = 133;
+
+const FINAL_CALCULATE = 14;
 
 // Room Scene
 const ROOM = 200;

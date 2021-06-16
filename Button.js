@@ -64,6 +64,19 @@ class Button
         }
     }
 
+    calculate()
+    {
+        const is_inside_button = mouseX > this.x - ( this.width / 2 ) && mouseX < this.x + ( this.width / 2 ) &&
+            mouseY > this.y - ( this.height / 2 ) && mouseY < this.y + ( this.height / 2 );
+
+        if ( is_inside_button )
+        {
+            Point -= Selected_Point;
+        }
+
+
+    }
+
 
     // Alert When Click
     Alert( text )
@@ -99,5 +112,25 @@ class Button
         {
             PointInput.remove();
         }
+    }
+
+    // Start Shuffle
+    startShuffle()
+    {
+        // Get Random amount in here 
+        Random_Cup_Amount(3, 200);
+
+        // Use Interval to Shuffle Shell
+        let Shuffle_interval = setInterval(() => 
+        {
+            Shuffle_CupPosition();
+            CupMove();
+        }, 20);
+    
+        setTimeout(() => {
+            clearTimeout(Shuffle_interval);
+            ShuffleEnd = true;
+        }, 1000);
+
     }
 }
