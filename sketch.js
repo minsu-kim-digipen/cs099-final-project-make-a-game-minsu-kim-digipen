@@ -45,7 +45,8 @@ let ShuffleEnd = false;
 // CHOOSE_CUP (1ST, 2ND, 3RD)
 let Confirm_Percent = new Button(CanvasWidth / 2, 500, 400, 70);
 
-let GetThisPoint;
+// FINAL_CALCULATE
+let Final_confirm = new Button();
 
 
 function setup()
@@ -239,9 +240,9 @@ function draw()
         textSize( 40 );
         textStyle( BOLD );
 
-        text( "You Choose First Cup!\nIf it's near the blue color,\nYou probably get money!", width / 2, 100 );
+        text( "You Choose Second Cup!\nIf it's near the green color,\nYou probably get money!", width / 2, 100 );
 
-        text( "You'll get this Percent..." + Cup[0] + "%!!!", width / 2, 400 );
+        text( "You'll get this Percent..." + Cup[1] + "%!!!", width / 2, 400 );
 
         pop();
 
@@ -269,9 +270,9 @@ function draw()
         textSize( 40 );
         textStyle( BOLD );
 
-        text( "You Choose First Cup!\nIf it's near the red color,\nYou probably get money!", width / 2, 100 );
+        text( "You Choose Third Cup!\nIf it's near the blue color,\nYou probably get money!", width / 2, 100 );
 
-        text( "You'll get this Percent..." + Cup[0] + "%!!!", width / 2, 400 );
+        text( "You'll get this Percent..." + Cup[2] + "%!!!", width / 2, 400 );
 
         pop();
 
@@ -288,7 +289,50 @@ function draw()
 
     case FINAL_CALCULATE:
     {
+        background(Cup[0], Cup[1], Cup[2]);
 
+        push();
+
+        fill(255);
+
+        textSize( 40 );
+        textStyle( BOLD );
+
+        text( "This is all amount of Cups...\nBackground is rgb of that amount!", width / 2, 50 );
+        text("1st : " + Cup[0] + " / 2nd : " + Cup[1] + " / 3rd : " + Cup[2], width /2 , 200);
+
+
+        textSize(40);
+
+        // First
+        fill(221, 250, 235);
+        text("What point you use!", width / 2 - 150, 300);
+
+        // Second
+        fill(220, 242, 247);
+        text("You will get this point!", width / 2 - 150, 400);
+
+
+        fill(243, 238, 224);
+        text("It's your FINAL POINT!", width / 2 - 150, 500);
+
+        pop();
+
+        push();
+
+        // First
+        fill(221, 250, 235);
+        display_point(width / 2 + 170, 290, IconSize, true);
+        
+        // Second
+        fill(220, 242, 247);
+        display_point( width / 2 + 170, 390, IconSize, false, true );
+
+        // Third
+        fill(243, 238, 224);
+        display_point( width / 2 + 170, 490, IconSize);
+
+        pop();
     }
 
 
@@ -313,6 +357,16 @@ function draw()
 function mousePressed()
 {
 
+    // After Click YES in Shell Game, Alert Execute
+    if(CurrentScene > 11 && CurrentScene < 20)
+    {
+        HomeButton.Alert("Sorry, You can't go home while playing Shell Game!");
+    }
+    else
+    {
+        HomeButton.ChangeScene( MAINMENU );
+        HomeButton.clearInput();
+    }
 
     switch ( CurrentScene )
     {
@@ -324,8 +378,6 @@ function mousePressed()
         ShopButton.ChangeScene( ROOM );
 
         HowtoButton.ChangeScene( HOWTO );
-
-        HomeButton.ChangeScene( MAINMENU );
     }
     break;
 
@@ -333,6 +385,8 @@ function mousePressed()
 
     case IS_INPUT_RIGHT:
     {
+
+
         input_true.ChangeScene( SELECT_SHELL );
         input_true.clearInput();
         input_true.calculate();
@@ -341,8 +395,6 @@ function mousePressed()
         input_false.ChangeScene( SHELL_GAME );
         input_false.Alert( "OK, Please Type Again~" );
 
-        HomeButton.ChangeScene( MAINMENU );
-        HomeButton.clearInput();
     }
     break;
 
@@ -353,10 +405,8 @@ function mousePressed()
             Select_1stCup.ChangeScene(CHOOSE_1ST_CUP);
             Select_2ndCup.ChangeScene(CHOOSE_2ND_CUP);
             Select_3rdCup.ChangeScene(CHOOSE_3RD_CUP);
-
-
         }
-        HomeButton.Alert("Sorry, You can't go home while playing Shell Game!");
+
     }
     break;
 
@@ -365,8 +415,6 @@ function mousePressed()
         GetThisPoint = Calculate_Final_Point(Cup[0]);
         Point += GetThisPoint;
         Confirm_Percent.ChangeScene(FINAL_CALCULATE);
-
-        HomeButton.Alert("Sorry, You can't go home while playing Shell Game!");
     }
     break;
 
@@ -375,8 +423,6 @@ function mousePressed()
         GetThisPoint = Calculate_Final_Point(Cup[1]);
         Point += GetThisPoint;
         Confirm_Percent.ChangeScene(FINAL_CALCULATE);
-
-        HomeButton.Alert("Sorry, You can't go home while playing Shell Game!");
     }
     break;
 
@@ -385,15 +431,8 @@ function mousePressed()
         GetThisPoint = Calculate_Final_Point(Cup[2]);
         Point += GetThisPoint;
         Confirm_Percent.ChangeScene(FINAL_CALCULATE);
-
-        HomeButton.Alert("Sorry, You can't go home while playing Shell Game!");
     }
     break;
-
-    case FINAL_CALCULATE:
-    {
-        HomeButton.Alert("Sorry, You can't go home while playing Shell Game!");
-    }
 
     // Room Scene
 

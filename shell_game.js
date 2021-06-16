@@ -6,8 +6,9 @@
 // Display Point
 
 let Point = 100;
+let GetThisPoint;
 
-function display_point( x, y, size, another_value_to_display = false )
+function display_point( x, y, size, another_value_to_display = false, GetThisPoint_display = false )
 {
     push();
 
@@ -21,6 +22,10 @@ function display_point( x, y, size, another_value_to_display = false )
     if ( another_value_to_display )
     {
         text( Selected_Point, x, y + 5 );
+    }
+    else if(GetThisPoint_display)
+    {
+        text(GetThisPoint, x, y + 5);
     }
     else
     {
@@ -78,7 +83,7 @@ function Random_Cup_Amount( Cup_amount, max_percent )
 
 function Calculate_Final_Point(which_cup)
 {
-    let Final_Point = Selected_Point * which_cup / 100;
+    let Final_Point = int(Selected_Point * which_cup / 100);
 
     return Final_Point;
 }

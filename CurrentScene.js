@@ -19,7 +19,7 @@ const CHOOSE_3RD_CUP = 133;
 const FINAL_CALCULATE = 14;
 
 // Room Scene
-const ROOM = 200;
+const ROOM = 20;
 
 // How to Play
-const HOWTO = 300;
+const HOWTO = 30;
