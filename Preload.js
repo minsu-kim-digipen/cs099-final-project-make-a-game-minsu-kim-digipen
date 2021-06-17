@@ -7,7 +7,8 @@ let SilverCup_Image;
 let BronzeCup_Image;
 
 // Sound
-
+let Background_Music;
+let Room_Music;
 
 
 function preload()
@@ -21,4 +22,6 @@ function preload()
     BronzeCup_Image = loadImage('assets/Image/Bronze_Cup.png');
 
     // Load Sound
+    Background_Music = loadSound('assets/Sound/Mr.ruiZ - Beach Ballin.mp3');
+    Room_Music = loadSound('assets/Sound/Our Leaves in the Breeze.mp3')
 }
