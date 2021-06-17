@@ -10,6 +10,9 @@ let BronzeCup_Image;
 let Background_Music;
 let Room_Music;
 
+// CurrentSong
+const BACKGROUND_MUSIC = 0;
+const ROOM_MUSIC = 1;
 
 function preload()
 {
@@ -24,4 +27,10 @@ function preload()
     // Load Sound
     Background_Music = loadSound('assets/Sound/Mr.ruiZ - Beach Ballin.mp3');
     Room_Music = loadSound('assets/Sound/Our Leaves in the Breeze.mp3')
+}
+
+function ChangeVolume()
+{
+    Background_Music.setVolume(Sound_Slider.value());
+    Room_Music.setVolume(Sound_Slider.value());
 }

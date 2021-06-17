@@ -132,4 +132,35 @@ class Button
         }, 1000);
 
     }
+
+    // Change Song
+    ChangeSong(ChangeToThisSong)
+    {
+        const is_inside_button = mouseX > this.x - ( this.width / 2 ) && mouseX < this.x + ( this.width / 2 ) &&
+            mouseY > this.y - ( this.height / 2 ) && mouseY < this.y + ( this.height / 2 );
+
+        
+        if(is_inside_button)
+        {
+            CurrentSong = ChangeToThisSong;
+
+            switch(CurrentSong)
+            {
+                case BACKGROUND_MUSIC:
+                {
+                    Room_Music.stop();
+
+                    Background_Music.loop();
+                }
+                break;
+
+                case ROOM_MUSIC:
+                {
+                    Background_Music.stop();
+
+                    Room_Music.loop();
+                }
+            }
+        }
+    }
 }

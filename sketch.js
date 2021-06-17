@@ -7,6 +7,7 @@
 let Canvas;
 
 let CurrentScene = MAINMENU;
+let CurrentSong = BACKGROUND_MUSIC;
 
 const CanvasWidth = 800;
 const CanvasHeight = 600;
@@ -14,6 +15,8 @@ const IconSize = 50;
 
 let Sound_Slider;
 let describe_Sound_Slider;
+
+let ResetSound = false;
 
 
 // Go to MainMenu
@@ -35,23 +38,29 @@ let input_true = new Button( 300, 550, 100, 50 );
 let input_false = new Button( 500, 550, 100, 50 );
 
 // SELECT_SHELL
-let Select_1stCup = new Button( 200, CanvasHeight / 2, 170, 170);
-let Select_2ndCup = new Button( 400, CanvasHeight / 2, 170, 170);
-let Select_3rdCup = new Button( 600, CanvasHeight / 2, 170, 170);
+let Select_1stCup = new Button( 200, CanvasHeight / 2, 170, 170 );
+let Select_2ndCup = new Button( 400, CanvasHeight / 2, 170, 170 );
+let Select_3rdCup = new Button( 600, CanvasHeight / 2, 170, 170 );
 
-let GoldCup = { x: 200 };
-let SilverCup = { x: 400 };
-let BronzeCup = { x: 600 };
+let GoldCup = {
+    x: 200
+};
+let SilverCup = {
+    x: 400
+};
+let BronzeCup = {
+    x: 600
+};
 
 let ShuffleEnd = false;
 
 // CHOOSE_CUP (1ST, 2ND, 3RD)
-let Confirm_Percent = new Button(CanvasWidth / 2, 500, 400, 70);
+let Confirm_Percent = new Button( CanvasWidth / 2, 500, 400, 70 );
 
 // FINAL_CALCULATE
-let Final_confirm = new Button(CanvasWidth / 2, 550, 100, 50);
+let Final_confirm = new Button( CanvasWidth / 2, 550, 100, 50 );
 
- 
+
 function setup()
 {
     Canvas = createCanvas( 800, 600 );
@@ -60,12 +69,9 @@ function setup()
     textSize( 30 );
     imageMode( CENTER );
 
-
-    // Set Music!
-    Background_Music.play();
-
-    describe_Sound_Slider = createP('Sound Volume');
-    Sound_Slider = createSlider(0, 1, 0.5, 0.01);
+    // Set Volume Slider
+    describe_Sound_Slider = createP( 'Sound Volume' );
+    Sound_Slider = createSlider( 0, 1, 0.5, 0.01 );
 }
 
 
@@ -73,16 +79,14 @@ function draw()
 {
     background( '#304859' );
 
-    print( "Current Scene : " + CurrentScene );
-    
+    print( "Current Scene : " + CurrentScene + " / Current Song : " + CurrentSong );
+
 
     // Volume slider
-    describe_Sound_Slider.position(Canvas.position().x + 330, Canvas.position().y + 585);   // describe position
-    Sound_Slider.position(Canvas.position().x + 320, Canvas.position().y + 620);    // Sound slider position
+    describe_Sound_Slider.position( Canvas.position().x + 330, Canvas.position().y + 585 ); // describe position
+    Sound_Slider.position( Canvas.position().x + 320, Canvas.position().y + 620 ); // Sound slider position
 
-    // Set Volume with this code
-    Background_Music.setVolume(Sound_Slider.value());
-
+    ChangeVolume(); // Set Volume
 
 
     // Home Button
@@ -196,7 +200,7 @@ function draw()
         fill( '#f4a460' );
         square( BronzeCup.x, HEIGHT, SIZE + 20 );
         image( BronzeCup_Image, BronzeCup.x, HEIGHT, SIZE, SIZE );
-        
+
         pop();
 
         // Text
@@ -214,35 +218,35 @@ function draw()
 
         pop();
 
-    }   
-    break; 
+    }
+    break;
 
     case CHOOSE_1ST_CUP:
     {
         ShuffleEnd = false;
 
-        background(Cup[0], 0, 0);
+        background( Cup[ 0 ], 0, 0 );
 
         push();
 
-        fill(255);
+        fill( 255 );
 
         textSize( 40 );
         textStyle( BOLD );
 
         text( "You Choose First Cup!\nIf it's near the red color,\nYou probably get money!", width / 2, 100 );
 
-        text( "You'll get this Percent..." + Cup[0] + "%!!!", width / 2, 400 );
+        text( "You'll get this Percent..." + Cup[ 0 ] + "%!!!", width / 2, 400 );
 
         pop();
 
-        if(Cup[0] <= 100)
+        if ( Cup[ 0 ] <= 100 )
         {
-            Confirm_Percent.draw("Okay...Let's Check...", 'blue', ITALIC);
+            Confirm_Percent.draw( "Okay...Let's Check...", 'blue', ITALIC );
         }
         else
         {
-            Confirm_Percent.draw("OKAY!! LET'S CHECK!!!", 'orange', BOLD);
+            Confirm_Percent.draw( "OKAY!! LET'S CHECK!!!", 'orange', BOLD );
         }
     }
     break;
@@ -251,28 +255,28 @@ function draw()
     {
         ShuffleEnd = false;
 
-        background(0, Cup[1], 0 );
+        background( 0, Cup[ 1 ], 0 );
 
         push();
 
-        fill(255);
+        fill( 255 );
 
         textSize( 40 );
         textStyle( BOLD );
 
         text( "You Choose Second Cup!\nIf it's near the green color,\nYou probably get money!", width / 2, 100 );
 
-        text( "You'll get this Percent..." + Cup[1] + "%!!!", width / 2, 400 );
+        text( "You'll get this Percent..." + Cup[ 1 ] + "%!!!", width / 2, 400 );
 
         pop();
 
-        if(Cup[1] <= 100)
+        if ( Cup[ 1 ] <= 100 )
         {
-            Confirm_Percent.draw("Okay...Let's Check...", 'blue', ITALIC);
+            Confirm_Percent.draw( "Okay...Let's Check...", 'blue', ITALIC );
         }
         else
         {
-            Confirm_Percent.draw("OKAY!! LET'S CHECK!!!", 'orange', BOLD);
+            Confirm_Percent.draw( "OKAY!! LET'S CHECK!!!", 'orange', BOLD );
         }
     }
     break;
@@ -281,80 +285,80 @@ function draw()
     {
         ShuffleEnd = false;
 
-        background(0, 0, Cup[2]);
+        background( 0, 0, Cup[ 2 ] );
 
         push();
 
-        fill(255);
+        fill( 255 );
 
         textSize( 40 );
         textStyle( BOLD );
 
         text( "You Choose Third Cup!\nIf it's near the blue color,\nYou probably get money!", width / 2, 100 );
 
-        text( "You'll get this Percent..." + Cup[2] + "%!!!", width / 2, 400 );
+        text( "You'll get this Percent..." + Cup[ 2 ] + "%!!!", width / 2, 400 );
 
         pop();
 
-        if(Cup[2] <= 100)
+        if ( Cup[ 2 ] <= 100 )
         {
-            Confirm_Percent.draw("Okay...Let's Check...", 'blue', ITALIC);
+            Confirm_Percent.draw( "Okay...Let's Check...", 'blue', ITALIC );
         }
         else
         {
-            Confirm_Percent.draw("OKAY!! LET'S CHECK!!!", 'orange', BOLD);
+            Confirm_Percent.draw( "OKAY!! LET'S CHECK!!!", 'orange', BOLD );
         }
     }
     break;
 
     case FINAL_CALCULATE:
     {
-        background(Cup[0], Cup[1], Cup[2]);
+        background( Cup[ 0 ], Cup[ 1 ], Cup[ 2 ] );
 
         push();
 
-        fill(255);
+        fill( 255 );
 
         textSize( 40 );
         textStyle( BOLD );
 
         text( "This is all amount of Cups...\nBackground is rgb of that amount!", width / 2, 50 );
-        text("1st : " + Cup[0] + " / 2nd : " + Cup[1] + " / 3rd : " + Cup[2], width /2 , 200);
+        text( "1st : " + Cup[ 0 ] + " / 2nd : " + Cup[ 1 ] + " / 3rd : " + Cup[ 2 ], width / 2, 200 );
 
 
-        textSize(40);
+        textSize( 40 );
 
         // First
-        fill(221, 250, 235);
-        text("What point you use!", width / 2 - 150, 300);
+        fill( 221, 250, 235 );
+        text( "What point you use!", width / 2 - 150, 300 );
 
         // Second
-        fill(220, 242, 247);
-        text("You will get this point!", width / 2 - 150, 400);
+        fill( 220, 242, 247 );
+        text( "You will get this point!", width / 2 - 150, 400 );
 
 
-        fill(243, 238, 224);
-        text("It's your FINAL POINT!", width / 2 - 150, 500);
+        fill( 243, 238, 224 );
+        text( "It's your FINAL POINT!", width / 2 - 150, 500 );
 
         pop();
 
         push();
 
         // First
-        fill(221, 250, 235);
-        display_point(width / 2 + 170, 290, IconSize, true);
-        
+        fill( 221, 250, 235 );
+        display_point( width / 2 + 170, 290, IconSize, true );
+
         // Second
-        fill(220, 242, 247);
+        fill( 220, 242, 247 );
         display_point( width / 2 + 170, 390, IconSize, false, true );
 
         // Third
-        fill(243, 238, 224);
-        display_point( width / 2 + 170, 490, IconSize);
+        fill( 243, 238, 224 );
+        display_point( width / 2 + 170, 490, IconSize );
 
         pop();
 
-        Final_confirm.draw("OKAY", 'red', BOLD);
+        Final_confirm.draw( "OKAY", 'red', BOLD );
     }
 
 
@@ -376,18 +380,40 @@ function draw()
 
 }
 
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
 function mousePressed()
 {
 
-    // After Click YES in Shell Game, Alert Execute
-    if(CurrentScene > 11 && CurrentScene < 20)
+    if(!ResetSound)
     {
-        HomeButton.Alert("Sorry, You can't go home while playing Shell Game!");
+        Background_Music.stop();
+        Room_Music.stop();
+
+        Background_Music.loop();
+
+        CurrentSong = BACKGROUND_MUSIC;
+
+        ResetSound = true;
+    }
+
+
+    // After Click YES in Shell Game, Alert Execute
+    if ( CurrentScene > 11 && CurrentScene < 20 )
+    {
+        HomeButton.Alert( "Sorry, You can't go home while playing Shell Game!" );
     }
     else
     {
         HomeButton.ChangeScene( MAINMENU );
         HomeButton.clearInput();
+    }
+
+    if(CurrentSong == ROOM_MUSIC)
+    {
+        HomeButton.ChangeSong(BACKGROUND_MUSIC);
     }
 
     switch ( CurrentScene )
@@ -398,6 +424,7 @@ function mousePressed()
         ShellButton.createInput( 100, 50 );
 
         ShopButton.ChangeScene( ROOM );
+        ShopButton.ChangeSong( ROOM_MUSIC );
 
         HowtoButton.ChangeScene( HOWTO );
     }
@@ -420,11 +447,11 @@ function mousePressed()
 
     case SELECT_SHELL:
     {
-        if(ShuffleEnd)
+        if ( ShuffleEnd )
         {
-            Select_1stCup.ChangeScene(CHOOSE_1ST_CUP);
-            Select_2ndCup.ChangeScene(CHOOSE_2ND_CUP);
-            Select_3rdCup.ChangeScene(CHOOSE_3RD_CUP);
+            Select_1stCup.ChangeScene( CHOOSE_1ST_CUP );
+            Select_2ndCup.ChangeScene( CHOOSE_2ND_CUP );
+            Select_3rdCup.ChangeScene( CHOOSE_3RD_CUP );
         }
 
     }
@@ -432,32 +459,32 @@ function mousePressed()
 
     case CHOOSE_1ST_CUP:
     {
-        GetThisPoint = Calculate_Final_Point(Cup[0]);
+        GetThisPoint = Calculate_Final_Point( Cup[ 0 ] );
         Point += GetThisPoint;
-        Confirm_Percent.ChangeScene(FINAL_CALCULATE);
+        Confirm_Percent.ChangeScene( FINAL_CALCULATE );
     }
     break;
 
     case CHOOSE_2ND_CUP:
     {
-        GetThisPoint = Calculate_Final_Point(Cup[1]);
+        GetThisPoint = Calculate_Final_Point( Cup[ 1 ] );
         Point += GetThisPoint;
-        Confirm_Percent.ChangeScene(FINAL_CALCULATE);
+        Confirm_Percent.ChangeScene( FINAL_CALCULATE );
     }
     break;
 
     case CHOOSE_3RD_CUP:
     {
-        GetThisPoint = Calculate_Final_Point(Cup[2]);
+        GetThisPoint = Calculate_Final_Point( Cup[ 2 ] );
         Point += GetThisPoint;
-        Confirm_Percent.ChangeScene(FINAL_CALCULATE);
+        Confirm_Percent.ChangeScene( FINAL_CALCULATE );
     }
     break;
 
     case FINAL_CALCULATE:
     {
-        Final_confirm.Alert("Thanks for Plying!\nGo to shop or play again!");
-        Final_confirm.ChangeScene(MAINMENU);
+        Final_confirm.Alert( "Thanks for Plying!\nGo to shop or play again!" );
+        Final_confirm.ChangeScene( MAINMENU );
     }
     break;
     // Room Scene
