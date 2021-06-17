@@ -56,8 +56,6 @@ function setup()
     textAlign( CENTER );
     textSize( 30 );
     imageMode( CENTER );
-
-    check();
 }
 
 
