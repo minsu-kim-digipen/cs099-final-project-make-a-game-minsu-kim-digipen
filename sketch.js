@@ -12,6 +12,9 @@ const CanvasWidth = 800;
 const CanvasHeight = 600;
 const IconSize = 50;
 
+let Sound_Slider;
+let describe_Sound_Slider;
+
 
 // Go to MainMenu
 let HomeButton = new Button( 30, 30, 50, 50 )
@@ -56,18 +59,37 @@ function setup()
     textAlign( CENTER );
     textSize( 30 );
     imageMode( CENTER );
+
+
+    // Set Music!
+    Background_Music.play();
+
+    describe_Sound_Slider = createP('Sound Volume');
+    Sound_Slider = createSlider(0, 1, 0.5, 0.01);
 }
 
 
 function draw()
 {
-    print( CurrentScene );
-
     background( '#304859' );
 
+    print( "Current Scene : " + CurrentScene );
+    
+
+    // Volume slider
+    describe_Sound_Slider.position(Canvas.position().x + 330, Canvas.position().y + 585);   // describe position
+    Sound_Slider.position(Canvas.position().x + 320, Canvas.position().y + 620);    // Sound slider position
+
+    // Set Volume with this code
+    Background_Music.setVolume(Sound_Slider.value());
+
+
+
+    // Home Button
     HomeButton.draw();
     image( HomeImage, 30, 30, IconSize, IconSize );
 
+    // Scene Change
     switch ( CurrentScene )
     {
     case MAINMENU:
@@ -434,7 +456,7 @@ function mousePressed()
 
     case FINAL_CALCULATE:
     {
-        Final_confirm.Alert("Thanks for Plying!");
+        Final_confirm.Alert("Thanks for Plying!\nGo to shop or play again!");
         Final_confirm.ChangeScene(MAINMENU);
     }
     break;
