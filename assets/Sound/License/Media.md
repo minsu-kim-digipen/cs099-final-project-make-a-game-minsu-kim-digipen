@@ -3,8 +3,7 @@
 Beach Ballin'.mp3 by Mr.ruiZ
 
 ## License
-Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)
-https://creativecommons.org/licenses/by-nc/4.0/
+[Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)](https://creativecommons.org/licenses/by-nc/4.0/)
 
 
 
@@ -66,8 +65,7 @@ Music Link: https://youtu.be/g7h5eT3X_XU
 # [assets\Sound\SFX\Next-howto.wav](https://freesound.org/people/InspectorJ/sounds/416179/)
 
 ## License
-Attribution 3.0 Unported (CC BY 3.0) \
-https://creativecommons.org/licenses/by/3.0/
+[Attribution 3.0 Unported (CC BY 3.0)](https://creativecommons.org/licenses/by/3.0/)
 
 ## Attribution
 Book, Flipping Through Pages, A.wav \
@@ -76,3 +74,13 @@ User : InspectorJ
 ## Change
 I changed original name to comfortable name. \
 Next-howto.wav
+
+# [Sci-Fi UI & UX Sound Effect Pack](https://sound-kajiya.itch.io/sci-fi-ui-ux-sound-effect-pack)
+
+## What I used
+assets\Sound\SFX\Select 50.wav
+assets\Sound\SFX\Warning 06.wav
+
+## License
+[Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/deed.en)
+Sci-Fi UI & UX Sound Effect Pack by Sound Kajiya

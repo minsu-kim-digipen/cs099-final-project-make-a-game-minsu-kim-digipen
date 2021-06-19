@@ -508,8 +508,8 @@ function mousePressed()
     {
         Fill_Salvation();
 
-        Final_confirm.Alert( "Thanks for Plying!\nGo to shop or play again!" );
         Final_confirm.ChangeScene( MAINMENU );
+        Final_confirm.Alert( "Thanks for Plying!\nGo to shop or play again!" );
     }
     break;
     // Room Scene

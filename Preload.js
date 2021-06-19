@@ -17,7 +17,9 @@ let Background_Music;
 let Room_Music;
 let SPECIAL;
 
-let Next_Howto;
+let Next_Howto_SFX;
+let Select_SFX;
+let Alert_SFX;
 
 function preload()
 {
@@ -40,6 +42,8 @@ function preload()
     SPECIAL = loadSound('assets/Sound/BGM/Universe.mp3');                           // SALVATION BGM
 
     Next_Howto = loadSound('assets/Sound/SFX/Next-howto.wav');                      // How to SFX
+    Select_SFX = loadSound('assets/Sound/SFX/Select 50.wav');
+    Alert_SFX = loadSound('assets/Sound/SFX/Warning 06.wav')
 }
 
 // Before Change Music, Please put this inside
@@ -54,5 +58,10 @@ function ChangeVolume()
 {
     Background_Music.setVolume(Sound_Slider.value());
     Room_Music.setVolume(Sound_Slider.value());
+    SPECIAL.setVolume(Sound_Slider.value());
+
+    Next_Howto_SFX.setVolume(Sound_Slider.value());
+    Select_SFX.setVolume(Sound_Slider.value());
+    Alert_SFX.setVolume(Sound_Slider.value());
 }
 

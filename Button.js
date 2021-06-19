@@ -59,6 +59,7 @@ class Button
 
         if ( is_inside_button )
         {
+            Select_SFX.play();
             CurrentScene = Scene;
         }
     }
@@ -85,6 +86,7 @@ class Button
 
         if ( is_inside_button )
         {
+            Alert_SFX.play();
             alert( text );
         }
     }
