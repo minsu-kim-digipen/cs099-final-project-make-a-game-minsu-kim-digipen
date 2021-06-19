@@ -36,3 +36,27 @@ Free Download / Stream: https://alplus.io/our-leaves-breeze \
 - You can NOT use third-party software to download the video/track, always use our download links.
 - You MUST request a license if you wish to use the music on any kind of commercial project.
 - More info about how to use Audio Library Plus music in your videos here: http://alplus.io/usage-policy
+
+
+# [Universe - Space Ambient Background Music For Videos](https://youtu.be/g7h5eT3X_XU)
+
+## Credits
+
+✅ You’re free to use this song in any of your YouTube videos without copyright claims, \
+but you MUST include the following in your video description (Copy & Paste):
+
+Music: Universe - SergePavkinMusic \
+Music Link: https://youtu.be/g7h5eT3X_XU 
+
+► Download MP3: https://drive.google.com/file/d/13c3n50lrwulFnm79F7W1wduqJ_qQmDNO/view
+
+## About using the music
+
+✅ About using the music:
+
+- You MUST include the full credits in your video description.
+- You can NOT claim the music as your own.
+- You can NOT sell the music anywhere.
+- You can NOT use the music as background music for your own musical work.
+- You can NOT use the music without giving any credits in the video description.
+- You can NOT remove or add parts from/to the credits.

@@ -78,7 +78,7 @@ function draw()
 {
     background( '#304859' );
 
-    print( "Current Scene : " + CurrentScene );
+    print( "Current Scene : " + CurrentScene + " / SALVATION : " + Salvation_Point);
 
 
     // Volume slider
@@ -497,6 +497,8 @@ function mousePressed()
 
     case FINAL_CALCULATE:
     {
+        Fill_Salvation();
+
         Final_confirm.Alert( "Thanks for Plying!\nGo to shop or play again!" );
         Final_confirm.ChangeScene( MAINMENU );
     }
