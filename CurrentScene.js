@@ -26,3 +26,6 @@ const ROOM = 20;
 
 // How to Play
 const HOWTO = 30;
+
+// Point is too low
+const SALVATION = 91;   // It's just Korean pun     9 == 구 + 1 == 원

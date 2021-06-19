@@ -160,6 +160,15 @@ class Button
                     Room_Music.loop();
                 }
                 break;
+
+                case SPECIAL:
+                {
+                    ResetAllMusic();
+
+                    SPECIAL.loop();
+                }
+
+                
             }
 
             // HomeButton case

@@ -19,7 +19,7 @@ let ResetSound = false;
 
 
 // Go to MainMenu
-let HomeButton = new Button( 30, 30, 50, 50 )
+let HomeButton = new Button( 30, 30, 50, 50 );
 
 // MainMenu
 let ShellButton = new Button( CanvasWidth / 2, 300, 200, 70 );
@@ -89,7 +89,8 @@ function draw()
 
 
     // Home Button
-    if(CurrentScene > 0)
+    if((CurrentScene >= MAINMENU && CurrentScene <= IS_INPUT_RIGHT ) 
+    || (CurrentScene >= ROOM && CurrentScene < SALVATION))
     {
         HomeButton.draw();
         image( HomeImage, 30, 30, IconSize, IconSize );
@@ -405,22 +406,16 @@ function mousePressed()
     }
 
 
-    // After Click YES in Shell Game, Alert Execute
-    if (CurrentScene >= SELECT_SHELL && CurrentScene < FINAL_CALCULATE)
-    {
-        HomeButton.Alert( "Sorry, You can't go home while playing Shell Game!" );
-    }
-    else if(CurrentScene >= CHOOSE_1ST_CUP && CurrentScene <= CHOOSE_3RD_CUP)
-    {
-        
-    }
-    else
+    // HomeButton
+    if((CurrentScene >= MAINMENU && CurrentScene <= IS_INPUT_RIGHT ) 
+    || (CurrentScene >= ROOM && CurrentScene < SALVATION))
     {
         HomeButton.ChangeScene( MAINMENU );
         HomeButton.clearInput();
         HomeButton.ChangeSong(undefined, true);
     }
 
+    // Switch by CurrentScene
     switch ( CurrentScene )
     {
     case PLEASE_CLICK:
@@ -431,8 +426,16 @@ function mousePressed()
 
     case MAINMENU:
     {
-        ShellButton.ChangeScene( SHELL_GAME );
-        ShellButton.createInput( 100, 50 );
+        if(Point > 10)
+        {
+            ShellButton.ChangeScene( SHELL_GAME );
+            ShellButton.createInput( 100, 50 );
+        }
+        else
+        {
+            ShellButton.ChangeScene(SALVATION);
+            ShellButton.ChangeSong(SPECIAL);
+        }
 
         ShopButton.ChangeScene( ROOM );
         ShopButton.ChangeSong(Room_Music);

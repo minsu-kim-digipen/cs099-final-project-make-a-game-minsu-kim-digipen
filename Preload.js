@@ -9,6 +9,7 @@ let BronzeCup_Image;
 // Sound
 let Background_Music;
 let Room_Music;
+let SPECIAL;
 
 function preload()
 {
@@ -23,6 +24,7 @@ function preload()
     // Load Sound
     Background_Music = loadSound('assets/Sound/Mr.ruiZ - Beach Ballin.mp3');
     Room_Music = loadSound('assets/Sound/Our Leaves in the Breeze.mp3')
+    SPECIAL = loadSound('assets/Sound/Universe.mp3')
 }
 
 // Before Change Music, Please put this inside
@@ -30,6 +32,7 @@ function ResetAllMusic()
 {
     Background_Music.stop();
     Room_Music.stop();
+    SPECIAL.stop();
 }
 
 function ChangeVolume()
