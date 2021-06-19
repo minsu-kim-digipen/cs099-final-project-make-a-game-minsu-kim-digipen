@@ -41,7 +41,7 @@ function preload()
     Room_Music = loadSound('assets/Sound/BGM/Our Leaves in the Breeze.mp3');        // Room BGM
     SPECIAL = loadSound('assets/Sound/BGM/Universe.mp3');                           // SALVATION BGM
 
-    Next_Howto = loadSound('assets/Sound/SFX/Next-howto.wav');                      // How to SFX
+    Next_Howto_SFX = loadSound('assets/Sound/SFX/Next-howto.wav');                      // How to SFX
     Select_SFX = loadSound('assets/Sound/SFX/Select 50.wav');
     Alert_SFX = loadSound('assets/Sound/SFX/Warning 06.wav')
 }
