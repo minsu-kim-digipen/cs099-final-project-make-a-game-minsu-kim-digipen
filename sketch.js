@@ -6,8 +6,7 @@
 // Initial Setting
 let Canvas;
 
-let CurrentScene = MAINMENU;
-let CurrentSong = BACKGROUND_MUSIC;
+let CurrentScene = PLEASE_CLICK;
 
 const CanvasWidth = 800;
 const CanvasHeight = 600;
@@ -79,7 +78,7 @@ function draw()
 {
     background( '#304859' );
 
-    print( "Current Scene : " + CurrentScene + " / Current Song : " + CurrentSong );
+    print( "Current Scene : " + CurrentScene );
 
 
     // Volume slider
@@ -90,12 +89,21 @@ function draw()
 
 
     // Home Button
-    HomeButton.draw();
-    image( HomeImage, 30, 30, IconSize, IconSize );
+    if(CurrentScene > 0)
+    {
+        HomeButton.draw();
+        image( HomeImage, 30, 30, IconSize, IconSize );
+    }
 
     // Scene Change
     switch ( CurrentScene )
     {
+    case PLEASE_CLICK:
+    {
+
+    }
+    break;
+
     case MAINMENU:
     {
         ShellButton.draw( "GAME" );
@@ -386,45 +394,48 @@ function draw()
 
 function mousePressed()
 {
-
+    // Reset all Sound when Refresh
     if(!ResetSound)
     {
-        Background_Music.stop();
-        Room_Music.stop();
+        ResetAllMusic();
 
         Background_Music.loop();
-
-        CurrentSong = BACKGROUND_MUSIC;
 
         ResetSound = true;
     }
 
 
     // After Click YES in Shell Game, Alert Execute
-    if ( CurrentScene > 11 && CurrentScene < 20 )
+    if (CurrentScene >= SELECT_SHELL && CurrentScene < FINAL_CALCULATE)
     {
         HomeButton.Alert( "Sorry, You can't go home while playing Shell Game!" );
+    }
+    else if(CurrentScene >= CHOOSE_1ST_CUP && CurrentScene <= CHOOSE_3RD_CUP)
+    {
+        
     }
     else
     {
         HomeButton.ChangeScene( MAINMENU );
         HomeButton.clearInput();
-    }
-
-    if(CurrentSong == ROOM_MUSIC)
-    {
-        HomeButton.ChangeSong(BACKGROUND_MUSIC);
+        HomeButton.ChangeSong(undefined, true);
     }
 
     switch ( CurrentScene )
     {
+    case PLEASE_CLICK:
+    {
+        CurrentScene = MAINMENU;
+    }
+    break;
+
     case MAINMENU:
     {
         ShellButton.ChangeScene( SHELL_GAME );
         ShellButton.createInput( 100, 50 );
 
         ShopButton.ChangeScene( ROOM );
-        ShopButton.ChangeSong( ROOM_MUSIC );
+        ShopButton.ChangeSong(Room_Music);
 
         HowtoButton.ChangeScene( HOWTO );
     }

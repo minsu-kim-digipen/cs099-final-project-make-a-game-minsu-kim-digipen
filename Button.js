@@ -134,33 +134,43 @@ class Button
     }
 
     // Change Song
-    ChangeSong(ChangeToThisSong)
+    ChangeSong(What_Music, is_HomeButton = false)
     {
         const is_inside_button = mouseX > this.x - ( this.width / 2 ) && mouseX < this.x + ( this.width / 2 ) &&
             mouseY > this.y - ( this.height / 2 ) && mouseY < this.y + ( this.height / 2 );
 
         
+        
         if(is_inside_button)
         {
-            CurrentSong = ChangeToThisSong;
-
-            switch(CurrentSong)
+            switch(What_Music)
             {
-                case BACKGROUND_MUSIC:
+                case Background_Music:
                 {
-                    Room_Music.stop();
+                    ResetAllMusic();
 
                     Background_Music.loop();
                 }
                 break;
 
-                case ROOM_MUSIC:
+                case Room_Music:
                 {
-                    Background_Music.stop();
+                    ResetAllMusic();
 
                     Room_Music.loop();
                 }
+                break;
             }
+
+            // HomeButton case
+            // Room Music is looping, Background Music loop
+            if(is_HomeButton && Room_Music.isLooping())
+            {
+                ResetAllMusic();
+
+                Background_Music.loop();
+            }
+
         }
     }
 }

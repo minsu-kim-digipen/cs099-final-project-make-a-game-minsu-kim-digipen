@@ -4,8 +4,11 @@
 // Spring 2021
 
 
+
 // MainMenu
-const MAINMENU = 0;
+const PLEASE_CLICK = 0;
+
+const MAINMENU = 1;
 
 // Shell game Scene
 const SHELL_GAME = 10;

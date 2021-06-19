@@ -10,10 +10,6 @@ let BronzeCup_Image;
 let Background_Music;
 let Room_Music;
 
-// CurrentSong
-const BACKGROUND_MUSIC = 0;
-const ROOM_MUSIC = 1;
-
 function preload()
 {
     // Load Image
@@ -29,8 +25,16 @@ function preload()
     Room_Music = loadSound('assets/Sound/Our Leaves in the Breeze.mp3')
 }
 
+// Before Change Music, Please put this inside
+function ResetAllMusic()
+{
+    Background_Music.stop();
+    Room_Music.stop();
+}
+
 function ChangeVolume()
 {
     Background_Music.setVolume(Sound_Slider.value());
     Room_Music.setVolume(Sound_Slider.value());
 }
+
