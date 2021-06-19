@@ -8,6 +8,12 @@
 
 ## [Point](https://www.flaticon.com/free-icon/point_4291373?term=point&page=1&position=9&page=1&position=9&related_id=4291373&origin=search)
 
+## [Shop](https://www.flaticon.com/free-icon/shop_3982748?term=shop&page=2&position=5&page=2&position=5&related_id=3982748&origin=search)
+
+## [Game-Controller](https://www.flaticon.com/free-icon/game-controller_2972291?term=game&page=1&position=7&page=1&position=7&related_id=2972291)
+
+## [Room](https://www.flaticon.com/free-icon/room_578110?term=room&page=1&position=8&page=1&position=8&related_id=578110&origin=search)
+
 
 
 # [IconArchive](https://iconarchive.com/show/flatastic-7-icons-by-custom-icon-design/Cup-gold-icon.html)

@@ -6,7 +6,7 @@
 // Initial Setting
 let Canvas;
 
-let CurrentScene = PLEASE_CLICK;
+let CurrentScene = MAINMENU;
 
 const CanvasWidth = 800;
 const CanvasHeight = 600;
@@ -23,7 +23,7 @@ let HomeButton = new Button( 30, 30, 50, 50 );
 
 // MainMenu
 let ShellButton = new Button( CanvasWidth / 2, 300, 200, 70 );
-let ShopButton = new Button( CanvasWidth / 2, 400, 200, 70 );
+let RoomButton = new Button( CanvasWidth / 2, 400, 200, 70 );
 let HowtoButton = new Button( CanvasWidth / 2, 500, 200, 70 );
 
 
@@ -107,8 +107,17 @@ function draw()
 
     case MAINMENU:
     {
+        // Game
         ShellButton.draw( "GAME" );
-        ShopButton.draw( "ROOM" );
+        image(GameImage, width / 2 - 70, 300, 40, 40);
+        image(GameImage, width / 2 + 70, 300, 40, 40);
+
+        // Room
+        RoomButton.draw( "ROOM" );
+        image(RoomImage, width / 2 - 70, 400, 40, 40);
+        image(RoomImage, width / 2 + 70, 400, 40, 40);
+
+        // HowtoPlay
         HowtoButton.draw( "How to Play" );
     }
     break;
@@ -437,8 +446,8 @@ function mousePressed()
             ShellButton.ChangeSong(SPECIAL);
         }
 
-        ShopButton.ChangeScene( ROOM );
-        ShopButton.ChangeSong(Room_Music);
+        RoomButton.ChangeScene( ROOM );
+        RoomButton.ChangeSong(Room_Music);
 
         HowtoButton.ChangeScene( HOWTO );
     }
