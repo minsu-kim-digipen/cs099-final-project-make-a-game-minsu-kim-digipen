@@ -1,4 +1,4 @@
-# [Mr.ruiZ - Beach Ballin'](https://freemusicarchive.org/music/mrruiz/winter-haze-summer-daze/beach-ballinmp3)
+# [assets\Sound\BGM\Mr.ruiZ - Beach Ballin.mp3](https://freemusicarchive.org/music/mrruiz/winter-haze-summer-daze/beach-ballinmp3)
 
 Beach Ballin'.mp3 by Mr.ruiZ
 
@@ -13,7 +13,7 @@ Changed Music name Beach Ballin' to Beach Ballin. \
 For loadSound.
 
 
-# [Our Leaves in the Breeze - Artificial.Music](https://alplus.io/our-leaves-breeze)
+# [assets\Sound\BGM\Our Leaves in the Breeze.mp3](https://alplus.io/our-leaves-breeze)
 
 ## Credits
 
@@ -38,7 +38,7 @@ Free Download / Stream: https://alplus.io/our-leaves-breeze \
 - More info about how to use Audio Library Plus music in your videos here: http://alplus.io/usage-policy
 
 
-# [Universe - Space Ambient Background Music For Videos](https://youtu.be/g7h5eT3X_XU)
+# [Universe.mp3](https://youtu.be/g7h5eT3X_XU)
 
 ## Credits
 
@@ -60,3 +60,19 @@ Music Link: https://youtu.be/g7h5eT3X_XU
 - You can NOT use the music as background music for your own musical work.
 - You can NOT use the music without giving any credits in the video description.
 - You can NOT remove or add parts from/to the credits.
+
+
+
+# [assets\Sound\SFX\Next-howto.wav](https://freesound.org/people/InspectorJ/sounds/416179/)
+
+## License
+Attribution 3.0 Unported (CC BY 3.0) \
+https://creativecommons.org/licenses/by/3.0/
+
+## Attribution
+Book, Flipping Through Pages, A.wav \
+User : InspectorJ
+
+## Change
+I changed original name to comfortable name. \
+Next-howto.wav
