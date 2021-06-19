@@ -20,6 +20,7 @@ let SPECIAL;
 let Next_Howto_SFX;
 let Select_SFX;
 let Alert_SFX;
+let Input_SFX;
 
 function preload()
 {
@@ -43,7 +44,8 @@ function preload()
 
     Next_Howto_SFX = loadSound('assets/Sound/SFX/Next-howto.wav');                      // How to SFX
     Select_SFX = loadSound('assets/Sound/SFX/Select 50.wav');
-    Alert_SFX = loadSound('assets/Sound/SFX/Warning 06.wav')
+    Alert_SFX = loadSound('assets/Sound/SFX/Warning 06.wav');
+    Input_SFX = loadSound('assets/Sound/SFX/Confirm 42.wav')
 }
 
 // Before Change Music, Please put this inside
@@ -63,5 +65,6 @@ function ChangeVolume()
     Next_Howto_SFX.setVolume(Sound_Slider.value());
     Select_SFX.setVolume(Sound_Slider.value());
     Alert_SFX.setVolume(Sound_Slider.value());
+    Input_SFX.setVolume(Sound_Slider.value());
 }
 

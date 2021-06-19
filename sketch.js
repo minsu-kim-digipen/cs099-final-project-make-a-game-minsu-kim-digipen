@@ -520,13 +520,21 @@ function mousePressed()
 
 function keyPressed()
 {
-    if ( CurrentScene == SHELL_GAME && keyCode === 13 )
+    if ( CurrentScene == SHELL_GAME && keyCode === 13)
     {
+        Input_SFX.play();
+
         if ( PointInput.value() >= 10 && PointInput.value() <= Point )
         {
+
             PointInput.changed( getPoint );
             Selected_Point = int( PointInput.value() );
             CurrentScene = IS_INPUT_RIGHT;
+        }
+        else
+        {
+            Alert_SFX.play();
+            alert("Please type valid value!");
         }
     }
 }
