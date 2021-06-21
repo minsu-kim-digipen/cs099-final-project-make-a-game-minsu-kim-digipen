@@ -6,7 +6,7 @@
 // Initial Setting
 let Canvas;
 
-let CurrentScene = PLEASE_CLICK;
+let CurrentScene = ROOM;
 
 const CanvasWidth = 800;
 const CanvasHeight = 600;
@@ -59,6 +59,10 @@ let Confirm_Percent = new Button( CanvasWidth / 2, 500, 400, 70 );
 
 // FINAL_CALCULATE
 let Final_confirm = new Button( CanvasWidth / 2, 550, 100, 50 );
+
+
+// ROOM
+let Shop_Button = new Button(770, 30, 50, 50);
 
 
 function setup()
@@ -383,7 +387,8 @@ function draw()
     // Room Scene
     case ROOM:
     {
-
+        Shop_Button.draw();
+        image( ShopImage, 770, 30, 47, 47 );
     }
     break;
 
@@ -517,6 +522,10 @@ function mousePressed()
     }
     break;
     // Room Scene
+    case ROOM:
+    {
+        Shop_Button.ChangeScene(SHOP);
+    }
 
     // How to play
     }
