@@ -5,7 +5,7 @@
 
 // Display Point
 
-let Point = 10000000;
+let Point = 110;
 let GetThisPoint;
 
 function display_point( x, y, size, another_value_to_display = false, GetThisPoint_display = false )
@@ -23,9 +23,9 @@ function display_point( x, y, size, another_value_to_display = false, GetThisPoi
     {
         text( Selected_Point, x, y + 5 );
     }
-    else if(GetThisPoint_display)
+    else if ( GetThisPoint_display )
     {
-        text(GetThisPoint, x, y + 5);
+        text( GetThisPoint, x, y + 5 );
     }
     else
     {
@@ -81,9 +81,9 @@ function Random_Cup_Amount( Cup_amount, max_percent )
     console.log( Cup );
 }
 
-function Calculate_Final_Point(which_cup)
+function Calculate_Final_Point( which_cup )
 {
-    let Final_Point = int(Selected_Point * which_cup / 100);
+    let Final_Point = int( Selected_Point * which_cup / 100 );
 
     return Final_Point;
 }
@@ -298,5 +298,3 @@ function CupMove()
     }
     }
 }
-
-

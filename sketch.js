@@ -6,7 +6,7 @@
 // Initial Setting
 let Canvas;
 
-let CurrentScene = SHOP;
+let CurrentScene = SHOP1;
 
 const CanvasWidth = 800;
 const CanvasHeight = 600;
@@ -23,7 +23,6 @@ let PointInput;
 let Selected_Point;
 
 
-
 // Cups
 let GoldCup = {
     x: 200
@@ -36,9 +35,6 @@ let BronzeCup = {
 };
 
 let ShuffleEnd = false;
-
-
-
 
 
 function setup()
@@ -59,7 +55,7 @@ function draw()
 {
     background( '#304859' );
 
-    print( "CurrentScene : " + CurrentScene + " / Point : " + Point + " / SALVATION : " + Salvation_Point);
+    print( "CurrentScene : " + CurrentScene + " / Point : " + Point + " / SALVATION : " + Salvation_Point );
 
 
     // Volume slider
@@ -70,11 +66,13 @@ function draw()
 
 
     // Home Button
-    if((CurrentScene >= MAINMENU && CurrentScene <= IS_INPUT_RIGHT ) || (CurrentScene >= ROOM && CurrentScene < SALVATION))
+    if ( ( CurrentScene >= MAINMENU && CurrentScene <= IS_INPUT_RIGHT ) || ( CurrentScene >= ROOM && CurrentScene <
+            SALVATION ) )
     {
         HomeButton.draw();
         image( HomeImage, 30, 30, IconSize, IconSize );
     }
+
 
     // Scene Change
     switch ( CurrentScene )
@@ -89,13 +87,13 @@ function draw()
     {
         // Game
         ShellButton.draw( "GAME" );
-        image(GameImage, width / 2 - 70, 300, 40, 40);
-        image(GameImage, width / 2 + 70, 300, 40, 40);
+        image( GameImage, width / 2 - 70, 300, 40, 40 );
+        image( GameImage, width / 2 + 70, 300, 40, 40 );
 
         // Room
         RoomButton.draw( "ROOM" );
-        image(RoomImage, width / 2 - 70, 400, 40, 40);
-        image(RoomImage, width / 2 + 70, 400, 40, 40);
+        image( RoomImage, width / 2 - 70, 400, 40, 40 );
+        image( RoomImage, width / 2 + 70, 400, 40, 40 );
 
         // HowtoPlay
         HowtoButton.draw( "How to Play" );
@@ -368,64 +366,54 @@ function draw()
     }
     break;
 
-    case SHOP:
+    case SHOP1:
     {
         // Background
         push();
-        imageMode(CORNER);
-        background(Shop_Background);
+        imageMode( CORNER );
+        background( Shop_Background );
         pop();
-
-        // Buttons
-        HomeButton.draw();
-        image( HomeImage, 30, 30, IconSize, IconSize ); 
-
-        BackToRoom_Button.draw();
-        image( RoomImage, 770, 30, 47, 47 );
-
-
-
 
         // Set textStyle
         push();
 
-        textSize(40);
-        fill('#9370db');
-        stroke(255);
-        strokeWeight(5);
-        textStyle(BOLD);
-        
+        textSize( 40 );
+        fill( '#9370db' );
+        stroke( 255 );
+        strokeWeight( 5 );
+        textStyle( BOLD );
+
         // Title
-        text("Welcome To Shop!", width / 2, 50);
+        text( "Welcome To Shop!", width / 2, 50 );
 
         image( ShopImage, 185, 35, 40, 40 );
         image( ShopImage, 615, 35, 40, 40 );
-        pop();  
+        pop();
 
         // Upgrade max percent!
         push();
 
-        fill('#6495ed');
-        rect(10, 60, 150, 200);
+        fill( '#6495ed' );
+        rect( 10, 60, 150, 200 );
 
-        imageMode(CORNER);
-        image(Upgrade_Image, 10, 63, 150, 70);
+        imageMode( CORNER );
+        image( Upgrade_Image, 10, 63, 150, 70 );
 
-        fill(255);
-        textAlign(CENTER);
-        textSize(20);
+        fill( 255 );
+        textAlign( CENTER );
+        textSize( 20 );
 
-        text("Increase 10%\nMAX percent!", 85, 155);
+        text( "Increase 10%\nMAX percent!", 85, 155 );
 
-        fill('red');
-        textStyle(BOLD);
+        fill( 'red' );
+        textStyle( BOLD );
 
-        text("Now : " + Max_Cup_Percent + "%", 85, 205);
+        text( "Now : " + Max_Cup_Percent + "%", 85, 205 );
 
         let upgrade_price = Upgrade_Percent();
 
         Upgrade_Purchase.draw();
-        Upgrade_Purchase.display_price(upgrade_price, upgrade, true);
+        Upgrade_Purchase.display_price( upgrade_price, upgrade, true );
 
         pop();
     }
@@ -433,11 +421,22 @@ function draw()
     // How to play
     case HOWTO:
     {
-        
+
     }
     break;
     }
 
+
+    // Back to Shop Button
+    if ( CurrentScene >= SHOP1 && CurrentScene < HOWTO )
+    {
+        // Buttons
+        HomeButton.draw();
+        image( HomeImage, 30, 30, IconSize, IconSize );
+
+        BackToRoom_Button.draw();
+        image( RoomImage, 770, 30, 47, 47 );
+    }
 
 }
 
@@ -448,7 +447,7 @@ function draw()
 function mousePressed()
 {
     // Reset all Sound when Refresh
-    if(!ResetSound)
+    if ( !ResetSound )
     {
         ResetAllMusic();
 
@@ -459,17 +458,19 @@ function mousePressed()
 
 
     // HomeButton
-    if((CurrentScene >= MAINMENU && CurrentScene <= IS_INPUT_RIGHT ) || (CurrentScene >= HOWTO && CurrentScene < SALVATION))    // Other case
+    if ( ( CurrentScene >= MAINMENU && CurrentScene <= IS_INPUT_RIGHT ) || ( CurrentScene >= HOWTO && CurrentScene <
+            SALVATION ) ) // Other case
     {
         HomeButton.ChangeScene( MAINMENU );
         HomeButton.clearInput();
     }
-    if((CurrentScene >= ROOM && CurrentScene < HOWTO))  // Room Case
+    if ( ( CurrentScene >= ROOM && CurrentScene < HOWTO ) ) // Room Case
     {
-        HomeButton.ChangeSong(Background_Music);    
+        HomeButton.ChangeSong( Background_Music );
         HomeButton.ChangeScene( MAINMENU );
         HomeButton.clearInput();
     }
+
 
     // Switch by CurrentScene
     switch ( CurrentScene )
@@ -482,19 +483,19 @@ function mousePressed()
 
     case MAINMENU:
     {
-        if(Point > 10)
+        if ( Point > 10 )
         {
             ShellButton.ChangeScene( SHELL_GAME );
             ShellButton.createInput( 100, 50 );
         }
         else
         {
-            ShellButton.ChangeScene(SALVATION);
-            ShellButton.ChangeSong(SPECIAL);
+            ShellButton.ChangeScene( SALVATION );
+            ShellButton.ChangeSong( SPECIAL );
         }
 
         RoomButton.ChangeScene( ROOM );
-        RoomButton.ChangeSong(Room_Music);
+        RoomButton.ChangeSong( Room_Music );
 
         HowtoButton.ChangeScene( HOWTO );
     }
@@ -562,16 +563,16 @@ function mousePressed()
     // Room Scene
     case ROOM:
     {
-        ShopButton.ChangeScene(SHOP);
+        ShopButton.ChangeScene( SHOP1 );
     }
     break;
 
-    case SHOP:
+    case SHOP1:
     {
-        BackToRoom_Button.ChangeScene(ROOM);
+        BackToRoom_Button.ChangeScene( ROOM );
 
         let upgrade_price = Upgrade_Percent();
-        Upgrade_Purchase.deal_price(upgrade_price, upgrade,true)
+        Upgrade_Purchase.deal_price( upgrade_price, upgrade, true );
     }
 
     // How to play
@@ -580,7 +581,7 @@ function mousePressed()
 
 function keyPressed()
 {
-    if ( CurrentScene == SHELL_GAME && keyCode === 13)
+    if ( CurrentScene == SHELL_GAME && keyCode === 13 )
     {
         Input_SFX.play();
 
@@ -594,7 +595,7 @@ function keyPressed()
         else
         {
             Alert_SFX.play();
-            alert("Please type valid value!");
+            alert( "Please type valid value!" );
         }
     }
 }

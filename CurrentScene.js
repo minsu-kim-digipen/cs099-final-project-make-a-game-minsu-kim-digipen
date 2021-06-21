@@ -23,7 +23,7 @@ const FINAL_CALCULATE = 14;
 
 // Room Scene
 const ROOM = 20;
-const SHOP = 21;
+const SHOP1 = 21;
 
 // How to Play
 const HOWTO = 30;
