@@ -435,10 +435,14 @@ function draw()
         display_point( width / 2 - 10, 560, IconSize );
         pop();
 
-        // Previous Button
+        // Previous & Next Button
+        push();
 
+        Previous_Button.draw('◀', 0, NORMAL, 50, 3);
+        Next_BUtton.draw('▶', 0, NORMAL, 50, 3);
 
-        // Next Button
+        pop();
+
 
         ////////////////////////////////////////////////////////////////////////////////
 
@@ -637,6 +641,10 @@ function mousePressed()
     {
         // BackToRoom
         BackToRoom_Button.ChangeScene( ROOM );
+
+        // Previous & Next Button
+        Previous_Button.Alert("It's First Scene!")
+        Next_BUtton.ChangeScene(ROOM_BACKGROUND_SHOP);
 
         // Upgrade
         let upgrade_price = Upgrade_Percent();

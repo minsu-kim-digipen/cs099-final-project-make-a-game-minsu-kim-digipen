@@ -5,7 +5,7 @@
 
 // Display Point
 
-let Point = 1100000;
+let Point = 110;
 let GetThisPoint;
 
 function display_point( x, y, size, another_value_to_display = false, GetThisPoint_display = false )

@@ -31,7 +31,8 @@ let Final_confirm = new Button( CanvasWidth / 2, 550, 100, 50 );
 let ShopButton = new Button(770, 30, 50, 50);
 
 // Using in All Shop
-
+let Previous_Button = new Button( 100, 560, 50, 50);
+let Next_BUtton = new Button(700, 560, 50, 50);
 
 // SHOP1
 let BackToRoom_Button = new Button(770, 30, 50, 50);
