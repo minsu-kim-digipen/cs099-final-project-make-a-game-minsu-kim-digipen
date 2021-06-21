@@ -38,7 +38,7 @@ function preload()
     ShopImage = loadImage('assets/Image/shop.png');
 
     // Load Sound
-    Background_Music = loadSound('assets/Sound/BGM/Mr.ruiZ - Beach Ballin.mp3');    // Basic BGM
+    Background_Music = loadSound('assets/Sound/BGM/bensound-allthat.mp3');    // Basic BGM
     Room_Music = loadSound('assets/Sound/BGM/Our Leaves in the Breeze.mp3');        // Room BGM
     SPECIAL = loadSound('assets/Sound/BGM/Universe.mp3');                           // SALVATION BGM
 
@@ -62,9 +62,9 @@ function ChangeVolume()
     Room_Music.setVolume(Sound_Slider.value());
     SPECIAL.setVolume(Sound_Slider.value());
 
-    Next_Howto_SFX.setVolume(Sound_Slider.value());
-    Select_SFX.setVolume(Sound_Slider.value());
-    Alert_SFX.setVolume(Sound_Slider.value());
-    Input_SFX.setVolume(Sound_Slider.value());
+    Next_Howto_SFX.setVolume(Sound_Slider.value() + 0.1);
+    Select_SFX.setVolume(Sound_Slider.value() + 0.1);
+    Alert_SFX.setVolume(Sound_Slider.value() + 0.1);
+    Input_SFX.setVolume(Sound_Slider.value() + 0.1);
 }
 

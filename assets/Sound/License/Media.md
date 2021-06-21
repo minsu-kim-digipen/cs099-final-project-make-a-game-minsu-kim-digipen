@@ -1,15 +1,21 @@
-# [assets\Sound\BGM\Mr.ruiZ - Beach Ballin.mp3](https://freemusicarchive.org/music/mrruiz/winter-haze-summer-daze/beach-ballinmp3)
-
-Beach Ballin'.mp3 by Mr.ruiZ
+# [assets\Sound\BGM\bensound-allthat.mp3](https://www.bensound.com/royalty-free-music/track/all-that-chill-hop)
 
 ## License
-[Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)](https://creativecommons.org/licenses/by-nc/4.0/)
+You are free to use this music in your multimedia project (online videos(YouTube,...), websites, animations, etc.) \
+as long as you credit Bensound.com, \
+For example: "Music: www.bensound.com" or "Royalty Free Music from Bensound"
 
+Click song path to check where the song from. \
+It's music is from Bensound.    
 
-
-## Changes
-Changed Music name Beach Ballin' to Beach Ballin. \
-For loadSound.
+## Cannot
+You cannot Claim our music as your own. \
+You cannot Register our music in any store/platform. \
+You cannot use our music for Audio Podcasts or AudioBooks. \
+You cannot make music, song, or remix with our music. \
+You can use our music for Facebook videos  \
+but you cannot register them to the Facebook Rights Manager Service \
+(that will keep other users from using our music).
 
 
 # [assets\Sound\BGM\Our Leaves in the Breeze.mp3](https://alplus.io/our-leaves-breeze)

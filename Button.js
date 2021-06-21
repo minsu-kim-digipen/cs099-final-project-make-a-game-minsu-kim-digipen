@@ -136,7 +136,7 @@ class Button
     }
 
     // Change Song
-    ChangeSong(What_Music, is_HomeButton = false)
+    ChangeSong(What_Music)
     {
         const is_inside_button = mouseX > this.x - ( this.width / 2 ) && mouseX < this.x + ( this.width / 2 ) &&
             mouseY > this.y - ( this.height / 2 ) && mouseY < this.y + ( this.height / 2 );
@@ -168,18 +168,7 @@ class Button
                     ResetAllMusic();
 
                     SPECIAL.loop();
-                }
-
-                
-            }
-
-            // HomeButton case
-            // Room Music is looping, Background Music loop
-            if(is_HomeButton && Room_Music.isLooping())
-            {
-                ResetAllMusic();
-
-                Background_Music.loop();
+                }  
             }
 
         }

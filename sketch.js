@@ -6,7 +6,7 @@
 // Initial Setting
 let Canvas;
 
-let CurrentScene = MAINMENU;
+let CurrentScene = PLEASE_CLICK;
 
 const CanvasWidth = 800;
 const CanvasHeight = 600;
@@ -16,6 +16,7 @@ let Sound_Slider;
 let describe_Sound_Slider;
 
 let ResetSound = false;
+let First_Play = true;
 
 
 // Go to MainMenu
@@ -89,8 +90,7 @@ function draw()
 
 
     // Home Button
-    if((CurrentScene >= MAINMENU && CurrentScene <= IS_INPUT_RIGHT ) 
-    || (CurrentScene >= ROOM && CurrentScene < SALVATION))
+    if((CurrentScene >= MAINMENU && CurrentScene <= IS_INPUT_RIGHT ) || (CurrentScene >= ROOM && CurrentScene < SALVATION))
     {
         HomeButton.draw();
         image( HomeImage, 30, 30, IconSize, IconSize );
@@ -416,12 +416,16 @@ function mousePressed()
 
 
     // HomeButton
-    if((CurrentScene >= MAINMENU && CurrentScene <= IS_INPUT_RIGHT ) 
-    || (CurrentScene >= ROOM && CurrentScene < SALVATION))
+    if((CurrentScene >= MAINMENU && CurrentScene <= IS_INPUT_RIGHT ) || (CurrentScene >= HOWTO && CurrentScene < SALVATION))    // Other case
     {
         HomeButton.ChangeScene( MAINMENU );
         HomeButton.clearInput();
-        HomeButton.ChangeSong(undefined, true);
+    }
+    if((CurrentScene >= ROOM && CurrentScene < HOWTO))  // Room Case
+    {
+        HomeButton.ChangeSong(Background_Music);    
+        HomeButton.ChangeScene( MAINMENU );
+        HomeButton.clearInput();
     }
 
     // Switch by CurrentScene
