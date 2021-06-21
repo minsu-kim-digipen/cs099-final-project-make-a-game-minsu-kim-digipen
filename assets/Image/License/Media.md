@@ -32,3 +32,8 @@ If that's not possible, place it at the footer of your website, blog or newslett
 
 ## [assets\Image\background\Shop_Background.jpg](https://www.freepik.com/free-photo/wooden-board-empty-table-top-blurred-background_1387629.htm#page=1&query=blur%20shop&position=2)
 <a href='https://www.freepik.com/photos/background'>Background photo created by tirachard - www.freepik.com</a>
+
+# [Pixabay](https://pixabay.com/)
+
+## [assets\Image\shop\upgrade.png](https://pixabay.com/illustrations/update-upgrade-renew-improve-1672350/)
+Image by <a href="https://pixabay.com/users/geralt-9301/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1672350">Gerd Altmann</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1672350">Pixabay</a>

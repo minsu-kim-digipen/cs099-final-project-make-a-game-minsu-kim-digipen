@@ -14,6 +14,8 @@ let ShopImage;
 
 let Shop_Background;
 
+let Upgrade_Image;
+
 // Sound
 let Background_Music;
 let Room_Music;
@@ -23,6 +25,7 @@ let Next_Howto_SFX;
 let Select_SFX;
 let Alert_SFX;
 let Input_SFX;
+let Purchase_SFX;
 
 function preload()
 {
@@ -39,7 +42,9 @@ function preload()
 
     ShopImage = loadImage('assets/Image/shop.png');
 
-    Shop_Background = loadImage('assets/Image/background/Shop_Background.jpg')
+    Shop_Background = loadImage('assets/Image/background/Shop_Background.jpg');
+
+    Upgrade_Image = loadImage('assets/Image/shop/upgrade.png')
 
     // Load Sound
     Background_Music = loadSound('assets/Sound/BGM/bensound-allthat.mp3');    // Basic BGM
@@ -49,7 +54,8 @@ function preload()
     Next_Howto_SFX = loadSound('assets/Sound/SFX/Next-howto.wav');                      // How to SFX
     Select_SFX = loadSound('assets/Sound/SFX/Select 50.wav');
     Alert_SFX = loadSound('assets/Sound/SFX/Warning 06.wav');
-    Input_SFX = loadSound('assets/Sound/SFX/Confirm 42.wav')
+    Input_SFX = loadSound('assets/Sound/SFX/Confirm 42.wav');
+    Purchase_SFX = loadSound('assets/Sound/SFX/Purchase_sound.wav')
 }
 
 // Before Change Music, Please put this inside
@@ -70,5 +76,6 @@ function ChangeVolume()
     Select_SFX.setVolume(Sound_Slider.value() + 0.1);
     Alert_SFX.setVolume(Sound_Slider.value() + 0.1);
     Input_SFX.setVolume(Sound_Slider.value() + 0.1);
+    Purchase_SFX.setVolume(Sound_Slider.value() + 0.1);
 }
 

@@ -3,6 +3,7 @@
 // Course     : CS099
 // Spring 2021
 
+
 class Button
 {
     constructor( x, y, width, height )
@@ -50,18 +51,117 @@ class Button
         pop();
     }
 
+    // For shop
+    display_price( price, is_own, is_upgrade = false )
+    {
+        if(is_own == SALE)
+        {
+            push();
+
+            imageMode( CENTER );
+            image( PointImage, this.x - 40, this.y, 30, 30 );
+
+            textAlign( LEFT, CENTER );
+            textSize( 30 );
+            textStyle( BOLD );
+            text( price, this.x - 20, this.y + 1 );
+
+            pop();
+        }
+        else
+        {
+            if(!is_upgrade)
+            {
+                push();
+
+                textSize( 30 );
+                fill('#6495ed')
+                textStyle( BOLD );
+                text( "OWN", this.x, this.y + 10);
+
+                pop();
+            }
+            else
+            {
+                push();
+
+                textSize( 30 );
+                fill('#6495ed')
+                textStyle( BOLD );
+                text( "MAX %!", this.x, this.y + 10);
+
+                pop();
+            }
+        }
+    }
+
+    deal_price( price, is_own , is_upgrade = false )
+    {
+        const is_inside_button = mouseX > this.x - ( this.width / 2 ) && mouseX < this.x + ( this.width / 2 ) &&
+            mouseY > this.y - ( this.height / 2 ) && mouseY < this.y + ( this.height / 2 );
+
+        if(is_inside_button)
+        {
+            switch(is_own)
+            {
+                case SALE:
+                {
+                    if(Point >= price)
+                    {
+                        Purchase_SFX.play();
+        
+                        Point -= price;
+
+                        if(is_upgrade)
+                        {
+                            Max_Cup_Percent += 10;
+                        }
+                        else
+                        {
+                            is_own = OWN;
+                        }
+                    }
+                    else
+                    {
+                        Alert_SFX.play();
+                        alert( "You don't have enough money!" );
+                    }
+                }
+                break;
+
+                // case OWN:
+                // {
+
+                // }
+                // break;
+
+                // case APPLY:
+                // {
+
+                // }
+                // break;
+            }
+
+        }
+    }
+
     // When Click, Change variable
 
-    ChangeScene( Scene )
+    ChangeScene( Scene, is_alert = false )
     {
         const is_inside_button = mouseX > this.x - ( this.width / 2 ) && mouseX < this.x + ( this.width / 2 ) &&
             mouseY > this.y - ( this.height / 2 ) && mouseY < this.y + ( this.height / 2 );
 
         if ( is_inside_button )
         {
-            Select_SFX.play();
+            if(!is_alert)
+            {
+                Select_SFX.play();
+            }
+
             CurrentScene = Scene;
         }
+
     }
 
     calculate()
@@ -119,56 +219,56 @@ class Button
     startShuffle()
     {
         // Get Random amount in here 
-        Random_Cup_Amount(3, 200);
+        Random_Cup_Amount( 3, Max_Cup_Percent );
 
         // Use Interval to Shuffle Shell
-        let Shuffle_interval = setInterval(() => 
+        let Shuffle_interval = setInterval( () =>
         {
             Shuffle_CupPosition();
             CupMove();
-        }, 20);
-    
-        setTimeout(() => {
-            clearTimeout(Shuffle_interval);
+        }, 20 );
+
+        setTimeout( () =>
+        {
+            clearTimeout( Shuffle_interval );
             ShuffleEnd = true;
-        }, 1000);
+        }, 1000 );
 
     }
 
     // Change Song
-    ChangeSong(What_Music)
+    ChangeSong( What_Music )
     {
         const is_inside_button = mouseX > this.x - ( this.width / 2 ) && mouseX < this.x + ( this.width / 2 ) &&
             mouseY > this.y - ( this.height / 2 ) && mouseY < this.y + ( this.height / 2 );
 
-        
-        
-        if(is_inside_button)
+
+        if ( is_inside_button )
         {
-            switch(What_Music)
+            switch ( What_Music )
             {
-                case Background_Music:
-                {
-                    ResetAllMusic();
+            case Background_Music:
+            {
+                ResetAllMusic();
 
-                    Background_Music.loop();
-                }
-                break;
+                Background_Music.loop();
+            }
+            break;
 
-                case Room_Music:
-                {
-                    ResetAllMusic();
+            case Room_Music:
+            {
+                ResetAllMusic();
 
-                    Room_Music.loop();
-                }
-                break;
+                Room_Music.loop();
+            }
+            break;
 
-                case SPECIAL:
-                {
-                    ResetAllMusic();
+            case SPECIAL:
+            {
+                ResetAllMusic();
 
-                    SPECIAL.loop();
-                }  
+                SPECIAL.loop();
+            }
             }
 
         }

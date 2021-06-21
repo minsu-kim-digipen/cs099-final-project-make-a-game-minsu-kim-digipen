@@ -18,30 +18,13 @@ let describe_Sound_Slider;
 let ResetSound = false;
 let First_Play = true;
 
-
-// Go to MainMenu
-let HomeButton = new Button( 30, 30, 50, 50 );
-
-// MainMenu
-let ShellButton = new Button( CanvasWidth / 2, 300, 200, 70 );
-let RoomButton = new Button( CanvasWidth / 2, 400, 200, 70 );
-let HowtoButton = new Button( CanvasWidth / 2, 500, 200, 70 );
-
-
-// Shell Game
 let PointInput;
 
-// IS_INPUT_RIGHT
 let Selected_Point;
 
-let input_true = new Button( 300, 550, 100, 50 );
-let input_false = new Button( 500, 550, 100, 50 );
 
-// SELECT_SHELL
-let Select_1stCup = new Button( 200, CanvasHeight / 2, 170, 170 );
-let Select_2ndCup = new Button( 400, CanvasHeight / 2, 170, 170 );
-let Select_3rdCup = new Button( 600, CanvasHeight / 2, 170, 170 );
 
+// Cups
 let GoldCup = {
     x: 200
 };
@@ -54,18 +37,8 @@ let BronzeCup = {
 
 let ShuffleEnd = false;
 
-// CHOOSE_CUP (1ST, 2ND, 3RD)
-let Confirm_Percent = new Button( CanvasWidth / 2, 500, 400, 70 );
-
-// FINAL_CALCULATE
-let Final_confirm = new Button( CanvasWidth / 2, 550, 100, 50 );
 
 
-// ROOM
-let ShopButton = new Button(770, 30, 50, 50);
-
-// SHOP
-let BackToRoom_Button = new Button(770, 30, 50, 50);
 
 
 function setup()
@@ -86,7 +59,7 @@ function draw()
 {
     background( '#304859' );
 
-    print( "Current Scene : " + CurrentScene + " / SALVATION : " + Salvation_Point);
+    print( "CurrentScene : " + CurrentScene + " / Point : " + Point + " / SALVATION : " + Salvation_Point);
 
 
     // Volume slider
@@ -397,18 +370,25 @@ function draw()
 
     case SHOP:
     {
+        // Background
         push();
         imageMode(CORNER);
         background(Shop_Background);
         pop();
 
+        // Buttons
+        HomeButton.draw();
+        image( HomeImage, 30, 30, IconSize, IconSize ); 
+
         BackToRoom_Button.draw();
         image( RoomImage, 770, 30, 47, 47 );
 
 
-        push();
+
 
         // Set textStyle
+        push();
+
         textSize(40);
         fill('#9370db');
         stroke(255);
@@ -421,12 +401,39 @@ function draw()
         image( ShopImage, 185, 35, 40, 40 );
         image( ShopImage, 615, 35, 40, 40 );
         pop();  
+
+        // Upgrade max percent!
+        push();
+
+        fill('#6495ed');
+        rect(10, 60, 150, 200);
+
+        imageMode(CORNER);
+        image(Upgrade_Image, 10, 63, 150, 70);
+
+        fill(255);
+        textAlign(CENTER);
+        textSize(20);
+
+        text("Increase 10%\nMAX percent!", 85, 155);
+
+        fill('red');
+        textStyle(BOLD);
+
+        text("Now : " + Max_Cup_Percent + "%", 85, 205);
+
+        let upgrade_price = Upgrade_Percent();
+
+        Upgrade_Purchase.draw();
+        Upgrade_Purchase.display_price(upgrade_price, upgrade, true);
+
+        pop();
     }
 
     // How to play
     case HOWTO:
     {
-
+        
     }
     break;
     }
@@ -502,7 +509,7 @@ function mousePressed()
         input_true.calculate();
         input_true.startShuffle();
 
-        input_false.ChangeScene( SHELL_GAME );
+        input_false.ChangeScene( SHELL_GAME, true );
         input_false.Alert( "OK, Please Type Again~" );
 
     }
@@ -548,7 +555,7 @@ function mousePressed()
     {
         Fill_Salvation();
 
-        Final_confirm.ChangeScene( MAINMENU );
+        Final_confirm.ChangeScene( MAINMENU, true );
         Final_confirm.Alert( "Thanks for Plying!\nGo to shop or play again!" );
     }
     break;
@@ -562,6 +569,9 @@ function mousePressed()
     case SHOP:
     {
         BackToRoom_Button.ChangeScene(ROOM);
+
+        let upgrade_price = Upgrade_Percent();
+        Upgrade_Purchase.deal_price(upgrade_price, upgrade,true)
     }
 
     // How to play
