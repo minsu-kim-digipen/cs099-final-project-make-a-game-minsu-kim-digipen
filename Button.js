@@ -88,10 +88,10 @@ class Button
             {
                 push();
 
-                textSize( 30 );
+                textSize( 50 );
                 fill('#6495ed')
                 textStyle( BOLD );
-                text( "MAX %!", this.x, this.y + 10);
+                text( "MAX %!", this.x + 5, this.y + 15);
 
                 pop();
             }
