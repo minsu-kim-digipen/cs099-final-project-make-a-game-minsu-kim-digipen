@@ -439,7 +439,7 @@ function draw()
         push();
 
         Previous_Button.draw('◀', 0, NORMAL, 50, 3);
-        Next_BUtton.draw('▶', 0, NORMAL, 50, 3);
+        Next_Button.draw('▶', 0, NORMAL, 50, 3);
 
         pop();
 
@@ -484,6 +484,51 @@ function draw()
         Upgrade_Purchase.display_price( upgrade_price, upgrade, 50, 12 , true );
         pop();
     }
+    break;
+
+    case ROOM_BACKGROUND_SHOP:
+    {
+        // Background
+        push();
+        imageMode( CORNER );
+        background( Shop_Background );
+        pop();
+
+        // Set textStyle
+        push();
+
+        textSize( 40 );
+        fill( '#9370db' );
+        stroke( 255 );
+        strokeWeight( 5 );
+        textStyle( BOLD );
+
+        // Title
+        text( "Welcome To Shop!", width / 2, 50 );
+
+        image( ShopImage, 185, 35, 40, 40 );
+        image( ShopImage, 615, 35, 40, 40 );
+        pop();
+
+        // Display Point
+        push();
+
+        fill('#228b22');
+        stroke(255);
+        strokeWeight(7);
+
+        display_point( width / 2 - 10, 560, IconSize );
+        pop();
+
+        // Previous & Next Button
+        push();
+
+        Previous_Button.draw('◀', 0, NORMAL, 50, 3);
+        Next_Button.draw('▶', 0, NORMAL, 50, 3);
+
+        pop();
+    }
+    break;
 
     // How to play
     case HOWTO:
@@ -642,14 +687,26 @@ function mousePressed()
         // BackToRoom
         BackToRoom_Button.ChangeScene( ROOM );
 
-        // Previous & Next Button
+        // Previous & Next Button (Change argument)
         Previous_Button.Alert("It's First Scene!")
-        Next_BUtton.ChangeScene(ROOM_BACKGROUND_SHOP);
+        Next_Button.ChangeScene(ROOM_BACKGROUND_SHOP);
 
         // Upgrade
         let upgrade_price = Upgrade_Percent();
         Upgrade_Purchase.deal_price( upgrade_price, upgrade, true );
     }
+    break;
+
+    case ROOM_BACKGROUND_SHOP:
+    {
+        // BackToRoom
+        BackToRoom_Button.ChangeScene( ROOM );
+
+        // Previous & Next Button (Change argument)
+        Previous_Button.ChangeScene(UPGRADE_SHOP);
+        Next_Button.ChangeScene();
+    }
+    break;
 
     // How to play
     }
