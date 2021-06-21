@@ -6,14 +6,14 @@
 // Initial Setting
 let Canvas;
 
-let CurrentScene = SHOP1;
+let CurrentScene = UPGRADE_SHOP;
 
 const CanvasWidth = 800;
 const CanvasHeight = 600;
 const IconSize = 50;
 
 let Sound_Slider;
-let describe_Sound_Slider;
+let Point_You_Have;
 
 let ResetSound = false;
 let First_Play = true;
@@ -79,7 +79,12 @@ function draw()
     {
     case PLEASE_CLICK:
     {
+        push();
 
+        imageMode(CORNER);
+        background(Click_Background);
+
+        pop();
     }
     break;
 
@@ -361,12 +366,42 @@ function draw()
     // Room Scene
     case ROOM:
     {
+        // Change Background
+        push();
+
+        imageMode(CORNER);
+
+        if(Brick_Room == APPLY)
+        {
+            background( Brick_Room_Image );
+        }
+        
+        if(LikeOcean_Room == APPLY)
+        {
+            background(LikeOcean_Room_Image);
+        }
+        if(BoxWood_Room == APPLY)
+        {
+            background(BoxWood_Room);
+        }
+
+        pop();
+
+
+
+
+
+        // Home Button
+        HomeButton.draw();
+        image( HomeImage, 30, 30, IconSize, IconSize );
+
+        // Shop Button
         ShopButton.draw();
         image( ShopImage, 770, 30, 47, 47 );
     }
     break;
 
-    case SHOP1:
+    case UPGRADE_SHOP:
     {
         // Background
         push();
@@ -390,15 +425,39 @@ function draw()
         image( ShopImage, 615, 35, 40, 40 );
         pop();
 
+        // Display Point
+        push();
+
+        fill('#228b22');
+        stroke(255);
+        strokeWeight(7);
+
+        display_point( width / 2 - 10, 560, IconSize );
+        pop();
+
+        // Previous Button
+
+
+        // Next Button
+
+        ////////////////////////////////////////////////////////////////////////////////
+
         // Upgrade max percent!
         push();
 
+        translate(260, 30);
+        scale(1.7);
+
+        // Stuff box
+        noStroke();
         fill( '#6495ed' );
         rect( 10, 60, 150, 200 );
 
+        // Image
         imageMode( CORNER );
         image( Upgrade_Image, 10, 63, 150, 70 );
 
+        // Description
         fill( 255 );
         textAlign( CENTER );
         textSize( 20 );
@@ -410,11 +469,15 @@ function draw()
 
         text( "Now : " + Max_Cup_Percent + "%", 85, 205 );
 
+        // Button
+        pop();
+
         let upgrade_price = Upgrade_Percent();
 
         Upgrade_Purchase.draw();
-        Upgrade_Purchase.display_price( upgrade_price, upgrade, true );
 
+        push();
+        Upgrade_Purchase.display_price( upgrade_price, upgrade, 50, 12 , true );
         pop();
     }
 
@@ -428,7 +491,7 @@ function draw()
 
 
     // Back to Shop Button
-    if ( CurrentScene >= SHOP1 && CurrentScene < HOWTO )
+    if ( CurrentScene >= UPGRADE_SHOP && CurrentScene < HOWTO )
     {
         // Buttons
         HomeButton.draw();
@@ -478,6 +541,9 @@ function mousePressed()
     case PLEASE_CLICK:
     {
         CurrentScene = MAINMENU;
+        Alert_SFX.play();
+        alert("Move Slider to set Volume!");
+
     }
     break;
 
@@ -563,14 +629,16 @@ function mousePressed()
     // Room Scene
     case ROOM:
     {
-        ShopButton.ChangeScene( SHOP1 );
+        ShopButton.ChangeScene( UPGRADE_SHOP );
     }
     break;
 
-    case SHOP1:
+    case UPGRADE_SHOP:
     {
+        // BackToRoom
         BackToRoom_Button.ChangeScene( ROOM );
 
+        // Upgrade
         let upgrade_price = Upgrade_Percent();
         Upgrade_Purchase.deal_price( upgrade_price, upgrade, true );
     }
@@ -583,11 +651,11 @@ function keyPressed()
 {
     if ( CurrentScene == SHELL_GAME && keyCode === 13 )
     {
-        Input_SFX.play();
+
 
         if ( PointInput.value() >= 10 && PointInput.value() <= Point )
         {
-
+            Input_SFX.play();
             PointInput.changed( getPoint );
             Selected_Point = int( PointInput.value() );
             CurrentScene = IS_INPUT_RIGHT;

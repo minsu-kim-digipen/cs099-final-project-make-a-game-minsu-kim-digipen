@@ -1,19 +1,27 @@
-// Image
+// Icons
 let GameImage;
 let RoomImage;
 
 
 let HomeImage;
+let ShopImage;
 let PointImage;
 
+// Select
 let GoldCup_Image;
 let SilverCup_Image;
 let BronzeCup_Image;
 
-let ShopImage;
-
+// Background
+let Click_Background;
 let Shop_Background;
 
+let Brick_Room_Image;
+let LikeOcean_Room_Image;
+let BoxWood_Room_Image;
+let Fantasy_Room_Image;
+
+// Shop
 let Upgrade_Image;
 
 // Sound
@@ -42,9 +50,11 @@ function preload()
 
     ShopImage = loadImage('assets/Image/shop.png');
 
+    // Background
     Shop_Background = loadImage('assets/Image/background/Shop_Background.jpg');
+    Click_Background = loadImage('assets/Image/background/Click_Anywhere.jpg')
 
-    Upgrade_Image = loadImage('assets/Image/shop/upgrade.png')
+    Upgrade_Image = loadImage('assets/Image/shop/upgrade.png');
 
     // Load Sound
     Background_Music = loadSound('assets/Sound/BGM/bensound-allthat.mp3');    // Basic BGM
@@ -55,7 +65,12 @@ function preload()
     Select_SFX = loadSound('assets/Sound/SFX/Select 50.wav');
     Alert_SFX = loadSound('assets/Sound/SFX/Warning 06.wav');
     Input_SFX = loadSound('assets/Sound/SFX/Confirm 42.wav');
-    Purchase_SFX = loadSound('assets/Sound/SFX/Purchase_sound.wav')
+    Purchase_SFX = loadSound('assets/Sound/SFX/Purchase_sound.wav');
+
+    Brick_Room_Image = loadImage('assets/Image/background/Shop/Brick.jpg');
+    LikeOcean_Room_Image = loadImage('assets/Image/background/Shop/LikeOcean.jpg');
+    BoxWood_Room_Image = loadImage('assets/Image/background/Shop/Boxwood.jpg');
+    Fantasy_Room_Image = loadImage('assets/Image/background/Shop/Fantasy.jpg');
 }
 
 // Before Change Music, Please put this inside

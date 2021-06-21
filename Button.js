@@ -52,21 +52,24 @@ class Button
     }
 
     // For shop
-    display_price( price, is_own, is_upgrade = false )
+    display_price( price, is_own, size = 30, interval = 20 , is_upgrade = false )
     {
+        const INTERVAL = size / 3 * 2
+
         if(is_own == SALE)
         {
             push();
 
             imageMode( CENTER );
-            image( PointImage, this.x - 40, this.y, 30, 30 );
+            image( PointImage, this.x - 40, this.y, size, size );
 
             textAlign( LEFT, CENTER );
-            textSize( 30 );
+            textSize( size );
             textStyle( BOLD );
-            text( price, this.x - 20, this.y + 1 );
+            text( price, this.x - interval, this.y + 1 );
 
             pop();
+
         }
         else
         {
@@ -124,7 +127,7 @@ class Button
                     else
                     {
                         Alert_SFX.play();
-                        alert( "You don't have enough money!" );
+                        alert( "You don't have enough Point!" );
                     }
                 }
                 break;
@@ -142,6 +145,35 @@ class Button
                 // break;
             }
 
+        }
+    }
+
+    Apply(variable, is_background = false)
+    {
+        if(!is_background)
+        {
+            if(variable == OWN)
+            {
+                variable = APPLY;
+            }
+            else if(variable == APPLY)
+            {
+                variable = OWN;
+            }
+        }
+        else
+        {
+            if(variable == OWN)
+            {
+                ResetBackground();
+
+                variable = APPLY;
+            }
+            else if(variable == APPLY)
+            {
+                Alert_SFX.play();
+                alert("Please apply other background! It's already applied~")
+            }
         }
     }
 

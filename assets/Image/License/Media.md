@@ -35,5 +35,23 @@ If that's not possible, place it at the footer of your website, blog or newslett
 
 # [Pixabay](https://pixabay.com/)
 
+## What is allowed?
+✓	All content on Pixabay can be used for free for commercial and noncommercial use across print and digital, except in the cases mentioned in "What is not allowed".
+
+✓	Attribution is not required. \
+Giving credit to the contributor or Pixabay is not necessary but is always appreciated by our community.
+
+✓	You can make modifications to content from Pixabay.
+
 ## [assets\Image\shop\upgrade.png](https://pixabay.com/illustrations/update-upgrade-renew-improve-1672350/)
 Image by <a href="https://pixabay.com/users/geralt-9301/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1672350">Gerd Altmann</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1672350">Pixabay</a>
+
+## [assets\Image\background\Click_Anywhere.jpg](https://pixabay.com/photos/coffee-cup-coffee-heartbeat-cup-2317201/)
+Image by <a href="https://pixabay.com/users/myriams-fotos-1627417/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=2317201">Meine Reise geht hier leider zu Ende. Märchen beginnen mit</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=2317201">Pixabay</a>
+
+### Changes
+Put `Click Anywhere to Start` in Image
+
+## Image by <a href="https://pixabay.com/users/darkmoon_art-1664300/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=4152623">Darkmoon_Art</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=4152623">Pixabay</a>
+
+All inside images `assets\Image\background\Shop\` are by Darkmoon_Art!

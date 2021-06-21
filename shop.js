@@ -33,3 +33,27 @@ function Upgrade_Percent()
         upgrade = OWN;
     }
 }
+
+// Background!
+let Brick_Room = APPLY;
+let LikeOcean_Room = SALE;
+let BoxWood_Room = SALE;
+let Fantasy_Room = SALE;
+
+function ResetBackground()
+{
+    BoxWood_Room = OWN;
+
+    if(!LikeOcean_Room == SALE)
+    {
+        LikeOcean_Room = OWN;
+    }
+    if(!BoxWood_Room == SALE)
+    {
+        BoxWood_Room = OWN;
+    }
+    if(!Fantasy_Room == SALE)
+    {
+        Fantasy_Room = OWN;
+    }
+}
