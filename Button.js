@@ -131,18 +131,6 @@ class Button
                     }
                 }
                 break;
-
-                // case OWN:
-                // {
-
-                // }
-                // break;
-
-                // case APPLY:
-                // {
-
-                // }
-                // break;
             }
 
         }
@@ -172,7 +160,7 @@ class Button
             else if(variable == APPLY)
             {
                 Alert_SFX.play();
-                alert("Please apply other background! It's already applied~")
+                alert("Please apply other background! It's already applied~");
             }
         }
     }
@@ -205,8 +193,6 @@ class Button
         {
             Point -= Selected_Point;
         }
-
-
     }
 
 

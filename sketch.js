@@ -81,8 +81,8 @@ function draw()
     {
         push();
 
-        imageMode(CORNER);
-        background(Click_Background);
+        imageMode( CORNER );
+        background( Click_Background );
 
         pop();
     }
@@ -369,26 +369,23 @@ function draw()
         // Change Background
         push();
 
-        imageMode(CORNER);
+        imageMode( CORNER );
 
-        if(Brick_Room == APPLY)
+        if ( Brick_Room == APPLY )
         {
             background( Brick_Room_Image );
         }
-        
-        if(LikeOcean_Room == APPLY)
+
+        if ( LikeOcean_Room == APPLY )
         {
-            background(LikeOcean_Room_Image);
+            background( LikeOcean_Room_Image );
         }
-        if(BoxWood_Room == APPLY)
+        if ( BoxWood_Room == APPLY )
         {
-            background(BoxWood_Room);
+            background( BoxWood_Room );
         }
 
         pop();
-
-
-
 
 
         // Home Button
@@ -428,9 +425,9 @@ function draw()
         // Display Point
         push();
 
-        fill('#228b22');
-        stroke(255);
-        strokeWeight(7);
+        fill( '#228b22' );
+        stroke( 255 );
+        strokeWeight( 7 );
 
         display_point( width / 2 - 10, 560, IconSize );
         pop();
@@ -438,8 +435,8 @@ function draw()
         // Previous & Next Button
         push();
 
-        Previous_Button.draw('◀', 0, NORMAL, 50, 3);
-        Next_Button.draw('▶', 0, NORMAL, 50, 3);
+        Previous_Button.draw( '◀', 0, NORMAL, 50, 3 );
+        Next_Button.draw( '▶', 0, NORMAL, 50, 3 );
 
         pop();
 
@@ -449,8 +446,8 @@ function draw()
         // Upgrade max percent!
         push();
 
-        translate(260, 30);
-        scale(1.7);
+        translate( 260, 30 );
+        scale( 1.7 );
 
         // Stuff box
         noStroke();
@@ -481,7 +478,7 @@ function draw()
         Upgrade_Purchase.draw();
 
         push();
-        Upgrade_Purchase.display_price( upgrade_price, upgrade, 50, 12 , true );
+        Upgrade_Purchase.display_price( upgrade_price, upgrade, 50, 12, true );
         pop();
     }
     break;
@@ -513,9 +510,9 @@ function draw()
         // Display Point
         push();
 
-        fill('#228b22');
-        stroke(255);
-        strokeWeight(7);
+        fill( '#228b22' );
+        stroke( 255 );
+        strokeWeight( 7 );
 
         display_point( width / 2 - 10, 560, IconSize );
         pop();
@@ -523,10 +520,13 @@ function draw()
         // Previous & Next Button
         push();
 
-        Previous_Button.draw('◀', 0, NORMAL, 50, 3);
-        Next_Button.draw('▶', 0, NORMAL, 50, 3);
+        Previous_Button.draw( '◀', 0, NORMAL, 50, 3 );
+        Next_Button.draw( '▶', 0, NORMAL, 50, 3 );
 
         pop();
+
+
+        // Background
     }
     break;
 
@@ -591,7 +591,7 @@ function mousePressed()
     {
         CurrentScene = MAINMENU;
         Alert_SFX.play();
-        alert("Move Slider to set Volume!");
+        alert( "Move Slider to set Volume!" );
 
     }
     break;
@@ -688,8 +688,8 @@ function mousePressed()
         BackToRoom_Button.ChangeScene( ROOM );
 
         // Previous & Next Button (Change argument)
-        Previous_Button.Alert("It's First Scene!")
-        Next_Button.ChangeScene(ROOM_BACKGROUND_SHOP);
+        Previous_Button.Alert( "It's First Scene!" )
+        Next_Button.ChangeScene( ROOM_BACKGROUND_SHOP );
 
         // Upgrade
         let upgrade_price = Upgrade_Percent();
@@ -703,7 +703,7 @@ function mousePressed()
         BackToRoom_Button.ChangeScene( ROOM );
 
         // Previous & Next Button (Change argument)
-        Previous_Button.ChangeScene(UPGRADE_SHOP);
+        Previous_Button.ChangeScene( UPGRADE_SHOP );
         Next_Button.ChangeScene();
     }
     break;
@@ -716,8 +716,6 @@ function keyPressed()
 {
     if ( CurrentScene == SHELL_GAME && keyCode === 13 )
     {
-
-
         if ( PointInput.value() >= 10 && PointInput.value() <= Point )
         {
             Input_SFX.play();
