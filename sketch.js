@@ -6,7 +6,7 @@
 // Initial Setting
 let Canvas;
 
-let CurrentScene = ROOM;
+let CurrentScene = SHOP;
 
 const CanvasWidth = 800;
 const CanvasHeight = 600;
@@ -397,8 +397,30 @@ function draw()
 
     case SHOP:
     {
+        push();
+        imageMode(CORNER);
+        background(Shop_Background);
+        pop();
+
         BackToRoom_Button.draw();
         image( RoomImage, 770, 30, 47, 47 );
+
+
+        push();
+
+        // Set textStyle
+        textSize(40);
+        fill('#9370db');
+        stroke(255);
+        strokeWeight(5);
+        textStyle(BOLD);
+        
+        // Title
+        text("Welcome To Shop!", width / 2, 50);
+
+        image( ShopImage, 185, 35, 40, 40 );
+        image( ShopImage, 615, 35, 40, 40 );
+        pop();  
     }
 
     // How to play

@@ -24,3 +24,11 @@ License : Free for non-commercial use
 ### [assets\Image\Gold_Cup.png](https://iconarchive.com/show/flatastic-7-icons-by-custom-icon-design/Cup-gold-icon.html)
 ### [assets\Image\Silver_Cup.png](https://iconarchive.com/show/flatastic-7-icons-by-custom-icon-design/Cup-silver-icon.html)
 ### [assets\Image\Bronze_Cup.png](https://iconarchive.com/show/flatastic-7-icons-by-custom-icon-design/Cup-bronze-icon.html)
+
+# [Freepik](https://www.freepik.com/)
+
+Copy this link and paste it wherever it's visible, close to where you’re using the resource. \
+If that's not possible, place it at the footer of your website, blog or newsletter, or in the credits section.
+
+## [assets\Image\background\Shop_Background.jpg](https://www.freepik.com/free-photo/wooden-board-empty-table-top-blurred-background_1387629.htm#page=1&query=blur%20shop&position=2)
+<a href='https://www.freepik.com/photos/background'>Background photo created by tirachard - www.freepik.com</a>

@@ -12,6 +12,8 @@ let BronzeCup_Image;
 
 let ShopImage;
 
+let Shop_Background;
+
 // Sound
 let Background_Music;
 let Room_Music;
@@ -36,6 +38,8 @@ function preload()
     BronzeCup_Image = loadImage('assets/Image/Bronze_Cup.png');
 
     ShopImage = loadImage('assets/Image/shop.png');
+
+    Shop_Background = loadImage('assets/Image/background/Shop_Background.jpg')
 
     // Load Sound
     Background_Music = loadSound('assets/Sound/BGM/bensound-allthat.mp3');    // Basic BGM
