@@ -62,7 +62,10 @@ let Final_confirm = new Button( CanvasWidth / 2, 550, 100, 50 );
 
 
 // ROOM
-let Shop_Button = new Button(770, 30, 50, 50);
+let ShopButton = new Button(770, 30, 50, 50);
+
+// SHOP
+let BackToRoom_Button = new Button(770, 30, 50, 50);
 
 
 function setup()
@@ -387,10 +390,16 @@ function draw()
     // Room Scene
     case ROOM:
     {
-        Shop_Button.draw();
+        ShopButton.draw();
         image( ShopImage, 770, 30, 47, 47 );
     }
     break;
+
+    case SHOP:
+    {
+        BackToRoom_Button.draw();
+        image( RoomImage, 770, 30, 47, 47 );
+    }
 
     // How to play
     case HOWTO:
@@ -524,7 +533,13 @@ function mousePressed()
     // Room Scene
     case ROOM:
     {
-        Shop_Button.ChangeScene(SHOP);
+        ShopButton.ChangeScene(SHOP);
+    }
+    break;
+
+    case SHOP:
+    {
+        BackToRoom_Button.ChangeScene(ROOM);
     }
 
     // How to play
