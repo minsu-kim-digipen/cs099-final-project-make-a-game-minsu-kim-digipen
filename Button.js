@@ -106,35 +106,66 @@ class Button
         }
     }
 
-    deal_price( price, is_own , is_upgrade = false )
+    deal_price( price, is_own , is_background = false ,is_upgrade = false )
     {
         const is_inside_button = mouseX > this.x - ( this.width / 2 ) && mouseX < this.x + ( this.width / 2 ) &&
             mouseY > this.y - ( this.height / 2 ) && mouseY < this.y + ( this.height / 2 );
 
-        if(is_inside_button)
+        if(is_inside_button && is_own == SALE)
         {
-            if(is_own == SALE)
+            if(Point >= price)
             {
+                Purchase_SFX.play();
 
-                if(Point >= price)
+                Point -= price;
+
+                if(is_upgrade)
                 {
-                    Purchase_SFX.play();
-    
-                    Point -= price;
-
-                    if(is_upgrade)
-                    {
-                        Max_Cup_Percent += 10;
-                    }
-                    else
-                    {
-                        return OWN;
-                    }
+                    Max_Cup_Percent += 10;
                 }
                 else
                 {
-                    Alert_SFX.play();
-                    alert( "You don't have enough Point!" );
+                    return OWN;
+                }
+            }
+            else
+            {
+                Alert_SFX.play();
+                alert( "You don't have enough Point!" );
+            }
+        }
+        else if(is_inside_button && is_own >= OWN)
+        {
+            if(!is_background)
+            {
+                if(is_own == OWN)
+                {
+                    return APPLY;
+                }
+                else if(is_own == APPLY)
+                {
+                    return OWN;
+                }
+            }
+            else
+            {
+                if(is_own == OWN)
+                {
+                    if(Brick_Room == APPLY || LikeOcean_Room == APPLY || BoxWood_Room == APPLY || Fantasy_Room == APPLY)
+                    {
+                        Alert_SFX.play();
+                        alert("Please un-apply other background!\nYou can only apply one background!");
+
+                        return OWN;
+                    }
+                    else
+                    {
+                        return APPLY;
+                    }
+                }
+                else if(is_own == APPLY)
+                {
+                    return OWN;
                 }
             }
         }
@@ -152,42 +183,6 @@ class Button
         }
     }
 
-    Apply(is_own, is_background = false)
-    {
-        const is_inside_button = mouseX > this.x - ( this.width / 2 ) && mouseX < this.x + ( this.width / 2 ) &&
-            mouseY > this.y - ( this.height / 2 ) && mouseY < this.y + ( this.height / 2 );
-
-        
-        if(is_inside_button && is_own >= OWN)
-        {
-            if(!is_background)
-            {
-                if(is_own == OWN)
-                {
-                    return APPLY;
-                }
-                else if(is_own == APPLY)
-                {
-                    return OWN;
-                }
-            }
-            else
-            {
-                if(is_own == OWN)
-                {
-                    ResetBackground();
-
-                    return APPLY;
-                }
-                else if(is_own == APPLY)
-                {
-                    Alert_SFX.play();
-                    alert("Please apply other background! It's already applied~");
-                }
-            }
-        }
-    }
-
     // When Click, Change variable
 
     ChangeScene( Scene, is_alert = false )
@@ -197,14 +192,21 @@ class Button
 
         if ( is_inside_button )
         {
-            if(!is_alert)
+            if(!(Brick_Room == APPLY || LikeOcean_Room == APPLY || BoxWood_Room == APPLY || Fantasy_Room == APPLY))
             {
-                Select_SFX.play();
+                Alert_SFX.play();
+                alert("Please Select background!\nIt's ESSENTIAL!");
             }
-
-            CurrentScene = Scene;
+            else
+            {
+                if(!is_alert)
+                {
+                    Select_SFX.play();
+                }
+    
+                CurrentScene = Scene;
+            }
         }
-
     }
 
     calculate()

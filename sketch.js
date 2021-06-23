@@ -374,14 +374,17 @@ function draw()
         {
             background( Brick_Room_Image );
         }
-
-        if ( LikeOcean_Room == APPLY )
+        else if ( LikeOcean_Room == APPLY )
         {
             background( LikeOcean_Room_Image );
         }
-        if ( BoxWood_Room == APPLY )
+        else if ( BoxWood_Room == APPLY )
         {
-            background( BoxWood_Room );
+            background( BoxWood_Room_Image );
+        }
+        else if( Fantasy_Room == APPLY)
+        {
+            background(Fantasy_Room_Image);
         }
 
         pop();
@@ -626,7 +629,10 @@ function mousePressed()
     }
     if ( ( CurrentScene >= ROOM && CurrentScene < HOWTO ) ) // Room Case
     {
-        HomeButton.ChangeSong( Background_Music );
+        if(Brick_Room == APPLY || LikeOcean_Room == APPLY || BoxWood_Room == APPLY || Fantasy_Room == APPLY)
+        {
+            HomeButton.ChangeSong( Background_Music );
+        }
         HomeButton.ChangeScene( MAINMENU );
         HomeButton.clearInput();
     }
@@ -741,7 +747,7 @@ function mousePressed()
 
         // Upgrade
         let upgrade_price = Upgrade_Percent();
-        Upgrade_Button.deal_price( upgrade_price, upgrade, true );
+        Upgrade_Button.deal_price( upgrade_price, upgrade, false , true );
     }
     break;
 
@@ -755,11 +761,9 @@ function mousePressed()
         Next_Button.ChangeScene();
 
         // Brick
-        Brick_Button.deal_price(0, Brick_Room);
-        Brick_Button.Apply(Brick_Room, true);
+        Brick_Room = Brick_Button.deal_price(0, Brick_Room, true);
 
-        Fantasy_Room = Fantasy_Button.deal_price(47, Fantasy_Room);
-        Fantasy_Room = Fantasy_Button.Apply(Fantasy_Room, true);
+        Fantasy_Room = Fantasy_Button.deal_price(47, Fantasy_Room, true);
 
 
     }
