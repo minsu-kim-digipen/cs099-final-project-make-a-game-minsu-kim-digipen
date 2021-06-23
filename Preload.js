@@ -34,6 +34,8 @@ let Select_SFX;
 let Alert_SFX;
 let Input_SFX;
 let Purchase_SFX;
+let Equip_SFX;
+let UnEquip_SFX;
 
 function preload()
 {
@@ -71,6 +73,9 @@ function preload()
     LikeOcean_Room_Image = loadImage('assets/Image/background/Shop/LikeOcean.jpg');
     BoxWood_Room_Image = loadImage('assets/Image/background/Shop/Boxwood.jpg');
     Fantasy_Room_Image = loadImage('assets/Image/background/Shop/Fantasy.jpg');
+
+    Equip_SFX = loadSound('assets/Sound/SFX/Select 19.wav')
+    UnEquip_SFX = loadSound('assets/Sound/SFX/Select 18.wav')
 }
 
 // Before Change Music, Please put this inside

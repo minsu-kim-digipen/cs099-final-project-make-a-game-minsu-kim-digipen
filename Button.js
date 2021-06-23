@@ -132,6 +132,8 @@ class Button
             {
                 Alert_SFX.play();
                 alert( "You don't have enough Point!" );
+
+                return SALE;
             }
         }
         else if(is_inside_button && is_own >= OWN)
@@ -140,10 +142,12 @@ class Button
             {
                 if(is_own == OWN)
                 {
+                    Equip_SFX.play();
                     return APPLY;
                 }
                 else if(is_own == APPLY)
                 {
+                    UnEquip_SFX.play();
                     return OWN;
                 }
             }
@@ -160,11 +164,13 @@ class Button
                     }
                     else
                     {
+                        Equip_SFX.play();
                         return APPLY;
                     }
                 }
                 else if(is_own == APPLY)
                 {
+                    UnEquip_SFX.play();
                     return OWN;
                 }
             }

@@ -578,6 +578,63 @@ function draw()
         Fantasy_Button.display_price(47, Fantasy_Room);
 
         pop();
+
+        // Boxwood Background
+        push();
+
+        noStroke();
+        fill( '#6495ed' );
+        rect( 410, 70, 180, 200 );
+
+        imageMode(CORNER);
+        image(BoxWood_Room_Image, 410, 70, 180, 80);
+
+        fill( 255 );
+        textAlign( CENTER );
+        textSize( 25 );
+
+        text( "Boxwood\nBackground", 500, 175 );
+
+        pop();
+
+        BoxWood_Button.draw();
+
+        push();
+
+        if(BoxWood_Room == SALE)
+        {
+            translate(15, 0);
+        }
+        BoxWood_Button.display_price(181, BoxWood_Room);
+
+        pop();
+
+        // LikeOcean Background
+
+        push();
+
+        noStroke();
+        fill( '#6495ed' );
+        rect( 600, 70, 180, 200 );
+
+        imageMode(CORNER);
+        image(LikeOcean_Room_Image, 600, 70, 180, 80);
+
+        fill( 255 );
+        textAlign( CENTER );
+        textSize( 25 );
+
+        text( "Like Ocean\nBackground", 690, 175 );
+
+        pop();
+
+        LikeOcean_Button.draw();
+
+        if(LikeOcean_Room == SALE)
+        {
+            translate(15, 0);
+        }
+        LikeOcean_Button.display_price(316, LikeOcean_Room)
     }
     break;
 
@@ -764,6 +821,10 @@ function mousePressed()
         Brick_Room = Brick_Button.deal_price(0, Brick_Room, true);
 
         Fantasy_Room = Fantasy_Button.deal_price(47, Fantasy_Room, true);
+
+        BoxWood_Room = BoxWood_Button.deal_price(181, BoxWood_Room, true);
+
+        LikeOcean_Room = LikeOcean_Button.deal_price(316, LikeOcean_Room, true);
 
 
     }

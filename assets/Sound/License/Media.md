@@ -87,9 +87,12 @@ Next-howto.wav
 # [Sci-Fi UI & UX Sound Effect Pack](https://sound-kajiya.itch.io/sci-fi-ui-ux-sound-effect-pack)
 
 ## What I used
-assets\Sound\SFX\Select 50.wav
-assets\Sound\SFX\Warning 06.wav
-assets\Sound\SFX\Confirm 42.wav
+assets\Sound\SFX\Select 50.wav \
+assets\Sound\SFX\Warning 06.wav \
+assets\Sound\SFX\Confirm 42.wav \
+assets\Sound\SFX\Select 18.wav \
+assets\Sound\SFX\Select 19.wav
+
 
 ## License
 [Attribution 4.0 International (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/deed.en)
