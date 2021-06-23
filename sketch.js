@@ -758,8 +758,8 @@ function mousePressed()
         Brick_Button.deal_price(0, Brick_Room);
         Brick_Button.Apply(Brick_Room, true);
 
-        Fantasy_Button.deal_price(47, Fantasy_Room);
-        Fantasy_Button.Apply(Fantasy_Room, true);
+        Fantasy_Room = Fantasy_Button.deal_price(47, Fantasy_Room);
+        Fantasy_Room = Fantasy_Button.Apply(Fantasy_Room, true);
 
 
     }

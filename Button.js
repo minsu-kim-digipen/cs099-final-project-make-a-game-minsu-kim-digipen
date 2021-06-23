@@ -93,7 +93,7 @@ class Button
                 pop();
             }
         }
-        else
+        else if(is_own == APPLY)
         {
             push();
 
@@ -128,7 +128,7 @@ class Button
                     }
                     else
                     {
-                        is_own += 1;
+                        return OWN;
                     }
                 }
                 else
@@ -136,41 +136,50 @@ class Button
                     Alert_SFX.play();
                     alert( "You don't have enough Point!" );
                 }
-                
-
             }
-
+        }
+        else if(!is_inside_button && is_own == SALE)
+        {
+            return SALE;
+        }
+        else if(!is_inside_button && is_own == OWN)
+        {
+            return OWN;
+        }
+        else if(!is_inside_button && is_own == APPLY)
+        {
+            return APPLY;
         }
     }
 
-    Apply(variable, is_background = false)
+    Apply(is_own, is_background = false)
     {
         const is_inside_button = mouseX > this.x - ( this.width / 2 ) && mouseX < this.x + ( this.width / 2 ) &&
             mouseY > this.y - ( this.height / 2 ) && mouseY < this.y + ( this.height / 2 );
 
         
-        if(is_inside_button)
+        if(is_inside_button && is_own >= OWN)
         {
             if(!is_background)
             {
-                if(variable == OWN)
+                if(is_own == OWN)
                 {
-                    variable = APPLY;
+                    return APPLY;
                 }
-                else if(variable == APPLY)
+                else if(is_own == APPLY)
                 {
-                    variable = OWN;
+                    return OWN;
                 }
             }
             else
             {
-                if(variable == OWN)
+                if(is_own == OWN)
                 {
                     ResetBackground();
 
-                    variable = APPLY;
+                    return APPLY;
                 }
-                else if(variable == APPLY)
+                else if(is_own == APPLY)
                 {
                     Alert_SFX.play();
                     alert("Please apply other background! It's already applied~");
