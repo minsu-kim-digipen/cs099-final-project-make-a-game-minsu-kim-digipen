@@ -97,5 +97,7 @@ function ChangeVolume()
     Alert_SFX.setVolume(Sound_Slider.value() + 0.1);
     Input_SFX.setVolume(Sound_Slider.value() + 0.1);
     Purchase_SFX.setVolume(Sound_Slider.value() + 0.1);
+    Equip_SFX.setVolume(Sound_Slider.value() + 0.1);
+    UnEquip_SFX.setVolume(Sound_Slider.value() + 0.1);
 }
 
