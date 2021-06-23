@@ -629,7 +629,10 @@ function mousePressed()
     }
     if ( ( CurrentScene >= ROOM && CurrentScene < HOWTO ) ) // Room Case
     {
-        HomeButton.ChangeSong( Background_Music );
+        if(Brick_Room == APPLY || LikeOcean_Room == APPLY || BoxWood_Room == APPLY || Fantasy_Room == APPLY)
+        {
+            HomeButton.ChangeSong( Background_Music );
+        }
         HomeButton.ChangeScene( MAINMENU );
         HomeButton.clearInput();
     }

@@ -192,14 +192,21 @@ class Button
 
         if ( is_inside_button )
         {
-            if(!is_alert)
+            if(!(Brick_Room == APPLY || LikeOcean_Room == APPLY || BoxWood_Room == APPLY || Fantasy_Room == APPLY))
             {
-                Select_SFX.play();
+                Alert_SFX.play();
+                alert("Please Select background!\nIt's ESSENTIAL!");
             }
-
-            CurrentScene = Scene;
+            else
+            {
+                if(!is_alert)
+                {
+                    Select_SFX.play();
+                }
+    
+                CurrentScene = Scene;
+            }
         }
-
     }
 
     calculate()
