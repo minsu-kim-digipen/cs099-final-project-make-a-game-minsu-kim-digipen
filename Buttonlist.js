@@ -34,7 +34,11 @@ let ShopButton = new Button(770, 30, 50, 50);
 let Previous_Button = new Button( 100, 560, 50, 50);
 let Next_Button = new Button(700, 560, 50, 50);
 
-// SHOP1
+// Upgrade Shop
 let BackToRoom_Button = new Button(770, 30, 50, 50);
 
-let Upgrade_Purchase = new Button(404.5, 433, 255, 80);
+let Upgrade_Button = new Button(404.5, 433, 255, 80);
+
+// Background Shop
+let Brick_Button = new Button(110, 245, 200, 50);
+let Fantasy_Button = new Button(310, 245, 180, 50);

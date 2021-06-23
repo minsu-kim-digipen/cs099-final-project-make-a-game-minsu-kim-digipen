@@ -54,8 +54,6 @@ class Button
     // For shop
     display_price( price, is_own, size = 30, interval = 20 , is_upgrade = false )
     {
-        const INTERVAL = size / 3 * 2
-
         if(is_own == SALE)
         {
             push();
@@ -69,15 +67,14 @@ class Button
             text( price, this.x - interval, this.y + 1 );
 
             pop();
-
         }
-        else
+        else if(is_own == OWN)
         {
             if(!is_upgrade)
             {
                 push();
 
-                textSize( 30 );
+                textSize( size );
                 fill('#6495ed')
                 textStyle( BOLD );
                 text( "OWN", this.x, this.y + 10);
@@ -96,6 +93,17 @@ class Button
                 pop();
             }
         }
+        else
+        {
+            push();
+
+            textSize( size );
+            fill('green')
+            textStyle( BOLD );
+            text( "APPLY", this.x, this.y + 10);
+
+            pop();
+        }
     }
 
     deal_price( price, is_own , is_upgrade = false )
@@ -105,32 +113,31 @@ class Button
 
         if(is_inside_button)
         {
-            switch(is_own)
+            if(is_own == SALE)
             {
-                case SALE:
-                {
-                    if(Point >= price)
-                    {
-                        Purchase_SFX.play();
-        
-                        Point -= price;
 
-                        if(is_upgrade)
-                        {
-                            Max_Cup_Percent += 10;
-                        }
-                        else
-                        {
-                            is_own = OWN;
-                        }
+                if(Point >= price)
+                {
+                    Purchase_SFX.play();
+    
+                    Point -= price;
+
+                    if(is_upgrade)
+                    {
+                        Max_Cup_Percent += 10;
                     }
                     else
                     {
-                        Alert_SFX.play();
-                        alert( "You don't have enough Point!" );
+                        is_own += 1;
                     }
                 }
-                break;
+                else
+                {
+                    Alert_SFX.play();
+                    alert( "You don't have enough Point!" );
+                }
+                
+
             }
 
         }
@@ -138,29 +145,36 @@ class Button
 
     Apply(variable, is_background = false)
     {
-        if(!is_background)
-        {
-            if(variable == OWN)
-            {
-                variable = APPLY;
-            }
-            else if(variable == APPLY)
-            {
-                variable = OWN;
-            }
-        }
-        else
-        {
-            if(variable == OWN)
-            {
-                ResetBackground();
+        const is_inside_button = mouseX > this.x - ( this.width / 2 ) && mouseX < this.x + ( this.width / 2 ) &&
+            mouseY > this.y - ( this.height / 2 ) && mouseY < this.y + ( this.height / 2 );
 
-                variable = APPLY;
-            }
-            else if(variable == APPLY)
+        
+        if(is_inside_button)
+        {
+            if(!is_background)
             {
-                Alert_SFX.play();
-                alert("Please apply other background! It's already applied~");
+                if(variable == OWN)
+                {
+                    variable = APPLY;
+                }
+                else if(variable == APPLY)
+                {
+                    variable = OWN;
+                }
+            }
+            else
+            {
+                if(variable == OWN)
+                {
+                    ResetBackground();
+
+                    variable = APPLY;
+                }
+                else if(variable == APPLY)
+                {
+                    Alert_SFX.play();
+                    alert("Please apply other background! It's already applied~");
+                }
             }
         }
     }

@@ -6,7 +6,7 @@
 // Initial Setting
 let Canvas;
 
-let CurrentScene = UPGRADE_SHOP;
+let CurrentScene = ROOM_BACKGROUND_SHOP;
 
 const CanvasWidth = 800;
 const CanvasHeight = 600;
@@ -16,7 +16,6 @@ let Sound_Slider;
 let Point_You_Have;
 
 let ResetSound = false;
-let First_Play = true;
 
 let PointInput;
 
@@ -475,10 +474,10 @@ function draw()
 
         let upgrade_price = Upgrade_Percent();
 
-        Upgrade_Purchase.draw();
+        Upgrade_Button.draw();
 
         push();
-        Upgrade_Purchase.display_price( upgrade_price, upgrade, 50, 12, true );
+        Upgrade_Button.display_price( upgrade_price, upgrade, 50, 12, true );
         pop();
     }
     break;
@@ -526,7 +525,56 @@ function draw()
         pop();
 
 
-        // Background
+        // Brick Background
+        push();
+
+        noStroke();
+        fill( '#6495ed' );
+        rect( 10, 70, 200, 200 );
+
+        imageMode(CORNER);
+        image(Brick_Room_Image, 10, 70, 200, 80);
+
+        fill( 255 );
+        textAlign( CENTER );
+        textSize( 25 );
+
+        text( "Basic Brick\nBackground", 110, 175 );
+
+        pop();
+
+        Brick_Button.draw();
+        Brick_Button.display_price(0, Brick_Room);
+
+        // Fantasy Background
+        push();
+
+        noStroke();
+        fill( '#6495ed' );
+        rect( 220, 70, 180, 200 );
+
+        imageMode(CORNER);
+        image(Fantasy_Room_Image, 220, 70, 180, 80);
+
+        fill( 255 );
+        textAlign( CENTER );
+        textSize( 25 );
+
+        text( "Like Fantasy\nBackground", 310, 175 );
+
+        pop();
+
+        Fantasy_Button.draw();
+
+        push();
+
+        if(Fantasy_Room == SALE)
+        {
+            translate(15, 0);
+        }
+        Fantasy_Button.display_price(47, Fantasy_Room);
+
+        pop();
     }
     break;
 
@@ -693,7 +741,7 @@ function mousePressed()
 
         // Upgrade
         let upgrade_price = Upgrade_Percent();
-        Upgrade_Purchase.deal_price( upgrade_price, upgrade, true );
+        Upgrade_Button.deal_price( upgrade_price, upgrade, true );
     }
     break;
 
@@ -705,6 +753,15 @@ function mousePressed()
         // Previous & Next Button (Change argument)
         Previous_Button.ChangeScene( UPGRADE_SHOP );
         Next_Button.ChangeScene();
+
+        // Brick
+        Brick_Button.deal_price(0, Brick_Room);
+        Brick_Button.Apply(Brick_Room, true);
+
+        Fantasy_Button.deal_price(47, Fantasy_Room);
+        Fantasy_Button.Apply(Fantasy_Room, true);
+
+
     }
     break;
 
