@@ -374,14 +374,17 @@ function draw()
         {
             background( Brick_Room_Image );
         }
-
-        if ( LikeOcean_Room == APPLY )
+        else if ( LikeOcean_Room == APPLY )
         {
             background( LikeOcean_Room_Image );
         }
-        if ( BoxWood_Room == APPLY )
+        else if ( BoxWood_Room == APPLY )
         {
-            background( BoxWood_Room );
+            background( BoxWood_Room_Image );
+        }
+        else if( Fantasy_Room == APPLY)
+        {
+            background(Fantasy_Room_Image);
         }
 
         pop();

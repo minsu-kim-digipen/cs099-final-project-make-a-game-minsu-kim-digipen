@@ -151,16 +151,21 @@ class Button
             {
                 if(is_own == OWN)
                 {
-                    ResetBackground();
+                    if(Brick_Room == APPLY || LikeOcean_Room == APPLY || BoxWood_Room == APPLY || Fantasy_Room == APPLY)
+                    {
+                        Alert_SFX.play();
+                        alert("Please un-apply other background!\nYou can only apply one background!");
 
-                    return APPLY;
+                        return OWN;
+                    }
+                    else
+                    {
+                        return APPLY;
+                    }
                 }
                 else if(is_own == APPLY)
                 {
-                    Alert_SFX.play();
-                    alert("Please apply other background! It's already applied~");
-
-                    return APPLY;
+                    return OWN;
                 }
             }
         }
