@@ -741,7 +741,7 @@ function mousePressed()
 
         // Upgrade
         let upgrade_price = Upgrade_Percent();
-        Upgrade_Button.deal_price( upgrade_price, upgrade, true );
+        Upgrade_Button.deal_price( upgrade_price, upgrade, false , true );
     }
     break;
 
@@ -755,11 +755,9 @@ function mousePressed()
         Next_Button.ChangeScene();
 
         // Brick
-        Brick_Button.deal_price(0, Brick_Room);
-        Brick_Button.Apply(Brick_Room, true);
+        Brick_Room = Brick_Button.deal_price(0, Brick_Room, true);
 
-        Fantasy_Room = Fantasy_Button.deal_price(47, Fantasy_Room);
-        Fantasy_Room = Fantasy_Button.Apply(Fantasy_Room, true);
+        Fantasy_Room = Fantasy_Button.deal_price(47, Fantasy_Room, true);
 
 
     }

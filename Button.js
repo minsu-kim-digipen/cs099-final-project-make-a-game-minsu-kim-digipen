@@ -106,59 +106,35 @@ class Button
         }
     }
 
-    deal_price( price, is_own , is_upgrade = false )
+    deal_price( price, is_own , is_background = false ,is_upgrade = false )
     {
         const is_inside_button = mouseX > this.x - ( this.width / 2 ) && mouseX < this.x + ( this.width / 2 ) &&
             mouseY > this.y - ( this.height / 2 ) && mouseY < this.y + ( this.height / 2 );
 
-        if(is_inside_button)
+        if(is_inside_button && is_own == SALE)
         {
-            if(is_own == SALE)
+            if(Point >= price)
             {
+                Purchase_SFX.play();
 
-                if(Point >= price)
+                Point -= price;
+
+                if(is_upgrade)
                 {
-                    Purchase_SFX.play();
-    
-                    Point -= price;
-
-                    if(is_upgrade)
-                    {
-                        Max_Cup_Percent += 10;
-                    }
-                    else
-                    {
-                        return OWN;
-                    }
+                    Max_Cup_Percent += 10;
                 }
                 else
                 {
-                    Alert_SFX.play();
-                    alert( "You don't have enough Point!" );
+                    return OWN;
                 }
             }
+            else
+            {
+                Alert_SFX.play();
+                alert( "You don't have enough Point!" );
+            }
         }
-        else if(!is_inside_button && is_own == SALE)
-        {
-            return SALE;
-        }
-        else if(!is_inside_button && is_own == OWN)
-        {
-            return OWN;
-        }
-        else if(!is_inside_button && is_own == APPLY)
-        {
-            return APPLY;
-        }
-    }
-
-    Apply(is_own, is_background = false)
-    {
-        const is_inside_button = mouseX > this.x - ( this.width / 2 ) && mouseX < this.x + ( this.width / 2 ) &&
-            mouseY > this.y - ( this.height / 2 ) && mouseY < this.y + ( this.height / 2 );
-
-        
-        if(is_inside_button && is_own >= OWN)
+        else if(is_inside_button && is_own >= OWN)
         {
             if(!is_background)
             {
@@ -183,8 +159,22 @@ class Button
                 {
                     Alert_SFX.play();
                     alert("Please apply other background! It's already applied~");
+
+                    return APPLY;
                 }
             }
+        }
+        else if(!is_inside_button && is_own == SALE)
+        {
+            return SALE;
+        }
+        else if(!is_inside_button && is_own == OWN)
+        {
+            return OWN;
+        }
+        else if(!is_inside_button && is_own == APPLY)
+        {
+            return APPLY;
         }
     }
 

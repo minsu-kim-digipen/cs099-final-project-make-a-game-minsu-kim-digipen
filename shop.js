@@ -42,18 +42,18 @@ let Fantasy_Room = SALE;
 
 function ResetBackground()
 {
-    BoxWood_Room = OWN;
+    // BoxWood_Room = OWN;
 
-    if(!LikeOcean_Room == SALE)
-    {
-        LikeOcean_Room = OWN;
-    }
-    if(!BoxWood_Room == SALE)
-    {
-        BoxWood_Room = OWN;
-    }
-    if(!Fantasy_Room == SALE)
-    {
-        Fantasy_Room = OWN;
-    }
+    // if(!LikeOcean_Room == SALE)
+    // {
+    //     LikeOcean_Room = OWN;
+    // }
+    // if(!BoxWood_Room == SALE)
+    // {
+    //     BoxWood_Room = OWN;
+    // }
+    // if(!Fantasy_Room == SALE)
+    // {
+    //     Fantasy_Room = OWN;
+    // }
 }
