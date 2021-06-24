@@ -1,3 +1,8 @@
+// Name       : Minsu Kim
+// Assignment : Make a Game
+// Course     : CS099
+// Spring 2021
+
 // Icons
 let GameImage;
 let RoomImage;

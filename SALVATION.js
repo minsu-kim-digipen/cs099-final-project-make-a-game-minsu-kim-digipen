@@ -1,3 +1,8 @@
+// Name       : Minsu Kim
+// Assignment : Make a Game
+// Course     : CS099
+// Spring 2021
+
 let Salvation_Point = 0;
 
 function Fill_Salvation()
