@@ -5,6 +5,10 @@
 
 let Salvation_Point = 0;
 
+let MIN_salvation = 0;
+let MAX_salvation = 100;
+let DEBT_salvation = 50
+
 let SALVATION = false;
 
 function Fill_Salvation()

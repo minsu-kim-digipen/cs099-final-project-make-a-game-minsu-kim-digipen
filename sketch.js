@@ -654,6 +654,30 @@ function draw()
         background(SALVATION_Background);
 
         pop();
+
+        push();
+
+        textSize( 40 );
+        textStyle( BOLD );
+
+        fill( '#6495ed' );
+        stroke(255);
+        strokeWeight(7);
+
+
+        text( "Welcome, bankrupt.\nI will give a chance to you.\nYou will get ⍟" 
+            + (Salvation_Point * MIN_salvation) + " ~ " + (Salvation_Point * MAX_salvation) 
+            + "\n\nAnd you need to give me" , width / 2, 100 );
+
+        fill(255, 0, 0);
+        text("⍟" + (Salvation_Point * DEBT_salvation) + " LATER", 440, 350);
+
+        fill(0, 255, 0);
+        text("TEST YOUR FORTUNE", width / 2, 420);
+
+        pop();
+
+
     }
     break;
     }
