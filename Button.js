@@ -322,4 +322,19 @@ class Button
 
         }
     }
+
+    start_SALVATION()
+    {
+        const is_inside_button = mouseX > this.x - ( this.width / 2 ) && mouseX < this.x + ( this.width / 2 ) &&
+            mouseY > this.y - ( this.height / 2 ) && mouseY < this.y + ( this.height / 2 );
+        
+        if(is_inside_button)
+        {
+            let SALVATION_Percent = int(random(MIN_salvation, MAX_salvation + 1));
+
+            GET_SALVATION =  int(Salvation_Point * SALVATION_Percent / 100);
+
+            Debt = int(Salvation_Point * DEBT_salvation / 100);
+        }
+    }
 }

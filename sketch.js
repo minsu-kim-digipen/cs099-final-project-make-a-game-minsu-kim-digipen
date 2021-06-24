@@ -682,6 +682,18 @@ function draw()
 
         pop();
 
+        push();
+
+        // Start_SALVATION_Button.draw();
+        image(Colored_WingPoint_Image, width / 2, 520, 200, 200);
+
+        pop();
+
+    }
+    break;
+
+    case Check_SALVATION:
+    {
 
     }
     break;
@@ -884,6 +896,14 @@ function mousePressed()
     break;
 
     // How to play
+
+    // SALVATION
+    case SALVATION_Chance:
+    {
+        Start_SALVATION_Button.start_SALVATION();
+        Start_SALVATION_Button.ChangeScene(Check_SALVATION);
+    }
+    break;
     }
 }
 

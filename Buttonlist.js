@@ -44,3 +44,9 @@ let Brick_Button = new Button(110, 245, 200, 50);
 let Fantasy_Button = new Button(310, 245, 180, 50);
 let BoxWood_Button = new Button(500, 245, 180, 50);
 let LikeOcean_Button = new Button(690, 245, 180, 50);
+
+
+
+
+// SALVATION_Chance 
+let Start_SALVATION_Button = new Button(CanvasWidth / 2, 520, 220, 120)
