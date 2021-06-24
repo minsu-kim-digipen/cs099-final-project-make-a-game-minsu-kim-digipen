@@ -6,7 +6,7 @@
 // Initial Setting
 let Canvas;
 
-let CurrentScene = SALVATION_Chance;
+let CurrentScene = PLEASE_CLICK;
 
 const CanvasWidth = 800;
 const CanvasHeight = 600;
@@ -323,7 +323,7 @@ function draw()
         textStyle( BOLD );
 
         text( "This is all amount of Cups...\nBackground is rgb of that amount!", width / 2, 50 );
-        text( "1st : " + Cup[ 0 ] + " / 2nd : " + Cup[ 1 ] + " / 3rd : " + Cup[ 2 ], width / 2, 200 );
+        text( "1st : " + Cup[ 0 ] + "% / 2nd : " + Cup[ 1 ] + "% / 3rd : " + Cup[ 2 ] + "%", width / 2, 200 );
 
 
         textSize( 40 );
@@ -360,6 +360,7 @@ function draw()
 
         Final_confirm.draw( "OKAY", 'red', BOLD );
     }
+    break;
 
 
     // Room Scene
@@ -382,9 +383,9 @@ function draw()
         {
             background( BoxWood_Room_Image );
         }
-        else if( Fantasy_Room == APPLY)
+        else if ( Fantasy_Room == APPLY )
         {
-            background(Fantasy_Room_Image);
+            background( Fantasy_Room_Image );
         }
 
         pop();
@@ -535,8 +536,8 @@ function draw()
         fill( '#6495ed' );
         rect( 10, 70, 200, 200 );
 
-        imageMode(CORNER);
-        image(Brick_Room_Image, 10, 70, 200, 80);
+        imageMode( CORNER );
+        image( Brick_Room_Image, 10, 70, 200, 80 );
 
         fill( 255 );
         textAlign( CENTER );
@@ -547,7 +548,7 @@ function draw()
         pop();
 
         Brick_Button.draw();
-        Brick_Button.display_price(0, Brick_Room);
+        Brick_Button.display_price( 0, Brick_Room );
 
         // Fantasy Background
         push();
@@ -556,8 +557,8 @@ function draw()
         fill( '#6495ed' );
         rect( 220, 70, 180, 200 );
 
-        imageMode(CORNER);
-        image(Fantasy_Room_Image, 220, 70, 180, 80);
+        imageMode( CORNER );
+        image( Fantasy_Room_Image, 220, 70, 180, 80 );
 
         fill( 255 );
         textAlign( CENTER );
@@ -571,11 +572,11 @@ function draw()
 
         push();
 
-        if(Fantasy_Room == SALE)
+        if ( Fantasy_Room == SALE )
         {
-            translate(15, 0);
+            translate( 15, 0 );
         }
-        Fantasy_Button.display_price(47, Fantasy_Room);
+        Fantasy_Button.display_price( 47, Fantasy_Room );
 
         pop();
 
@@ -586,8 +587,8 @@ function draw()
         fill( '#6495ed' );
         rect( 410, 70, 180, 200 );
 
-        imageMode(CORNER);
-        image(BoxWood_Room_Image, 410, 70, 180, 80);
+        imageMode( CORNER );
+        image( BoxWood_Room_Image, 410, 70, 180, 80 );
 
         fill( 255 );
         textAlign( CENTER );
@@ -601,11 +602,11 @@ function draw()
 
         push();
 
-        if(BoxWood_Room == SALE)
+        if ( BoxWood_Room == SALE )
         {
-            translate(15, 0);
+            translate( 15, 0 );
         }
-        BoxWood_Button.display_price(181, BoxWood_Room);
+        BoxWood_Button.display_price( 181, BoxWood_Room );
 
         pop();
 
@@ -617,8 +618,8 @@ function draw()
         fill( '#6495ed' );
         rect( 600, 70, 180, 200 );
 
-        imageMode(CORNER);
-        image(LikeOcean_Room_Image, 600, 70, 180, 80);
+        imageMode( CORNER );
+        image( LikeOcean_Room_Image, 600, 70, 180, 80 );
 
         fill( 255 );
         textAlign( CENTER );
@@ -630,11 +631,11 @@ function draw()
 
         LikeOcean_Button.draw();
 
-        if(LikeOcean_Room == SALE)
+        if ( LikeOcean_Room == SALE )
         {
-            translate(15, 0);
+            translate( 15, 0 );
         }
-        LikeOcean_Button.display_price(316, LikeOcean_Room)
+        LikeOcean_Button.display_price( 316, LikeOcean_Room )
     }
     break;
 
@@ -650,8 +651,8 @@ function draw()
     {
         push();
 
-        imageMode(CORNER);
-        background(SALVATION_Background);
+        imageMode( CORNER );
+        background( SALVATION_Background );
 
         pop();
 
@@ -661,19 +662,19 @@ function draw()
         textStyle( BOLD );
 
         fill( '#6495ed' );
-        stroke(255);
-        strokeWeight(7);
+        stroke( 255 );
+        strokeWeight( 7 );
 
 
-        text( "Welcome, bankrupt.\nI will give a chance to you.\nYou will get ⍟" 
-            + (Salvation_Point * MIN_salvation) + " ~ " + (Salvation_Point * MAX_salvation) 
-            + "\n\nAnd you need to give me" , width / 2, 100 );
+        text( "Welcome, bankrupt.\nI will give a chance to you.\nYou will get ⍟" +
+            ( Salvation_Point * MIN_salvation / 100 ) + " ~ " + ( Salvation_Point * MAX_salvation / 100 ) +
+            "\n\nAnd you need to give me", width / 2, 100 );
 
-        fill(255, 0, 0);
-        text("⍟" + (Salvation_Point * DEBT_salvation) + " LATER", 440, 350);
+        fill( 255, 0, 0 );
+        text( "⍟" + ( Salvation_Point * DEBT_salvation / 100 ) + " LATER", 440, 350 );
 
-        fill(0, 255, 0);
-        text("TEST YOUR FORTUNE", width / 2, 420);
+        fill( 0, 255, 0 );
+        text( "TEST YOUR FORTUNE", width / 2, 420 );
 
         pop();
 
@@ -722,7 +723,7 @@ function mousePressed()
     }
     if ( ( CurrentScene >= ROOM && CurrentScene < HOWTO ) ) // Room Case
     {
-        if(Brick_Room == APPLY || LikeOcean_Room == APPLY || BoxWood_Room == APPLY || Fantasy_Room == APPLY)
+        if ( Brick_Room == APPLY || LikeOcean_Room == APPLY || BoxWood_Room == APPLY || Fantasy_Room == APPLY )
         {
             HomeButton.ChangeSong( Background_Music );
         }
@@ -750,7 +751,7 @@ function mousePressed()
             ShellButton.ChangeScene( SHELL_GAME );
             ShellButton.createInput( 100, 50 );
         }
-        else if(Point < 10 && SALVATION == false)
+        else if ( Point < 10 && SALVATION == false )
         {
             ShellButton.ChangeScene( SALVATION_Chance );
             ShellButton.ChangeSong( SPECIAL );
@@ -758,7 +759,7 @@ function mousePressed()
         else
         {
             ResetAllMusic();
-            ShellButton.ChangeScene(Bankrupt);
+            ShellButton.ChangeScene( Bankrupt );
         }
 
         RoomButton.ChangeScene( ROOM );
@@ -830,13 +831,13 @@ function mousePressed()
     // Room Scene
     case ROOM:
     {
-        if(SALVATION == false)
+        if ( SALVATION == false )
         {
             ShopButton.ChangeScene( UPGRADE_SHOP );
         }
         else
         {
-            ShopButton.ChangeScene(Pay_Debt);
+            ShopButton.ChangeScene( Pay_Debt );
         }
     }
     break;
@@ -852,7 +853,7 @@ function mousePressed()
 
         // Upgrade
         let upgrade_price = Upgrade_Percent();
-        Upgrade_Button.deal_price( upgrade_price, upgrade, false , true );
+        Upgrade_Button.deal_price( upgrade_price, upgrade, false, true );
     }
     break;
 
@@ -866,13 +867,13 @@ function mousePressed()
         Next_Button.ChangeScene();
 
         // Brick
-        Brick_Room = Brick_Button.deal_price(0, Brick_Room, true);
+        Brick_Room = Brick_Button.deal_price( 0, Brick_Room, true );
 
-        Fantasy_Room = Fantasy_Button.deal_price(47, Fantasy_Room, true);
+        Fantasy_Room = Fantasy_Button.deal_price( 47, Fantasy_Room, true );
 
-        BoxWood_Room = BoxWood_Button.deal_price(181, BoxWood_Room, true);
+        BoxWood_Room = BoxWood_Button.deal_price( 181, BoxWood_Room, true );
 
-        LikeOcean_Room = LikeOcean_Button.deal_price(316, LikeOcean_Room, true);
+        LikeOcean_Room = LikeOcean_Button.deal_price( 316, LikeOcean_Room, true );
 
 
     }
