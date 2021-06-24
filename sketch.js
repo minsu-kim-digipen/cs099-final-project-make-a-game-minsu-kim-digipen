@@ -631,11 +631,15 @@ function draw()
 
         LikeOcean_Button.draw();
 
+        push();
+
         if ( LikeOcean_Room == SALE )
         {
             translate( 15, 0 );
         }
-        LikeOcean_Button.display_price( 316, LikeOcean_Room )
+        LikeOcean_Button.display_price( 316, LikeOcean_Room );
+
+        pop();
     }
     break;
 
