@@ -6,7 +6,7 @@
 // Initial Setting
 let Canvas;
 
-let CurrentScene = ROOM_BACKGROUND_SHOP;
+let CurrentScene = SALVATION_Chance;
 
 const CanvasWidth = 800;
 const CanvasHeight = 600;
@@ -66,7 +66,7 @@ function draw()
 
     // Home Button
     if ( ( CurrentScene >= MAINMENU && CurrentScene <= IS_INPUT_RIGHT ) || ( CurrentScene >= ROOM && CurrentScene <
-            SALVATION ) )
+            SALVATION_Chance ) )
     {
         HomeButton.draw();
         image( HomeImage, 30, 30, IconSize, IconSize );
@@ -644,6 +644,18 @@ function draw()
 
     }
     break;
+
+    // SALVATION
+    case SALVATION_Chance:
+    {
+        push();
+
+        imageMode(CORNER);
+        background(SALVATION_Background);
+
+        pop();
+    }
+    break;
     }
 
 
@@ -679,7 +691,7 @@ function mousePressed()
 
     // HomeButton
     if ( ( CurrentScene >= MAINMENU && CurrentScene <= IS_INPUT_RIGHT ) || ( CurrentScene >= HOWTO && CurrentScene <
-            SALVATION ) ) // Other case
+            SALVATION_Chance ) ) // Other case
     {
         HomeButton.ChangeScene( MAINMENU );
         HomeButton.clearInput();
@@ -709,15 +721,20 @@ function mousePressed()
 
     case MAINMENU:
     {
-        if ( Point > 10 )
+        if ( Point >= 10 )
         {
             ShellButton.ChangeScene( SHELL_GAME );
             ShellButton.createInput( 100, 50 );
         }
+        else if(Point < 10 && SALVATION == false)
+        {
+            ShellButton.ChangeScene( SALVATION_Chance );
+            ShellButton.ChangeSong( SPECIAL );
+        }
         else
         {
-            ShellButton.ChangeScene( SALVATION );
-            ShellButton.ChangeSong( SPECIAL );
+            ResetAllMusic();
+            ShellButton.ChangeScene(Bankrupt);
         }
 
         RoomButton.ChangeScene( ROOM );
@@ -789,7 +806,14 @@ function mousePressed()
     // Room Scene
     case ROOM:
     {
-        ShopButton.ChangeScene( UPGRADE_SHOP );
+        if(SALVATION == false)
+        {
+            ShopButton.ChangeScene( UPGRADE_SHOP );
+        }
+        else
+        {
+            ShopButton.ChangeScene(Pay_Debt);
+        }
     }
     break;
 

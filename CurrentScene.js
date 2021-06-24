@@ -30,4 +30,7 @@ const ROOM_BACKGROUND_SHOP = 22;
 const HOWTO = 30;
 
 // Point is too low
-const SALVATION = 91;   // It's just Korean pun     9 == 구 + 1 == 원
+const SALVATION_Chance = 91;   // It's just Korean pun     9 == 구 + 1 == 원
+const Check_SALVATION = 92;
+const Pay_Debt = 93;    // When go shop
+const Bankrupt = 94;    // Didn't pay debt

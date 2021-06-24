@@ -20,6 +20,7 @@ let BronzeCup_Image;
 // Background
 let Click_Background;
 let Shop_Background;
+let SALVATION_Background;
 
 let Brick_Room_Image;
 let LikeOcean_Room_Image;
@@ -79,8 +80,10 @@ function preload()
     BoxWood_Room_Image = loadImage('assets/Image/background/Shop/Boxwood.jpg');
     Fantasy_Room_Image = loadImage('assets/Image/background/Shop/Fantasy.jpg');
 
-    Equip_SFX = loadSound('assets/Sound/SFX/Select 19.wav')
-    UnEquip_SFX = loadSound('assets/Sound/SFX/Select 18.wav')
+    Equip_SFX = loadSound('assets/Sound/SFX/Select 19.wav');
+    UnEquip_SFX = loadSound('assets/Sound/SFX/Select 18.wav');
+
+    SALVATION_Background = loadImage('assets/Image/background/SALVATION.png');
 }
 
 // Before Change Music, Please put this inside
