@@ -14,6 +14,9 @@
 
 ### [assets\Image\room.png](https://www.flaticon.com/free-icon/room_578110?term=room&page=1&position=8&page=1&position=8&related_id=578110&origin=search)
 
+### [assets\Image\Black Coin WIng.png](https://www.flaticon.com/free-icon/wings_1553431?term=wing&related_id=1553431&origin=search)
+### [assets\Image\Colored Coin Wing.png](https://www.flaticon.com/free-icon/wings_1553431?term=wing&related_id=1553431&origin=search)
+
 
 
 # [IconArchive](https://iconarchive.com/)

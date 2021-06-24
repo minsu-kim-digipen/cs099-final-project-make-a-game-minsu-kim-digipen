@@ -12,6 +12,9 @@ let HomeImage;
 let ShopImage;
 let PointImage;
 
+let Colored_WingPoint_Image;
+let Black_WingPoint_Image;
+
 // Select
 let GoldCup_Image;
 let SilverCup_Image;
@@ -84,6 +87,9 @@ function preload()
     UnEquip_SFX = loadSound('assets/Sound/SFX/Select 18.wav');
 
     SALVATION_Background = loadImage('assets/Image/background/SALVATION.png');
+
+    Colored_WingPoint_Image = loadImage('assets/Image/Colored Coin Wing.png');
+    Black_WingPoint_Image = loadImage('/assets/Image/Black Coin WIng.png');
 }
 
 // Before Change Music, Please put this inside
