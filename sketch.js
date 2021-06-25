@@ -6,7 +6,7 @@
 // Initial Setting
 let Canvas;
 
-let CurrentScene = SALVATION_CHANCE;
+let CurrentScene = MAINMENU;
 
 const CanvasWidth = 800;
 const CanvasHeight = 600;
@@ -89,15 +89,21 @@ function draw()
 
     case MAINMENU:
     {
+        Change_Background();
+
+        // HomeButton
+        HomeButton.draw();
+        image( HomeImage, 30, 30, IconSize, IconSize );
+
         // Game
         ShellButton.draw( "GAME" );
         image( GameImage, width / 2 - 70, 300, 40, 40 );
         image( GameImage, width / 2 + 70, 300, 40, 40 );
 
-        // Room
-        RoomButton.draw( "ROOM" );
-        image( RoomImage, width / 2 - 70, 400, 40, 40 );
-        image( RoomImage, width / 2 + 70, 400, 40, 40 );
+        // SHOP
+        ShopButton.draw( "SHOP" );
+        image( ShopImage, width / 2 - 70, 400, 40, 40 );
+        image( ShopImage, width / 2 + 70, 400, 40, 40 );
 
         // HowtoPlay
         HowtoButton.draw( "How to Play" );
@@ -106,11 +112,18 @@ function draw()
     // Shall game Scene
     case SHELL_GAME:
     {
+        Change_Background();
+
+        // HomeButton
+        HomeButton.draw();
+        image( HomeImage, 30, 30, IconSize, IconSize );
         push();
 
         fill( 255, 0, 0 );
         textSize( 40 );
         textStyle( BOLD );
+        stroke(255);
+        strokeWeight(7);
 
         text( "Welcome to Shell Game!", width / 2, 100 );
 
@@ -121,7 +134,7 @@ function draw()
         fill( 'orange' )
         text( "How much point will you use?", width / 2, 400 );
 
-        fill( 'gold' )
+        fill( 'green' )
         text( "Please type greater than 10 points!", width / 2, 550 );
 
 
@@ -143,6 +156,13 @@ function draw()
     case IS_INPUT_RIGHT:
     {
 
+        Change_Background();
+
+        // HomeButton
+        HomeButton.draw();
+        image( HomeImage, 30, 30, IconSize, IconSize );
+        push();
+
         if ( isNaN( Selected_Point ) )
         {
             alert( "Please Type again! Please don't do strange thing..." );
@@ -151,11 +171,16 @@ function draw()
 
         push();
 
+        translate(0, 30);
+
         fill( 255, 0, 0 );
         textSize( 40 );
         textStyle( BOLD );
+        stroke(225);
+        strokeWeight(7);
 
-        text( "Please Check \n It's same point as you want to use!", width / 2, 50 );
+
+        text( "Please Check\nIt's same point as you want to use!", width / 2, 50 );
 
         fill( 'green' )
         text( "Current Point", width / 2, 170 );
@@ -177,6 +202,13 @@ function draw()
 
     case SELECT_SHELL:
     {
+        Change_Background();
+
+        // HomeButton
+        HomeButton.draw();
+        image( HomeImage, 30, 30, IconSize, IconSize );
+        push();
+
         // Image of cup
         push();
 
@@ -209,6 +241,8 @@ function draw()
         fill( 255, 0, 0 );
         textSize( 40 );
         textStyle( BOLD );
+        stroke(255);
+        strokeWeight(7);
 
         text( "Choose the Cup!", width / 2, 100 );
 
@@ -363,43 +397,7 @@ function draw()
     break;
 
 
-    // Room Scene
-    case ROOM:
-    {
-        // Change Background
-        push();
-
-        imageMode( CORNER );
-
-        if ( Brick_Room == APPLY )
-        {
-            background( Brick_Room_Image );
-        }
-        else if ( LikeOcean_Room == APPLY )
-        {
-            background( LikeOcean_Room_Image );
-        }
-        else if ( BoxWood_Room == APPLY )
-        {
-            background( BoxWood_Room_Image );
-        }
-        else if ( Fantasy_Room == APPLY )
-        {
-            background( Fantasy_Room_Image );
-        }
-
-        pop();
-
-
-        // Home Button
-        HomeButton.draw();
-        image( HomeImage, 30, 30, IconSize, IconSize );
-
-        // Shop Button
-        ShopButton.draw();
-        image( ShopImage, 770, 30, 47, 47 );
-    }
-    break;
+    // Shop Scene
 
     case UPGRADE_SHOP:
     {
@@ -408,6 +406,11 @@ function draw()
         imageMode( CORNER );
         background( Shop_Background );
         pop();
+
+        // HomeButton
+        HomeButton.draw();
+        image( HomeImage, 30, 30, IconSize, IconSize );
+
 
         // Set textStyle
         push();
@@ -493,6 +496,10 @@ function draw()
         imageMode( CORNER );
         background( Shop_Background );
         pop();
+
+        // HomeButton
+        HomeButton.draw();
+        image( HomeImage, 30, 30, IconSize, IconSize );
 
         // Set textStyle
         push();
@@ -703,19 +710,6 @@ function draw()
     }
     break;
     }
-
-
-    // Back to Shop Button
-    if ( CurrentScene >= UPGRADE_SHOP && CurrentScene < HOWTO )
-    {
-        // Buttons
-        HomeButton.draw();
-        image( HomeImage, 30, 30, IconSize, IconSize );
-
-        BackToRoom_Button.draw();
-        image( RoomImage, 770, 30, 47, 47 );
-    }
-
 }
 
 
@@ -783,8 +777,17 @@ function mousePressed()
             ShellButton.ChangeScene( GAMEOVER );
         }
 
-        RoomButton.ChangeScene( ROOM );
-        RoomButton.ChangeSong( Room_Music );
+
+
+        if ( SALVATION == false )
+        {
+            ShopButton.ChangeScene( UPGRADE_SHOP );
+            ShopButton.ChangeSong( Room_Music );
+        }
+        else
+        {
+            ShopButton.ChangeScene( PAY_DEBT );
+        }
 
         HowtoButton.ChangeScene( HOWTO );
     }
@@ -849,27 +852,11 @@ function mousePressed()
         Final_confirm.Alert( "Thanks for Plying!\nGo to shop or play again!" );
     }
     break;
-    // Room Scene
-    case ROOM:
-    {
-        if ( SALVATION == false )
-        {
-            ShopButton.ChangeScene( UPGRADE_SHOP );
-        }
-        else
-        {
-            ShopButton.ChangeScene( PAY_DEBT );
-        }
-    }
-    break;
 
     case UPGRADE_SHOP:
     {
-        // BackToRoom
-        BackToRoom_Button.ChangeScene( ROOM );
-
         // Previous & Next Button (Change argument)
-        Previous_Button.Alert( "It's First Scene!" )
+        Previous_Button.Alert( "It's start page!" )
         Next_Button.ChangeScene( ROOM_BACKGROUND_SHOP );
 
         // Upgrade
@@ -880,12 +867,9 @@ function mousePressed()
 
     case ROOM_BACKGROUND_SHOP:
     {
-        // BackToRoom
-        BackToRoom_Button.ChangeScene( ROOM );
-
         // Previous & Next Button (Change argument)
         Previous_Button.ChangeScene( UPGRADE_SHOP );
-        Next_Button.ChangeScene();
+        Next_Button.Alert("It's last page!")
 
         // Brick
         Brick_Room = Brick_Button.deal_price( 0, Brick_Room, true );

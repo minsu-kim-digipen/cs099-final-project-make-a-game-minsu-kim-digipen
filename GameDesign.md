@@ -18,7 +18,7 @@ If you choose, that percent number reveal and you get that percent of ⍟! \
 You can choose less than 10 Points. \
 If you have less than 10 Points, you get the chance. 
 
-You can go shop and buy upgrade, room background or other stuff!
+You can go shop and buy upgrade, shell game background!
 
 ## Summary
 1. Play Shell game and earn ⍟.

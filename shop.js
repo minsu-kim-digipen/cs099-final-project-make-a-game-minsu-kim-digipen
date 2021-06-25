@@ -39,3 +39,29 @@ let Brick_Room = APPLY;
 let LikeOcean_Room = SALE;
 let BoxWood_Room = SALE;
 let Fantasy_Room = SALE;
+
+function Change_Background()
+{
+    push();
+
+    imageMode( CORNER );
+
+    if ( Brick_Room == APPLY )
+    {
+        background( Brick_Room_Image );
+    }
+    else if ( LikeOcean_Room == APPLY )
+    {
+        background( LikeOcean_Room_Image );
+    }
+    else if ( BoxWood_Room == APPLY )
+    {
+        background( BoxWood_Room_Image );
+    }
+    else if ( Fantasy_Room == APPLY )
+    {
+        background( Fantasy_Room_Image );
+    }
+
+    pop();
+}
