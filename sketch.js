@@ -138,15 +138,10 @@ function draw()
         text( "Please type greater than 10 points!", width / 2, 550 );
 
 
-        translate( 40, 0 );
-
-        fill( 0 );
-        textSize( 20 );
-        textStyle( NORMAL );
+        fill(0);
+        display_point( width / 2 - 10, 280, IconSize );
 
         pop();
-
-        display_point( width / 2 - 10, 280, IconSize );
 
 
         PointInput.position( Canvas.position().x + 350, Canvas.position().y + 450 );

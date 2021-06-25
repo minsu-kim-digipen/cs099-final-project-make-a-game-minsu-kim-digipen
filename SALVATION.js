@@ -16,6 +16,6 @@ let SALVATION = false;
 
 function Fill_Salvation()
 {
-    let Salvation_Amount = int(GetThisPoint * random(50, 100) / 100);
+    let Salvation_Amount = int(GetThisPoint * random(0, 168) / 100);
     Salvation_Point += Salvation_Amount;
 }
