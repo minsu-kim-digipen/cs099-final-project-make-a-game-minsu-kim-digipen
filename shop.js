@@ -16,22 +16,7 @@ function Upgrade_Percent()
 {
     const upgrade_gauge = (Max_Cup_Percent - 190) / 10;
 
-    if(Max_Cup_Percent < 300)
-    {
-        return (upgrade_gauge * upgrade_gauge) * 10;
-    }
-    else if(Max_Cup_Percent >= 300 && Max_Cup_Percent < 400)
-    {
-        return (upgrade_gauge * upgrade_gauge) * 15;
-    }
-    else if(Max_Cup_Percent == 400)
-    {
-        return 666;
-    }
-    else
-    {
-        upgrade = OWN;
-    }
+    return (upgrade_gauge * upgrade_gauge) * 10;
 }
 
 // Background!
