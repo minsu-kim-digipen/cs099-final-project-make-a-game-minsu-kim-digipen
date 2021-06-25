@@ -6,7 +6,7 @@
 // Initial Setting
 let Canvas;
 
-let CurrentScene = SALVATION_Chance;
+let CurrentScene = MAINMENU;
 
 const CanvasWidth = 800;
 const CanvasHeight = 600;
