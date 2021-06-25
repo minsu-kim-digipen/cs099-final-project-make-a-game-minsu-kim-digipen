@@ -22,7 +22,7 @@ function Upgrade_Percent()
 // Background!
 let Brick_Room = APPLY;
 let LikeOcean_Room = SALE;
-let BoxWood_Room = SALE;
+let Poker_Room = SALE;
 let Fantasy_Room = SALE;
 
 function Change_Background()
@@ -39,9 +39,9 @@ function Change_Background()
     {
         background( LikeOcean_Room_Image );
     }
-    else if ( BoxWood_Room == APPLY )
+    else if ( Poker_Room == APPLY )
     {
-        background( BoxWood_Room_Image );
+        background( Poker_Room_Image );
     }
     else if ( Fantasy_Room == APPLY )
     {

@@ -155,7 +155,7 @@ class Button
             {
                 if(is_own == OWN)
                 {
-                    if(Brick_Room == APPLY || LikeOcean_Room == APPLY || BoxWood_Room == APPLY || Fantasy_Room == APPLY)
+                    if(Brick_Room == APPLY || LikeOcean_Room == APPLY || Poker_Room == APPLY || Fantasy_Room == APPLY)
                     {
                         Alert_SFX.play();
                         alert("Please un-apply other background!\nYou can only apply one background!");
@@ -198,7 +198,7 @@ class Button
 
         if ( is_inside_button )
         {
-            if(!(Brick_Room == APPLY || LikeOcean_Room == APPLY || BoxWood_Room == APPLY || Fantasy_Room == APPLY))
+            if(!(Brick_Room == APPLY || LikeOcean_Room == APPLY || Poker_Room == APPLY || Fantasy_Room == APPLY))
             {
                 Alert_SFX.play();
                 alert("Please Select background!\nIt's ESSENTIAL!");

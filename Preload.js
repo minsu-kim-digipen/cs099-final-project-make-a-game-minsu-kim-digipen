@@ -27,7 +27,7 @@ let SALVATION_Background;
 
 let Brick_Room_Image;
 let LikeOcean_Room_Image;
-let BoxWood_Room_Image;
+let Poker_Room_Image;
 let Fantasy_Room_Image;
 
 // Shop
@@ -80,7 +80,7 @@ function preload()
 
     Brick_Room_Image = loadImage('assets/Image/background/Shop/Brick.jpg');
     LikeOcean_Room_Image = loadImage('assets/Image/background/Shop/LikeOcean.jpg');
-    BoxWood_Room_Image = loadImage('assets/Image/background/Shop/Boxwood.jpg');
+    Poker_Room_Image = loadImage('assets/Image/background/Shop/Poker.jpg');
     Fantasy_Room_Image = loadImage('assets/Image/background/Shop/Fantasy.jpg');
 
     Equip_SFX = loadSound('assets/Sound/SFX/Select 19.wav');

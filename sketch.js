@@ -578,11 +578,11 @@ function draw()
         {
             translate( 15, 0 );
         }
-        Fantasy_Button.display_price( 47, Fantasy_Room );
+        Fantasy_Button.display_price( 200, Fantasy_Room );
 
         pop();
 
-        // Boxwood Background
+        // Poker Background
         push();
 
         noStroke();
@@ -590,25 +590,25 @@ function draw()
         rect( 410, 70, 180, 200 );
 
         imageMode( CORNER );
-        image( BoxWood_Room_Image, 410, 70, 180, 80 );
+        image( Poker_Room_Image, 410, 70, 180, 80 );
 
         fill( 255 );
         textAlign( CENTER );
         textSize( 25 );
 
-        text( "Boxwood\nBackground", 500, 175 );
+        text( "Poker\nBackground", 500, 175 );
 
         pop();
 
-        BoxWood_Button.draw();
+        Poker_Button.draw();
 
         push();
 
-        if ( BoxWood_Room == SALE )
+        if ( Poker_Room == SALE )
         {
             translate( 15, 0 );
         }
-        BoxWood_Button.display_price( 181, BoxWood_Room );
+        Poker_Button.display_price( 777, Poker_Room );
 
         pop();
 
@@ -639,7 +639,7 @@ function draw()
         {
             translate( 15, 0 );
         }
-        LikeOcean_Button.display_price( 316, LikeOcean_Room );
+        LikeOcean_Button.display_price( 1004, LikeOcean_Room );
 
         pop();
     }
@@ -733,7 +733,7 @@ function mousePressed()
     }
     if ( ( CurrentScene >= ROOM && CurrentScene < HOWTO ) ) // Room Case
     {
-        if ( Brick_Room == APPLY || LikeOcean_Room == APPLY || BoxWood_Room == APPLY || Fantasy_Room == APPLY )
+        if ( Brick_Room == APPLY || LikeOcean_Room == APPLY || Poker_Room == APPLY || Fantasy_Room == APPLY )
         {
             HomeButton.ChangeSong( Background_Music );
         }
@@ -869,11 +869,11 @@ function mousePressed()
         // Brick
         Brick_Room = Brick_Button.deal_price( 0, Brick_Room, true );
 
-        Fantasy_Room = Fantasy_Button.deal_price( 47, Fantasy_Room, true );
+        Fantasy_Room = Fantasy_Button.deal_price( 200, Fantasy_Room, true );
 
-        BoxWood_Room = BoxWood_Button.deal_price( 181, BoxWood_Room, true );
+        Poker_Room = Poker_Button.deal_price( 777, Poker_Room, true );
 
-        LikeOcean_Room = LikeOcean_Button.deal_price( 316, LikeOcean_Room, true );
+        LikeOcean_Room = LikeOcean_Button.deal_price( 1004, LikeOcean_Room, true );
 
 
     }

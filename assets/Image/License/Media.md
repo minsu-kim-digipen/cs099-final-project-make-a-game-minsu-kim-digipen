@@ -55,9 +55,15 @@ Image by <a href="https://pixabay.com/users/myriams-fotos-1627417/?utm_source=li
 ### Changes
 Put `Click Anywhere to Start` in Image
 
-## Image by <a href="https://pixabay.com/users/darkmoon_art-1664300/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=4152623">Darkmoon_Art</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=4152623">Pixabay</a>
-
-All inside images `assets\Image\background\Shop\` are by Darkmoon_Art!
-
 ## [assets\Image\background\SALVATION.png](https://pixabay.com/photos/jesus-god-bible-holy-clouds-3149505/)
 Image by <a href="https://pixabay.com/users/jeffjacobs1990-7438739/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=3149505">Jeff Jacobs</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=3149505">Pixabay</a>
+
+## [assets\Image\background\Shop\Brick.jpg](https://pixabay.com/photos/blackboard-wall-black-dark-grunge-1846865/)
+
+## [assets\Image\background\Shop\Poker.jpg](https://pixabay.com/photos/poker-game-play-gambling-luck-1564042/)
+Image by <a href="https://pixabay.com/users/tonic-pics-3001971/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1564042">Tom und Nicki Löschner</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1564042">Pixabay</a>
+
+## [assets\Image\background\Shop\Fantasy.jpg](https://pixabay.com/illustrations/background-texture-wall-plaster-4326353/)
+## [assets\Image\background\Shop\LikeOcean.jpg](https://pixabay.com/illustrations/space-empty-background-image-stage-4152623/)
+
+Image by <a href="https://pixabay.com/users/darkmoon_art-1664300/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=4326353">Darkmoon_Art</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=4326353">Pixabay</a>
