@@ -25,6 +25,7 @@ const FINAL_CALCULATE = 14;
 const ROOM = 20;
 const UPGRADE_SHOP = 21;
 const ROOM_BACKGROUND_SHOP = 22;
+const SALVATION_SHOP = 23;
 
 // How to Play
 const HOWTO = 30;

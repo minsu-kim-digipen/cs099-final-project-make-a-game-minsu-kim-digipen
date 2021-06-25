@@ -122,8 +122,8 @@ function draw()
         fill( 255, 0, 0 );
         textSize( 40 );
         textStyle( BOLD );
-        stroke(255);
-        strokeWeight(7);
+        stroke( 255 );
+        strokeWeight( 7 );
 
         text( "Welcome to Shell Game!", width / 2, 100 );
 
@@ -138,7 +138,7 @@ function draw()
         text( "Please type greater than 10 points!", width / 2, 550 );
 
 
-        fill(0);
+        fill( 0 );
         display_point( width / 2 - 10, 280, IconSize );
 
         pop();
@@ -166,13 +166,13 @@ function draw()
 
         push();
 
-        translate(0, 30);
+        translate( 0, 30 );
 
         fill( 255, 0, 0 );
         textSize( 40 );
         textStyle( BOLD );
-        stroke(225);
-        strokeWeight(7);
+        stroke( 225 );
+        strokeWeight( 7 );
 
 
         text( "Please Check\nIt's same point as you want to use!", width / 2, 50 );
@@ -236,8 +236,8 @@ function draw()
         fill( 255, 0, 0 );
         textSize( 40 );
         textStyle( BOLD );
-        stroke(255);
-        strokeWeight(7);
+        stroke( 255 );
+        strokeWeight( 7 );
 
         text( "Choose the Cup!", width / 2, 100 );
 
@@ -687,7 +687,7 @@ function draw()
         push();
 
         // Start_SALVATION_Button.draw();
-        image(Colored_WingPoint_Image, width / 2, 520, 200, 200);
+        image( Colored_WingPoint_Image, width / 2, 520, 200, 200 );
 
         pop();
 
@@ -771,7 +771,6 @@ function mousePressed()
             ResetAllMusic();
             ShellButton.ChangeScene( GAMEOVER );
         }
-
 
 
         if ( SALVATION == false )
@@ -864,7 +863,7 @@ function mousePressed()
     {
         // Previous & Next Button (Change argument)
         Previous_Button.ChangeScene( UPGRADE_SHOP );
-        Next_Button.Alert("It's last page!")
+        Next_Button.ChangeScene( SALVATION_SHOP );
 
         // Brick
         Brick_Room = Brick_Button.deal_price( 0, Brick_Room, true );
@@ -885,7 +884,7 @@ function mousePressed()
     case SALVATION_CHANCE:
     {
         Start_SALVATION_Button.start_SALVATION();
-        Start_SALVATION_Button.ChangeScene(CHECK_SALVATION);
+        Start_SALVATION_Button.ChangeScene( CHECK_SALVATION );
     }
     break;
     }
