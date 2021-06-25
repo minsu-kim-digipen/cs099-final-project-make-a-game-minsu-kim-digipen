@@ -2,6 +2,9 @@
 This is first game project using p5js.
 
 ## Markdown file
+### [Assignment.md](Assignment.md)
+This is CS099 final project. \
+Condition and Grading Rubric are there. 
 
 ### [GameDesign.md](GameDesign.md)
 In this markdown file, you can check how I get this game idea or memo.

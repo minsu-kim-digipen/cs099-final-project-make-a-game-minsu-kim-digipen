@@ -694,7 +694,12 @@ function draw()
 
     case CHECK_SALVATION:
     {
+        push();
 
+        imageMode( CORNER );
+        background( SALVATION_Background );
+
+        pop();
     }
     break;
     }
