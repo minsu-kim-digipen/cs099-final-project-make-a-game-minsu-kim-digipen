@@ -677,7 +677,7 @@ function draw()
             "\n\nAnd you need to give me", width / 2, 100 );
 
         fill( 255, 0, 0 );
-        text( "⍟" + ( Salvation_Point * DEBT_salvation / 100 ) + " LATER", width / 2, 353 );
+        text( "⍟" + int( Salvation_Point * DEBT_salvation / 100 ) + " LATER", width / 2, 353 );
 
         fill( 0, 255, 0 );
         text( "TEST YOUR FORTUNE", width / 2, 420 );
