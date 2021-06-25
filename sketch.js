@@ -6,7 +6,7 @@
 // Initial Setting
 let Canvas;
 
-let CurrentScene = MAINMENU;
+let CurrentScene = SALVATION_CHANCE;
 
 const CanvasWidth = 800;
 const CanvasHeight = 600;
@@ -66,7 +66,7 @@ function draw()
 
     // Home Button
     if ( ( CurrentScene >= MAINMENU && CurrentScene <= IS_INPUT_RIGHT ) || ( CurrentScene >= ROOM && CurrentScene <
-            SALVATION_Chance ) )
+            SALVATION_CHANCE ) )
     {
         HomeButton.draw();
         image( HomeImage, 30, 30, IconSize, IconSize );
@@ -651,7 +651,7 @@ function draw()
     break;
 
     // SALVATION
-    case SALVATION_Chance:
+    case SALVATION_CHANCE:
     {
         push();
 
@@ -692,7 +692,7 @@ function draw()
     }
     break;
 
-    case Check_SALVATION:
+    case CHECK_SALVATION:
     {
 
     }
@@ -732,7 +732,7 @@ function mousePressed()
 
     // HomeButton
     if ( ( CurrentScene >= MAINMENU && CurrentScene <= IS_INPUT_RIGHT ) || ( CurrentScene >= HOWTO && CurrentScene <
-            SALVATION_Chance ) ) // Other case
+            SALVATION_CHANCE ) ) // Other case
     {
         HomeButton.ChangeScene( MAINMENU );
         HomeButton.clearInput();
@@ -769,13 +769,13 @@ function mousePressed()
         }
         else if ( Point < 10 && SALVATION == false )
         {
-            ShellButton.ChangeScene( SALVATION_Chance );
+            ShellButton.ChangeScene( SALVATION_CHANCE );
             ShellButton.ChangeSong( SPECIAL );
         }
         else
         {
             ResetAllMusic();
-            ShellButton.ChangeScene( Bankrupt );
+            ShellButton.ChangeScene( GAMEOVER );
         }
 
         RoomButton.ChangeScene( ROOM );
@@ -853,7 +853,7 @@ function mousePressed()
         }
         else
         {
-            ShopButton.ChangeScene( Pay_Debt );
+            ShopButton.ChangeScene( PAY_DEBT );
         }
     }
     break;
@@ -898,10 +898,10 @@ function mousePressed()
     // How to play
 
     // SALVATION
-    case SALVATION_Chance:
+    case SALVATION_CHANCE:
     {
         Start_SALVATION_Button.start_SALVATION();
-        Start_SALVATION_Button.ChangeScene(Check_SALVATION);
+        Start_SALVATION_Button.ChangeScene(CHECK_SALVATION);
     }
     break;
     }
