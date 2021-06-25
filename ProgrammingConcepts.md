@@ -99,9 +99,9 @@ So we can set what code to execute.
 Like when it is weekday go to university, when it is weekend just stay home.
 
 ## How do we use it?
-There are three things, if / else if / else \
+There are three things, if / else if / else 
 
-If execute when it's true. \
+If execute when it's true. 
 
 Else if is similar with if, when inside if condition is false, check else if. \
 And else if condition is true, that executes.
@@ -188,7 +188,7 @@ With class, we can reduce that concern.
 
 ## How do we use it?
 First we need to define class. \
-`class [name]` to define class. \
+`class [name]` to define class. 
 
 Inside the class, we need constructor. \
 `constructor([argument])` \
