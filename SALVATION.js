@@ -13,9 +13,3 @@ let GET_SALVATION = 0;
 let Debt = 0;
 
 let SALVATION = false;
-
-function Fill_Salvation()
-{
-    let Salvation_Amount = int(Selected_Point * random(0, 150) / 100);
-    Salvation_Point += Salvation_Amount;
-}

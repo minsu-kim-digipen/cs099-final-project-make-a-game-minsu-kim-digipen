@@ -6,7 +6,7 @@
 // Initial Setting
 let Canvas;
 
-let CurrentScene = MAINMENU;
+let CurrentScene = ROOM_BACKGROUND_SHOP;
 
 const CanvasWidth = 800;
 const CanvasHeight = 600;
@@ -840,7 +840,7 @@ function mousePressed()
 
     case FINAL_CALCULATE:
     {
-        Fill_Salvation();
+        Final_confirm.Fill_Salvation();
 
         Final_confirm.ChangeScene( MAINMENU, true );
         Final_confirm.Alert( "Thanks for Plying!\nGo to shop or play again!" );
@@ -850,7 +850,7 @@ function mousePressed()
     case UPGRADE_SHOP:
     {
         // Previous & Next Button (Change argument)
-        Previous_Button.Alert( "It's start page!" )
+        Previous_Button.Alert( "It's first page!" )
         Next_Button.ChangeScene( ROOM_BACKGROUND_SHOP );
 
         // Upgrade
@@ -863,7 +863,7 @@ function mousePressed()
     {
         // Previous & Next Button (Change argument)
         Previous_Button.ChangeScene( UPGRADE_SHOP );
-        Next_Button.ChangeScene( SALVATION_SHOP );
+        Next_Button.Alert("It's last page!")
 
         // Brick
         Brick_Room = Brick_Button.deal_price( 0, Brick_Room, true );

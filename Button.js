@@ -323,6 +323,18 @@ class Button
         }
     }
 
+    Fill_Salvation()
+    {
+        const is_inside_button = mouseX > this.x - ( this.width / 2 ) && mouseX < this.x + ( this.width / 2 ) &&
+        mouseY > this.y - ( this.height / 2 ) && mouseY < this.y + ( this.height / 2 );
+
+        if(is_inside_button)
+        {
+            let Salvation_Amount = int(Selected_Point * random(0, 150) / 100);
+            Salvation_Point += Salvation_Amount;
+        }
+    }
+
     start_SALVATION()
     {
         const is_inside_button = mouseX > this.x - ( this.width / 2 ) && mouseX < this.x + ( this.width / 2 ) &&
