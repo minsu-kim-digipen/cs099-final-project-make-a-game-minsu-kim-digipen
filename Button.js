@@ -85,7 +85,7 @@ class Button
             {
                 push();
 
-                textSize( 50 );
+                textSize( size );
                 fill('#6495ed')
                 textStyle( BOLD );
                 text( "MAX %!", this.x + 5, this.y + 15);
@@ -126,6 +126,22 @@ class Button
                         Max_Cup_Percent += 10;
                         break;
 
+                    case 2:
+                        Fill_MIN_salvation += 1;
+                        break;
+
+                    case 3:
+                        MIN_salvation += 1;
+                        break;
+
+                    case 4:
+                        Fill_MAX_salvation += 10;
+                        break;
+
+                    case 5:
+                        MAX_salvation += 10;
+                        break;
+
                     default:
                         return OWN;
                 }
@@ -133,9 +149,13 @@ class Button
             else
             {
                 Alert_SFX.play();
-                alert( "You don't have enough Point!" );
 
-                return SALE;
+                if(is_upgrade = 0)
+                {
+                    alert( "You don't have enough Point!" );
+
+                    return SALE;
+                }
             }
         }
         else if(is_inside_button && is_own >= OWN)

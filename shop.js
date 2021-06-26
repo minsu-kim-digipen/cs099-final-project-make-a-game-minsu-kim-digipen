@@ -50,3 +50,8 @@ function Change_Background()
 
     pop();
 }
+
+let Fill_MIN_salvation_upgrade = SALE;
+let Fill_MAX_salvation_upgrade = SALE;
+let MIN_salvation_upgrade = SALE;
+let MAX_salvation_upgrade = SALE;

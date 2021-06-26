@@ -18,3 +18,41 @@ let DEBT_salvation = 50;
 
 let GET_SALVATION = 0;
 let Debt = 0;
+
+function MIN_Upgrade_Percent(standard)
+{
+    if(standard < 100)
+    {
+        return standard;
+    }
+    else
+    {
+        if(standard == MIN_salvation)
+        {
+            MIN_salvation_upgrade = OWN;
+        }
+        else if(standard == Fill_MIN_salvation)
+        {
+            Fill_MIN_salvation_upgrade = OWN;
+        }
+    }
+}
+
+function MAX_Upgrade_Percent(standard)
+{
+    if(standard < 150)
+    {
+        return (standard * 120 / 100);
+    }
+    else
+    {
+        if(standard == MAX_salvation)
+        {
+            MAX_salvation_upgrade = OWN;
+        }
+        else if(standard == Fill_MAX_salvation)
+        {
+            Fill_MAX_salvation_upgrade = OWN;
+        }
+    }
+}

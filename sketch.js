@@ -677,6 +677,10 @@ function draw()
 
         Fill_MIN_salvation_Button.draw();
 
+        let Fill_MIN_salvation_price = MIN_Upgrade_Percent(Fill_MIN_salvation);
+
+        Fill_MIN_salvation_Button.display_price( Fill_MIN_salvation_price, Fill_MIN_salvation_upgrade, 35, 10, true );
+
         // Fill MAX percent
         fill( 255 );
         textAlign( CENTER );
@@ -690,6 +694,10 @@ function draw()
         text( "Now : " + Fill_MAX_salvation + "%", 300, 455 );
 
         Fill_MAX_salvation_Button.draw();
+
+        let Fill_MAX_salvation_price = MAX_Upgrade_Percent(Fill_MAX_salvation);
+
+        Fill_MAX_salvation_Button.display_price( Fill_MAX_salvation_price, Fill_MAX_salvation_upgrade, 35, 10, true );
 
         // SALVATION Min percent
         fill( 255 );
@@ -705,6 +713,10 @@ function draw()
 
         MIN_salvation_Button.draw();
 
+        let MIN_salvation_price = MIN_Upgrade_Percent(MIN_salvation);
+
+        MIN_salvation_Button.display_price( MIN_salvation_price, MIN_salvation_upgrade, 35, 10, true );
+
         // SALVATION Max percent
         fill( 255 );
         textAlign( CENTER );
@@ -719,6 +731,9 @@ function draw()
 
         MAX_salvation_Button.draw();
 
+        let MAX_salvation_price = MAX_Upgrade_Percent(MAX_salvation);
+
+        MAX_salvation_Button.display_price( MAX_salvation_price, MAX_salvation_upgrade, 35, 10, true );
 
     }
     break;
@@ -943,7 +958,7 @@ function mousePressed()
         Previous_Button.ChangeScene( UPGRADE_SHOP );
         Next_Button.Alert("It's last page!")
 
-        // Brick
+        // Background
         Brick_Room = Brick_Button.deal_price( 0, Brick_Room, true );
 
         Fantasy_Room = Fantasy_Button.deal_price( 200, Fantasy_Room, true );
@@ -952,7 +967,25 @@ function mousePressed()
 
         LikeOcean_Room = LikeOcean_Button.deal_price( 1004, LikeOcean_Room, true );
 
+        // Fill Min Salvation
+        let Fill_MIN_salvation_price = MIN_Upgrade_Percent(Fill_MIN_salvation);
 
+        Fill_MIN_salvation_Button.deal_price( Fill_MIN_salvation_price, Fill_MIN_salvation_upgrade, false, 2 );
+
+        // Min Salvation
+        let MIN_salvation_price = MIN_Upgrade_Percent(MIN_salvation);
+
+        MIN_salvation_Button.deal_price( MIN_salvation_price, MIN_salvation_upgrade, false, 3 );
+
+        // Fill MAx salvation
+        let Fill_MAX_salvation_price = MAX_Upgrade_Percent(Fill_MAX_salvation);
+
+        Fill_MAX_salvation_Button.deal_price( Fill_MAX_salvation_price, Fill_MAX_salvation_upgrade, false, 4 );
+
+        // Max salvation
+        let MAX_salvation_price = MAX_Upgrade_Percent(MAX_salvation);
+
+        MAX_salvation_Button.deal_price( MAX_salvation_price, MAX_salvation_upgrade, false, 5 );
     }
     break;
 
