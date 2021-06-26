@@ -330,7 +330,7 @@ class Button
 
         if(is_inside_button)
         {
-            let Salvation_Amount = int(Selected_Point * random(0, 150) / 100);
+            let Salvation_Amount = int(Selected_Point * random(Fill_MIN_salvation, Fill_MAX_salvation) / 100);
             Salvation_Point += Salvation_Amount;
         }
     }
