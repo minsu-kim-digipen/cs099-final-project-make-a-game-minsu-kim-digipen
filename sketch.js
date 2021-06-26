@@ -6,7 +6,7 @@
 // Initial Setting
 let Canvas;
 
-let CurrentScene = ROOM_BACKGROUND_SHOP;
+let CurrentScene = SALVATION_CHANCE;
 
 const CanvasWidth = 800;
 const CanvasHeight = 600;
@@ -766,7 +766,7 @@ function draw()
 
 
         text( "Welcome, bankrupt.\nI will give a chance to you.\nYou will get ⍟" +
-            ( Salvation_Point * MIN_salvation / 100 ) + " ~ " + ( Salvation_Point * MAX_salvation / 100 ) +
+            int( Salvation_Point * MIN_salvation / 100 ) + " ~ " + int( Salvation_Point * MAX_salvation / 100 ) +
             "\n\nAnd you need to give me", width / 2, 100 );
 
         fill( 255, 0, 0 );
@@ -779,7 +779,6 @@ function draw()
 
         push();
 
-        // Start_SALVATION_Button.draw();
         image( Colored_WingPoint_Image, width / 2, 520, 200, 200 );
 
         pop();
@@ -793,6 +792,12 @@ function draw()
 
         imageMode( CORNER );
         background( SALVATION_Background );
+
+        pop();
+
+        push();
+
+        image( Colored_WingPoint_Image, width / 2, 520, 200, 200 );
 
         pop();
     }
@@ -994,10 +999,15 @@ function mousePressed()
     // SALVATION
     case SALVATION_CHANCE:
     {
-        Start_SALVATION_Button.start_SALVATION();
-        Start_SALVATION_Button.ChangeScene( CHECK_SALVATION );
+        SALVATION_Button.start_SALVATION();
+        SALVATION_Button.ChangeScene( CHECK_SALVATION );
     }
     break;
+
+    case CHECK_SALVATION:
+    {
+        SALVATION_Button.ChangeScene( MAINMENU, false, true );
+    }
     }
 }
 

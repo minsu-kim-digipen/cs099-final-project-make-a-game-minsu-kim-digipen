@@ -47,4 +47,4 @@ let MAX_salvation_Button = new Button(680, 490, 180, 50);
 
 
 // SALVATION_Chance 
-let Start_SALVATION_Button = new Button(CanvasWidth / 2, 520, 220, 120);
+let SALVATION_Button = new Button(CanvasWidth / 2, 520, 220, 120);

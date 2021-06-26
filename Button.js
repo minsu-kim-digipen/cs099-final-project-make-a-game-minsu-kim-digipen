@@ -213,7 +213,7 @@ class Button
 
     // When Click, Change variable
 
-    ChangeScene( Scene, is_alert = false )
+    ChangeScene( Scene, is_alert = false, is_salvation = false )
     {
         const is_inside_button = mouseX > this.x - ( this.width / 2 ) && mouseX < this.x + ( this.width / 2 ) &&
             mouseY > this.y - ( this.height / 2 ) && mouseY < this.y + ( this.height / 2 );
@@ -230,6 +230,16 @@ class Button
                 if(!is_alert)
                 {
                     Select_SFX.play();
+                }
+
+                if(is_salvation)
+                {
+                    Point += GET_SALVATION;
+
+                    Salvation_Point = 0;
+                    GET_SALVATION = 0;
+
+                    SALVATION = true;
                 }
     
                 CurrentScene = Scene;
