@@ -642,6 +642,84 @@ function draw()
         LikeOcean_Button.display_price( 1004, LikeOcean_Room );
 
         pop();
+
+        // Showcase box
+        push();
+
+        noStroke();
+        fill( '#6495ed' );
+
+        for(BOX = 0; BOX < 4; BOX++)
+        {
+            const showcaseWidth = 180;
+            const interval = 10;
+
+            const x_position = 20 + ((showcaseWidth + interval) * BOX);
+
+            rect(x_position, 290, showcaseWidth, 220);
+
+            imageMode( CORNER );
+            image( Upgrade_Image, x_position, 290, showcaseWidth, 70 );
+        }
+        pop();
+
+        // Fill Min percent
+        fill( 255 );
+        textAlign( CENTER );
+        textSize( 25 );
+
+        text( "Increase Fill\nMIN percent!", 110, 390 );
+
+        fill( 'red' );
+        textStyle( BOLD );
+
+        text( "Now : " + Fill_MIN_salvation + "%", 110, 455 );
+
+        Fill_MIN_salvation_Button.draw();
+
+        // Fill MAX percent
+        fill( 255 );
+        textAlign( CENTER );
+        textSize( 25 );
+
+        text( "Increase Fill\nMAX percent!", 300, 390 );
+
+        fill( 'red' );
+        textStyle( BOLD );
+
+        text( "Now : " + Fill_MAX_salvation + "%", 300, 455 );
+
+        Fill_MAX_salvation_Button.draw();
+
+        // SALVATION Min percent
+        fill( 255 );
+        textAlign( CENTER );
+        textSize( 25 );
+
+        text( "Increase GET\nMIN percent!", 490, 390 );
+
+        fill( 'red' );
+        textStyle( BOLD );
+
+        text( "Now : " + MIN_salvation + "%", 490, 455 );
+
+        MIN_salvation_Button.draw();
+
+        // SALVATION Max percent
+        fill( 255 );
+        textAlign( CENTER );
+        textSize( 25 );
+
+        text( "Increase GET\nMAX percent!", 680, 390 );
+
+        fill( 'red' );
+        textStyle( BOLD );
+
+        text( "Now : " + MAX_salvation + "%", 680, 455 );
+
+        MAX_salvation_Button.draw();
+
+
     }
     break;
 
@@ -855,7 +933,7 @@ function mousePressed()
 
         // Upgrade
         let upgrade_price = Upgrade_Percent();
-        Upgrade_Button.deal_price( upgrade_price, upgrade, false, true );
+        Upgrade_Button.deal_price( upgrade_price, upgrade, false, 1 );
     }
     break;
 

@@ -40,6 +40,11 @@ let Fantasy_Button = new Button(310, 245, 180, 50);
 let Poker_Button = new Button(500, 245, 180, 50);
 let LikeOcean_Button = new Button(690, 245, 180, 50);
 
+let Fill_MIN_salvation_Button = new Button(110, 490, 180, 50);
+let Fill_MAX_salvation_Button = new Button(300, 490, 180, 50);
+let MIN_salvation_Button = new Button(490, 490, 180, 50);
+let MAX_salvation_Button = new Button(680, 490, 180, 50);
+
 
 // SALVATION_Chance 
 let Start_SALVATION_Button = new Button(CanvasWidth / 2, 520, 220, 120);

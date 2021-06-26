@@ -106,7 +106,7 @@ class Button
         }
     }
 
-    deal_price( price, is_own , is_background = false ,is_upgrade = false )
+    deal_price( price, is_own , is_background = false , is_upgrade = 0 )
     {
         const is_inside_button = mouseX > this.x - ( this.width / 2 ) && mouseX < this.x + ( this.width / 2 ) &&
             mouseY > this.y - ( this.height / 2 ) && mouseY < this.y + ( this.height / 2 );
@@ -119,13 +119,15 @@ class Button
 
                 Point -= price;
 
-                if(is_upgrade)
+
+                switch(is_upgrade)
                 {
-                    Max_Cup_Percent += 10;
-                }
-                else
-                {
-                    return OWN;
+                    case 1:
+                        Max_Cup_Percent += 10;
+                        break;
+
+                    default:
+                        return OWN;
                 }
             }
             else
