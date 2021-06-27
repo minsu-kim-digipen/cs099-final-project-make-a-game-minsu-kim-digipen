@@ -49,6 +49,15 @@ let Purchase_SFX;
 let Equip_SFX;
 let UnEquip_SFX;
 
+let HOWTO0_Image;
+let HOWTO1_Image;
+let HOWTO2_Image;
+let HOWTO3_Image;
+let HOWTO4_Image;
+let HOWTO5_Image;
+let HOWTO6_Image;
+let HOWTO7_Image;
+
 function preload()
 {
     // Load Image
@@ -97,6 +106,15 @@ function preload()
     GAMEOVER_Background = loadImage('/assets/Image/background/GAMEOVER.jpg');
 
     CardImage = loadImage('assets/Image/card-game.png');
+
+    HOWTO0_Image = loadImage('assets/Image/HOWTO/0.png');
+    HOWTO1_Image = loadImage('assets/Image/HOWTO/1.png');
+    HOWTO2_Image = loadImage('assets/Image/HOWTO/2.png');
+    HOWTO3_Image = loadImage('assets/Image/HOWTO/3.png');
+    HOWTO4_Image = loadImage('assets/Image/HOWTO/4.png');
+    HOWTO5_Image = loadImage('assets/Image/HOWTO/5.png');
+    HOWTO6_Image = loadImage('assets/Image/HOWTO/6.png');
+    HOWTO7_Image = loadImage('assets/Image/HOWTO/7.png');
 }
 
 // Before Change Music, Please put this inside

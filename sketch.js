@@ -761,10 +761,17 @@ function draw()
     {
         push();
 
+        imageMode(CORNER);
+        background(HOWTO0_Image);
+
+        HomeButton.draw();
+        
         Previous_Button.draw( '◀', 0, NORMAL, 50, 3 );
         Next_Button.draw( '▶', 0, NORMAL, 50, 3 );
 
         pop();
+
+        image( HomeImage, 30, 30, IconSize, IconSize );
     }
     break;
 
@@ -772,10 +779,17 @@ function draw()
     {
         push();
 
+        imageMode(CORNER);
+        background(HOWTO1_Image);
+
+        HomeButton.draw();
+
         Previous_Button.draw( '◀', 0, NORMAL, 50, 3 );
         Next_Button.draw( '▶', 0, NORMAL, 50, 3 );
 
         pop();
+
+        image( HomeImage, 30, 30, IconSize, IconSize );
     }
     break;
 
@@ -783,10 +797,17 @@ function draw()
     {
         push();
 
+        imageMode(CORNER);
+        background(HOWTO2_Image);
+
+        HomeButton.draw();
+
         Previous_Button.draw( '◀', 0, NORMAL, 50, 3 );
         Next_Button.draw( '▶', 0, NORMAL, 50, 3 );
 
         pop();
+
+        image( HomeImage, 30, 30, IconSize, IconSize );
     }
     break;
 
@@ -794,10 +815,17 @@ function draw()
     {
         push();
 
+        imageMode(CORNER);
+        background(HOWTO3_Image);
+
+        HomeButton.draw();
+
         Previous_Button.draw( '◀', 0, NORMAL, 50, 3 );
         Next_Button.draw( '▶', 0, NORMAL, 50, 3 );
 
         pop();
+
+        image( HomeImage, 30, 30, IconSize, IconSize );
     }
     break;
 
@@ -805,10 +833,17 @@ function draw()
     {
         push();
 
+        imageMode(CORNER);
+        background(HOWTO4_Image);
+
+        HomeButton.draw();
+
         Previous_Button.draw( '◀', 0, NORMAL, 50, 3 );
         Next_Button.draw( '▶', 0, NORMAL, 50, 3 );
 
         pop();
+
+        image( HomeImage, 30, 30, IconSize, IconSize );
     }
     break;
 
@@ -816,20 +851,34 @@ function draw()
     {
         push();
 
+        imageMode(CORNER);
+        background(HOWTO5_Image);
+
+        HomeButton.draw();
+
         Previous_Button.draw( '◀', 0, NORMAL, 50, 3 );
         Next_Button.draw( '▶', 0, NORMAL, 50, 3 );
 
         pop();
+
+        image( HomeImage, 30, 30, IconSize, IconSize );
     }
     break;
     case HOWTO6:
     {
         push();
 
+        imageMode(CORNER);
+        background(HOWTO6_Image);
+
+        HomeButton.draw();
+
         Previous_Button.draw( '◀', 0, NORMAL, 50, 3 );
         Next_Button.draw( '▶', 0, NORMAL, 50, 3 );
 
         pop();
+
+        image( HomeImage, 30, 30, IconSize, IconSize );
     }
     break;
 
@@ -837,10 +886,17 @@ function draw()
     {
         push();
 
+        imageMode(CORNER);
+        background(HOWTO7_Image);
+
+        HomeButton.draw();
+
         Previous_Button.draw( '◀', 0, NORMAL, 50, 3 );
         Next_Button.draw( '▶', 0, NORMAL, 50, 3 );
 
         pop();
+
+        image( HomeImage, 30, 30, IconSize, IconSize );
     }
     break;
 

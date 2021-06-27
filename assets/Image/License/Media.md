@@ -70,3 +70,8 @@ Image by <a href="https://pixabay.com/users/darkmoon_art-1664300/?utm_source=lin
 
 ## [assets\Image\background\GAMEOVER.jpg](https://pixabay.com/illustrations/game-over-video-game-final-3862774/)
 Image by <a href="https://pixabay.com/users/absolutvision-6158753/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=3862774">Gino Crescoli</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=3862774">Pixabay</a>
+
+
+# HOWTO
+assets\Image\HOWTO \
+All this image is by game screenshot.
