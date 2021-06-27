@@ -6,7 +6,7 @@
 // Initial Setting
 let Canvas;
 
-let CurrentScene = MAINMENU;
+let CurrentScene = PLEASE_CLICK;
 
 const CanvasWidth = 800;
 const CanvasHeight = 600;
