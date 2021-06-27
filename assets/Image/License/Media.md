@@ -18,6 +18,7 @@
 ### [assets\Image\Colored Coin Wing.png](https://www.flaticon.com/free-icon/wings_1553431?term=wing&related_id=1553431&origin=search)
 
 ### [assets\Image\card-game.png](https://www.flaticon.com/free-icon/card-game_2883447?term=card&page=1&position=45&page=1&position=45&related_id=2883447&origin=search)
+Also used in ico!
 
 # [IconArchive](https://iconarchive.com/)
 
