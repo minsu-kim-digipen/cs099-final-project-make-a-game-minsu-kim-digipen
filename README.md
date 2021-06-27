@@ -1,5 +1,6 @@
 # Welcome to Shell Game!
-This is first game project using p5js.
+This is first game project using p5js. \
+[Play Game!](https://minsu-kim-digipen.github.io/cs099-final-project-make-a-game-minsu-kim-digipen/)
 
 ## Markdown file
 ### [Assignment.md](Assignment.md)
