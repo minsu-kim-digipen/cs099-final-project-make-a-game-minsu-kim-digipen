@@ -17,5 +17,5 @@ Shapes, function, class and so on.
 Where I get all background and sound? \
 Check Media markdown file to check that.
 
-#### [Image License](assets\Image\License\Media.md) 
-#### [Sound License](assets\Sound\License\Media.md)
+#### [Image License](assets/Image/License/Media.md) 
+#### [Sound License](assets/Sound/License/Media.md)
