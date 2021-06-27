@@ -27,7 +27,14 @@ const UPGRADE_SHOP = 21;
 const ROOM_BACKGROUND_SHOP = 22;
 
 // How to Play
-const HOWTO = 30;
+const HOWTO0 = 30;
+const HOWTO1 = 31;
+const HOWTO2 = 32;
+const HOWTO3 = 33;
+const HOWTO4 = 34;
+const HOWTO5 = 35;
+const HOWTO6 = 36;
+const HOWTO7 = 37;
 
 // Point is too low
 const SALVATION_CHANCE = 91;   // It's just Korean pun     9 == 구 + 1 == 원

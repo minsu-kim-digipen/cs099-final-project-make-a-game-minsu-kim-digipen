@@ -757,9 +757,90 @@ function draw()
     break;
 
     // How to play
-    case HOWTO:
+    case HOWTO0:
     {
+        push();
 
+        Previous_Button.draw( '◀', 0, NORMAL, 50, 3 );
+        Next_Button.draw( '▶', 0, NORMAL, 50, 3 );
+
+        pop();
+    }
+    break;
+
+    case HOWTO1:
+    {
+        push();
+
+        Previous_Button.draw( '◀', 0, NORMAL, 50, 3 );
+        Next_Button.draw( '▶', 0, NORMAL, 50, 3 );
+
+        pop();
+    }
+    break;
+
+    case HOWTO2:
+    {
+        push();
+
+        Previous_Button.draw( '◀', 0, NORMAL, 50, 3 );
+        Next_Button.draw( '▶', 0, NORMAL, 50, 3 );
+
+        pop();
+    }
+    break;
+
+    case HOWTO3:
+    {
+        push();
+
+        Previous_Button.draw( '◀', 0, NORMAL, 50, 3 );
+        Next_Button.draw( '▶', 0, NORMAL, 50, 3 );
+
+        pop();
+    }
+    break;
+
+    case HOWTO4:
+    {
+        push();
+
+        Previous_Button.draw( '◀', 0, NORMAL, 50, 3 );
+        Next_Button.draw( '▶', 0, NORMAL, 50, 3 );
+
+        pop();
+    }
+    break;
+
+    case HOWTO5:
+    {
+        push();
+
+        Previous_Button.draw( '◀', 0, NORMAL, 50, 3 );
+        Next_Button.draw( '▶', 0, NORMAL, 50, 3 );
+
+        pop();
+    }
+    break;
+    case HOWTO6:
+    {
+        push();
+
+        Previous_Button.draw( '◀', 0, NORMAL, 50, 3 );
+        Next_Button.draw( '▶', 0, NORMAL, 50, 3 );
+
+        pop();
+    }
+    break;
+
+    case HOWTO7:
+    {
+        push();
+
+        Previous_Button.draw( '◀', 0, NORMAL, 50, 3 );
+        Next_Button.draw( '▶', 0, NORMAL, 50, 3 );
+
+        pop();
     }
     break;
 
@@ -851,6 +932,10 @@ function draw()
 
         pop();
 
+        // HomeButton
+        HomeButton.draw();
+        image( HomeImage, 30, 30, IconSize, IconSize );
+
         push();
 
         image(PointImage, 300, height / 2 - 5, 100, 100);
@@ -911,13 +996,13 @@ function mousePressed()
 
 
     // HomeButton
-    if ( ( CurrentScene >= MAINMENU && CurrentScene <= IS_INPUT_RIGHT ) || ( CurrentScene >= HOWTO && CurrentScene <
+    if ( ( CurrentScene >= MAINMENU && CurrentScene <= IS_INPUT_RIGHT ) || ( CurrentScene >= HOWTO0 && CurrentScene <
             SALVATION_CHANCE ) ) // Other case
     {
         HomeButton.ChangeScene( MAINMENU );
         HomeButton.clearInput();
     }
-    if ( ( CurrentScene >= ROOM && CurrentScene < HOWTO ) ) // Room Case
+    if ( ( CurrentScene >= ROOM && CurrentScene < HOWTO0 ) ) // Room Case
     {
         if ( Brick_Room == APPLY || LikeOcean_Room == APPLY || Poker_Room == APPLY || Fantasy_Room == APPLY )
         {
@@ -954,9 +1039,9 @@ function mousePressed()
         }
         else
         {
-            ShellButton.Alert("GAMEOVER! Thanks for PLAYING!")
             ShellButton.ChangeScene( GAMEOVER, true );
             ShellButton.ChangeSong(SPECIAL);
+            ShellButton.Alert("GAMEOVER! Thanks for PLAYING!");
         }
 
 
@@ -971,7 +1056,7 @@ function mousePressed()
             ShopButton.ChangeSong(SPECIAL);
         }
 
-        HowtoButton.ChangeScene( HOWTO );
+        HowtoButton.ChangeScene( HOWTO0 );
     }
     break;
 
@@ -1085,6 +1170,61 @@ function mousePressed()
     break;
 
     // How to play
+    case HOWTO0:
+    {
+        Previous_Button.Alert( "It's first page!" )
+        Next_Button.ChangeScene( HOWTO1 );
+    }
+    break;
+
+    case HOWTO1:
+    {
+        Previous_Button.ChangeScene(HOWTO0);
+        Next_Button.ChangeScene( HOWTO2 );
+    }
+    break;
+
+    case HOWTO2:
+    {
+        Previous_Button.ChangeScene(HOWTO1);
+        Next_Button.ChangeScene( HOWTO3 );
+    }
+    break;
+
+    case HOWTO3:
+    {
+        Previous_Button.ChangeScene(HOWTO2);
+        Next_Button.ChangeScene( HOWTO4 );
+    }
+    break;
+
+    case HOWTO4:
+    {
+        Previous_Button.ChangeScene(HOWTO3);
+        Next_Button.ChangeScene( HOWTO5 );
+    }
+    break;
+
+    case HOWTO5:
+    {
+        Previous_Button.ChangeScene(HOWTO4);
+        Next_Button.ChangeScene( HOWTO6 );
+    }
+    break;
+
+    case HOWTO6:
+    {
+        Previous_Button.ChangeScene(HOWTO5);
+        Next_Button.ChangeScene( HOWTO7 );
+    }
+    break;
+
+    case HOWTO7:
+    {
+        Previous_Button.ChangeScene(HOWTO6);
+        Next_Button.Alert("This is last page!");
+    }
+    break;
 
     // SALVATION
     case SALVATION_CHANCE:
@@ -1112,6 +1252,9 @@ function mousePressed()
         {
             SALVATION_Button.Alert("You don't have enough POINT!");
         }
+
+        HomeButton.ChangeSong( Background_Music );
+        HomeButton.ChangeScene(MAINMENU);
     }
     break;
     }
