@@ -6,7 +6,7 @@
 // Initial Setting
 let Canvas;
 
-let CurrentScene = SALVATION_CHANCE;
+let CurrentScene = PAY_DEBT;
 
 const CanvasWidth = 800;
 const CanvasHeight = 600;
@@ -795,9 +795,79 @@ function draw()
 
         pop();
 
+
+        push();
+
+        textSize( 40 );
+        textStyle( BOLD );
+
+        fill( '#6495ed' );
+        stroke( 255 );
+        strokeWeight( 7 );
+
+
+        text( "You earn ⍟ " + GET_SALVATION + "\nYour debt is ⍟ " + Debt, width / 2, 100 );
+        text( "Later, Come to Shop.\nI will wait for you.", width / 2, 220 );
+
+        fill('red');
+        text( "If you don't, Next time\nGAME will OVER", width / 2, 350 );
+
+        pop();
+
+
+
         push();
 
         image( Colored_WingPoint_Image, width / 2, 520, 200, 200 );
+
+        pop();
+    }
+    break;
+
+    case PAY_DEBT:
+    {
+        push();
+
+        imageMode( CORNER );
+        background( SALVATION_Background );
+
+        pop();
+
+        push();
+
+        image(PointImage, 300, height / 2 - 5, 100, 100);
+
+        textAlign(LEFT, CENTER);
+        textSize(100);
+        textStyle( BOLD );
+
+        fill( '#6495ed' );
+        stroke( 255 );
+        strokeWeight( 7 );
+        
+
+
+        text(Debt, 400, height/2);
+
+        textAlign(CENTER, CENTER);
+        text("PAY DEBT", width / 2, 70);
+
+        pop();
+
+        push();
+
+        image( Black_WingPoint_Image, width / 2, 520, 200, 200 );
+
+        pop();  
+    }
+    break;
+
+    case GAMEOVER:
+    {
+        push();
+
+        imageMode(CORNER);
+        // background();
 
         pop();
     }
@@ -879,6 +949,7 @@ function mousePressed()
         else
         {
             ShopButton.ChangeScene( PAY_DEBT );
+            ShopButton.ChangeSong(SPECIAL);
         }
 
         HowtoButton.ChangeScene( HOWTO );
@@ -1007,7 +1078,25 @@ function mousePressed()
     case CHECK_SALVATION:
     {
         SALVATION_Button.ChangeScene( MAINMENU, false, true );
+        SALVATION_Button.ChangeSong(Background_Music);
     }
+    break;
+
+    case PAY_DEBT:
+    {
+        if(Point >= Debt)
+        {
+            Purchase_SFX.play();
+            
+            SALVATION_Button.ChangeScene(MAINMENU, false, false, true);
+            SALVATION_Button.ChangeSong(Background_Music);
+        }
+        else
+        {
+            SALVATION_Button.Alert("You don't have enough POINT!");
+        }
+    }
+    break;
     }
 }
 

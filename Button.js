@@ -213,7 +213,7 @@ class Button
 
     // When Click, Change variable
 
-    ChangeScene( Scene, is_alert = false, is_salvation = false )
+    ChangeScene( Scene, is_alert = false, is_salvation = false, is_debt = false )
     {
         const is_inside_button = mouseX > this.x - ( this.width / 2 ) && mouseX < this.x + ( this.width / 2 ) &&
             mouseY > this.y - ( this.height / 2 ) && mouseY < this.y + ( this.height / 2 );
@@ -240,6 +240,14 @@ class Button
                     GET_SALVATION = 0;
 
                     SALVATION = true;
+                }
+
+                if(is_debt)
+                {
+                    Point -= Debt;
+
+                    Debt = 0;
+                    SALVATION = false;
                 }
     
                 CurrentScene = Scene;
