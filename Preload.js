@@ -4,6 +4,8 @@
 // Spring 2021
 
 // Icons
+let CardImage;
+
 let GameImage;
 let RoomImage;
 
@@ -93,6 +95,8 @@ function preload()
     Black_WingPoint_Image = loadImage('/assets/Image/Black Coin WIng.png');
 
     GAMEOVER_Background = loadImage('/assets/Image/background/GAMEOVER.jpg');
+
+    CardImage = loadImage('assets/Image/card-game.png');
 }
 
 // Before Change Music, Please put this inside

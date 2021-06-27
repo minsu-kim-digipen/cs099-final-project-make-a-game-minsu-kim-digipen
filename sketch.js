@@ -6,7 +6,7 @@
 // Initial Setting
 let Canvas;
 
-let CurrentScene = PLEASE_CLICK;
+let CurrentScene = MAINMENU;
 
 const CanvasWidth = 800;
 const CanvasHeight = 600;
@@ -107,6 +107,24 @@ function draw()
 
         // HowtoPlay
         HowtoButton.draw( "How to Play" );
+
+        image(CardImage, 150, 85, 70, 70);
+
+        push();
+
+
+        textAlign(CENTER, CENTER);
+        textSize(77);
+        textStyle( BOLD );
+
+        fill( 'gold' );
+        stroke( 255 );
+        strokeWeight( 7 );
+        
+
+        text("SHELL GAME!", width / 2, 130);
+
+        pop();
     }
     break;
     // Shall game Scene
