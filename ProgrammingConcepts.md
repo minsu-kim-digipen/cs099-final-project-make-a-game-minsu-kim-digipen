@@ -11,14 +11,30 @@ We can make all of these with using Shape function.
 
 ## How do we use it?
 All Shapes need to type position. \
-Position standard can change with OOMode. \
+This will be first, second argument.
+```js
+rect(50, 50);    // This will be x : 50 / y : 50 position!
+```
+Position standard can change with OOMode. \ 
+Like rectMode, ellipseMode.
+
 And type size of the shape. \
 We need to put width / height or just diameter.
+```js
+rect(50, 50, 10, 40);    // This will be width : 10 / height : 40!
+square(50, 50, 30);     // Square has same width & height value, so you need to type just one.
+```
 
 For optional, we can add some value to make more deatiled.
 
 ## Example
+I used only rect.
+```js
+    rectMode( CENTER );         // sketch.js 228    (Edit standard to CENTER)
 
+    rect( 10, 60, 150, 200 );   // sketch.js 474    (x : 10 / y : 60, width : 150, height : 200)
+    rect( 220, 70, 180, 200 );  // sketch.js 578    (x : 220 / y : 70, width : 180 / height : 200)
+```
 
 # Colors
 
@@ -52,6 +68,12 @@ Behind Color function are affected.
 * Color (That color will affect after this function.)
 
 ## Example
+```js
+    fill( 'gold' ); // sketch.js 237    
+    fill( '#f4a460' );  // sketch.js 245    (HEX code)
+    fill( 255, 0, 0 );  // sketch.js 254    (RGB)
+
+```
 
 # Variables
 
@@ -84,6 +106,27 @@ When we define the variable, we can put inside argument or change value with cal
 
 ## Example
 
+```js
+    // sketch.js 6~22
+
+    // Initial Setting
+    let Canvas; // Define variable
+
+    let CurrentScene = MAINMENU;    // Define and put value
+
+    const CanvasWidth = 800;    // Const doesn't change
+    const CanvasHeight = 600;
+    const IconSize = 50;
+
+    let Sound_Slider;
+    let Point_You_Have;
+
+    let ResetSound = false;
+
+    let PointInput;
+
+    let Selected_Point;
+```
 
 # Conditional Statements
 
@@ -110,7 +153,44 @@ Else executes when all if and else if is false. \
 Like if rainy take umbrella, else take nothing!
 
 ## Example
+```js
+    // sketch.js 1086~1115
 
+    // If point is equal or more than 10
+    if ( Point >= 10 )
+    {
+        ShellButton.ChangeScene( SHELL_GAME );
+        ShellButton.createInput( 100, 50 );
+    }
+    // If point is less than 10 AND salvation is false
+    else if ( Point < 10 && SALVATION == false )
+    {
+        ShellButton.ChangeScene( SALVATION_CHANCE );
+        ShellButton.ChangeSong( SPECIAL );
+    }
+    // If it isn't if / else if condition, this execute
+    else
+    {
+        ShellButton.ChangeScene( GAMEOVER, true );
+        ShellButton.ChangeSong(SPECIAL);
+        ShellButton.Alert("GAMEOVER! Thanks for PLAYING!");
+    }
+
+    // If salvation is false, this execute.
+    if ( SALVATION == false )
+    {
+        ShopButton.ChangeScene( UPGRADE_SHOP );
+        ShopButton.ChangeSong( Room_Music );
+    }
+    // Else
+    else
+    {
+        ShopButton.ChangeScene( PAY_DEBT );
+        ShopButton.ChangeSong(SPECIAL);
+    }
+
+    HowtoButton.ChangeScene( HOWTO0 );
+```
 
 # Loops
 
@@ -142,7 +222,24 @@ Change argument execute after inside code are all executed.
 
 
 ## Example
+```js
+    // sketch.js 670~681
 
+    // loop 4 time
+    for(BOX = 0; BOX < 4; BOX++)
+    {
+        const showcaseWidth = 180;
+        const interval = 10;
+
+        const x_position = 20 + ((showcaseWidth + interval) * BOX);
+
+        rect(x_position, 290, showcaseWidth, 220);
+
+        imageMode( CORNER );
+        image( Upgrade_Image, x_position, 290, showcaseWidth, 70 );
+    }
+    // End this loop, BOX plus 1
+```
 
 # Functions
 
@@ -170,6 +267,27 @@ Inside that function you write code.
 If you need to output result, use return to output that.
 
 ## Example
+```js
+// SALVATION.js 22~39
+function MIN_Upgrade_Percent(standard)  // Get standard argument
+{
+    if(standard < 100)
+    {
+        return standard;    // Standard will return
+    }
+    else
+    {
+        if(standard == MIN_salvation)
+        {
+            MIN_salvation_upgrade = OWN;
+        }
+        else if(standard == Fill_MIN_salvation)
+        {
+            Fill_MIN_salvation_upgrade = OWN;
+        }
+    }
+}
+```
 
 
 # Classes
@@ -214,16 +332,114 @@ For use plus function, use `[variable].[function]` \
 Like `Chicken.plus()`
 
 ## Example
+```js
+// Make Class
+// Button.js 9~15
+class Button
+{
+    // In constructor, you can get value with argument.
+    constructor( x, y, width, height )
+    {
+        // Use this. to use in class
+        this.x = x;
+        this.y = y;
+        this.width = width;
+        this.height = height;
+    }
 
+    // Function in class
+    // Button.js 298~307
+    clearInput()
+    {
+        // Use this. to get button position
+        const is_inside_button = mouseX > this.x - ( this.width / 2 ) && mouseX < this.x + ( this.width / 2 ) &&
+            mouseY > this.y - ( this.height / 2 ) && mouseY < this.y + ( this.height / 2 );
+
+        if ( is_inside_button )
+        {
+            PointInput.remove();
+        }
+    }
+}
+
+// Define new Button
+// Buttonlist.js 8
+let HomeButton = new Button( 30, 30, 50, 50 );
+
+// Use function
+// sketch.js 1069
+HomeButton.clearInput();    // This way, clearInput will execute!
+```
 
 # Arrays
 
 ## What is these?
+As simply, this is collection of data. \
+You can store number, text and so on.
 
+And you that collection is stored like `{5, 10, true}` \
+You can use this thing with index. 
 
 ## Why is it important?
+This is easy to add or delete and define. \
+Like particle, make an particle with array, and can remove when it go over the background!
+
+This is stored as index, so it's more easy to delete particle1, particle2, particle3 ~~~ particle 50.
 
 ## How do we use it?
+First you need to define array. \
+Use `[variable] = []` or `[variable] = [5, 10, 15]`. \
+Last way, you can define and put value inside array at the same time.
+
+And you can get value with this method. \
+`variable[0]`
+
+Let's think it's `chicken = [5, 10, 15]` \
+I want to get 10, then type `chicken[1]` to get that!
+
+Be careful, array index starts 0, not 1.
+
+You can add value in array with `.push()` \
+When you use that, that value will add at the last index.
+
+You can remove value in array with `.splice(index, howmuch)` \
+In index, put index and howmuch, if you want to delete 1~3 type this way `.splice(1, 3)`
 
 ## Example
 
+```js
+// shell_game.js 50~82
+let Cup = [];   // Define Cup array
+
+function Random_Cup_Amount( Cup_amount, max_percent )
+{
+    // Initial variable
+
+    let MAX_PERCENT;
+
+    // Get First max_percent amount
+    if ( MAX_PERCENT == undefined )
+    {
+        MAX_PERCENT = max_percent
+    }
+
+    // Get random value
+    for ( i = 0; i < Cup_amount; i++ )
+    {
+        // This is the last cup
+        if ( i == Cup_amount - 1 )
+        {
+            Cup[ i ] = MAX_PERCENT  // Put in the index
+        }
+        // This is the other cups, using random to get percent value
+        else
+        {
+            Cup[ i ] = int( random( MAX_PERCENT ) );
+            MAX_PERCENT -= Cup[ i ];
+        }
+    }
+
+    // Visualize cup in console
+    console.log( Cup );
+}
+```
