@@ -101,9 +101,9 @@ function preload()
     SALVATION_Background = loadImage('assets/Image/background/SALVATION.png');
 
     Colored_WingPoint_Image = loadImage('assets/Image/Colored Coin Wing.png');
-    Black_WingPoint_Image = loadImage('/assets/Image/Black Coin WIng.jpg');
+    Black_WingPoint_Image = loadImage('assets/Image/Black Coin WIng.jpg');
 
-    GAMEOVER_Background = loadImage('/assets/Image/background/GAMEOVER.png');
+    GAMEOVER_Background = loadImage('assets/Image/background/GAMEOVER.png');
 
     CardImage = loadImage('assets/Image/card-game.png');
 
