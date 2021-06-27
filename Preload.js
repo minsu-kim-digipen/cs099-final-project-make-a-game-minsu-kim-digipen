@@ -24,6 +24,7 @@ let BronzeCup_Image;
 let Click_Background;
 let Shop_Background;
 let SALVATION_Background;
+let GAMEOVER_Background;
 
 let Brick_Room_Image;
 let LikeOcean_Room_Image;
@@ -90,6 +91,8 @@ function preload()
 
     Colored_WingPoint_Image = loadImage('assets/Image/Colored Coin Wing.png');
     Black_WingPoint_Image = loadImage('/assets/Image/Black Coin WIng.png');
+
+    GAMEOVER_Background = loadImage('/assets/Image/background/GAMEOVER.jpg');
 }
 
 // Before Change Music, Please put this inside

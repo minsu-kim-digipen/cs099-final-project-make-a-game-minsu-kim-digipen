@@ -6,7 +6,7 @@
 // Initial Setting
 let Canvas;
 
-let CurrentScene = PAY_DEBT;
+let CurrentScene = PLEASE_CLICK;
 
 const CanvasWidth = 800;
 const CanvasHeight = 600;
@@ -867,7 +867,7 @@ function draw()
         push();
 
         imageMode(CORNER);
-        // background();
+        background(GAMEOVER_Background);
 
         pop();
     }
@@ -936,8 +936,9 @@ function mousePressed()
         }
         else
         {
-            ResetAllMusic();
-            ShellButton.ChangeScene( GAMEOVER );
+            ShellButton.Alert("GAMEOVER! Thanks for PLAYING!")
+            ShellButton.ChangeScene( GAMEOVER, true );
+            ShellButton.ChangeSong(SPECIAL);
         }
 
 
@@ -1086,9 +1087,7 @@ function mousePressed()
     {
         if(Point >= Debt)
         {
-            Purchase_SFX.play();
-            
-            SALVATION_Button.ChangeScene(MAINMENU, false, false, true);
+            SALVATION_Button.ChangeScene(MAINMENU, true, false, true);
             SALVATION_Button.ChangeSong(Background_Music);
         }
         else

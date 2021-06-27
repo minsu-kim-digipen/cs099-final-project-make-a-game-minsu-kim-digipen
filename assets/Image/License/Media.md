@@ -67,3 +67,6 @@ Image by <a href="https://pixabay.com/users/tonic-pics-3001971/?utm_source=link-
 ## [assets\Image\background\Shop\LikeOcean.jpg](https://pixabay.com/illustrations/space-empty-background-image-stage-4152623/)
 
 Image by <a href="https://pixabay.com/users/darkmoon_art-1664300/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=4326353">Darkmoon_Art</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=4326353">Pixabay</a>
+
+## [assets\Image\background\GAMEOVER.jpg](https://pixabay.com/illustrations/game-over-video-game-final-3862774/)
+Image by <a href="https://pixabay.com/users/absolutvision-6158753/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=3862774">Gino Crescoli</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=3862774">Pixabay</a>

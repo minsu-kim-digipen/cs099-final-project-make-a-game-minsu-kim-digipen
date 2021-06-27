@@ -244,6 +244,8 @@ class Button
 
                 if(is_debt)
                 {
+                    Purchase_SFX.play();
+
                     Point -= Debt;
 
                     Debt = 0;
