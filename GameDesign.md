@@ -60,7 +60,7 @@ So I thought it is related to the theme, and made this!
 This is the prototype of MainMenu. \
 Put three Buttons to click an icon. \
 When Click it turns to gray to know it could be selected.
-![mainmenu](GameDesign\0.jpg)
+![mainmenu](GameDesign/0.jpg)
 
 ## Shell Game
 Actually, there are not Paper prototype, So I will explain with this.
@@ -73,7 +73,7 @@ I thought to make 10 / 50 / 100 point button to get value, \
 But when your point is 44 and wants to use all of them? \
 It's hard for this algorithm. \
 So I made an input box to get value.
-![ss](assets\Image\HOWTO\1.png)
+![ss](assets/Image/HOWTO/1.png)
 
 I made this Scene to check again. \
 Sometimes, we want to use just 10 points but input 100 points as a mistake! \
@@ -81,13 +81,13 @@ This is why I made this Scene!
 
 If you click Yes, go to the next page. \
 If you click No, go to the previous page and input again!
-![ss](assets\Image\HOWTO\2.png)
+![ss](assets/Image/HOWTO/2.png)
 
 First, I think to present animation that moves... \
 But when I made that, it just teleports to the position.
 
 So I make 3 different cups and shuffle very fast.
-![ss](assets\Image\HOWTO\3.png)
+![ss](assets/Image/HOWTO/3.png)
 
 I make the background with RGB to know you earn money, or not. \
 If you choose the first cup, it would be (r, 0, 0) \
@@ -98,11 +98,11 @@ When it is less than 100%, the text is Italic and blue. \
 When it is more than 100%, the text will BOLD and RED!
 
 I want to express the emotion of the player, so I made it like this.
-![ss](assets\Image\HOWTO\4.png)
+![ss](assets/Image/HOWTO/4.png)
 
 Finally, check points! \
 Reveal all percent of cups, and what point you use, what point you will get, and Finally your current point!
-![ss](assets\Image\HOWTO\5.png)
+![ss](assets/Image/HOWTO/5.png)
 
 ## Shop
 This is the Shop Showcase prototype. \
@@ -115,13 +115,13 @@ And then, short description. \
 Like it will increase 10% of MAX Point!
 
 At the bottom draw & mouse is in code, how to write code with button class.
-![Shop](GameDesign\1.jpg)
+![Shop](GameDesign/1.jpg)
 
 This is a short prototype of position.
 
 Showcase Rect mode is CORNER but the button is CENTER. \
 So I need to organize position with writing on paper.
-![Position](GameDesign\2.jpg)
+![Position](GameDesign/2.jpg)
 
 ## SALVATION
 It's the prototype of SALVATION!
@@ -131,5 +131,5 @@ So I need to make a function to give chance.
 
 The visual is simple, just click the button. \
 But there have various variables and functions.
-![First](GameDesign\3.jpg)
-![Second](GameDesign\4.jpg)
+![First](GameDesign/3.jpg)
+![Second](GameDesign/4.jpg)
